@@ -15,10 +15,8 @@ namespace Webzine.WebApplication.Controllers
         /// 
         /// <returns>Return the index page</returns>
         /// 
-        [Route("home")]
         public IActionResult Index()
         {
-            this.ViewBag.Nom = "Poto";
             return this.View();
         }
     }

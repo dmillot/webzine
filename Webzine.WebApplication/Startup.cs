@@ -28,6 +28,9 @@ namespace Webzine.WebApplication
                 app.UseDeveloperExceptionPage();
             }
 
+            // permet d'accéder au données contenu dans le fichier "www"
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
