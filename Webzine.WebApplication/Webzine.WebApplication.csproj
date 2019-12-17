@@ -104,4 +104,8 @@
     <None Include="wwwroot\lib\popper.js\umd\popper.min.js.map" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>
