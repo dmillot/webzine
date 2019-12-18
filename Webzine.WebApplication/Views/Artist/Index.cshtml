@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model Webzine.WebApplication.ViewModels.ArtistViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <title>@Model.NomArtiste</title>
+</head>
+<body>
+    <div>
+        <h1>@Model.NomArtiste</h1>
+        <hr class="style1">
+
+        <p>@Model.BiographieArtiste</p>
+        <h1>Titres</h1>
+        <hr class="style1">
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Album Picture</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Duree</th>
+                    <th scope="col">Chronique</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var titre in Model.Tracks)
+                {
+                    <tr>
+                        <td><img src="@titre.AlbumPicture" style="display:block; height:50px;"/></td>
+                        <td>@titre.TrackTitle</td>
+                        <td>@titre.Duree</td>
+                        <td><a href="@titre.TrackTitle"><i class="fa fa-link"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
