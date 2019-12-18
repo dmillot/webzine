@@ -9,6 +9,7 @@ namespace Webzine.Entity
     /// </summary>
     public class Style
     {
+        private int _id;
         private string _nomStyle;
         private string _descriptionStyle;
         private List<Titre> _titres;
@@ -16,6 +17,8 @@ namespace Webzine.Entity
         public string NomStyle { get => _nomStyle; set => _nomStyle = value; }
         public string DescriptionStyle { get => _descriptionStyle; set => _descriptionStyle = value; }
         public List<Titre> Titres { get => _titres; set => _titres = value; }
+        public int Id { get => _id; set => _id = value; }
+
         /// <summary>
         /// Constructeur vide
         /// </summary>
