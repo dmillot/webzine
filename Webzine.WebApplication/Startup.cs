@@ -28,7 +28,7 @@ namespace Webzine.WebApplication
                 app.UseDeveloperExceptionPage();
             }
 
-            // permet d'accéder au données contenu dans le fichier "www"
+            // permet d'accéder au données contenu dans le fichier "wwwroot"
             app.UseStaticFiles();
 
             app.UseRouting();
