@@ -3,28 +3,143 @@
     <title>
         WebZine
     </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
 </head>
-    <body>
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<body>
+    @{  Layout = "_header";}
+    <div class="row mt-5">
+        <div class="col ml-5">
+            @* colonne Chronique *@
+            <div class="row">
+                @* Derniers titres chroniqués *@
+                <div class="row">
+                    <h1>Derniers titres chroniqués</h1>
+                </div>
+                <div class="row">
+                    <ul class="list-unstyled">
+                        <li class="media bg-light mr-4 mb-4">
+                            <img src="~/images/kraftwerk.jpg" class="img-thumbnail ml-3 mt-3" width="200" height="200">
+                            <div class="media-body p-3 mb-2">
+                                <a href="#">
+                                    <h5 class="mb-1">Kraftwerk - The Robots </h5>
+                                </a>
+                                <p class="text-secondary">
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                </p>
+                                <button class="btn btn-primary" type="submit">Lire la suite</button>
+                                <i class="fas fa-calendar ml-3"> 18/03/19 12:34:34 </i>
+                                <i class="fas fa-tags ml-3"></i>
+                                <a href="#">
+                                    Electro
+                                </a>
+                            </div>
+                        </li>
+                        <li class="media bg-light mr-4 mb-4">
+                            <img src="~/images/kraftwerk.jpg" class="img-thumbnail ml-3 mt-3" width="200" height="200">
+                            <div class="media-body p-3 mb-2">
+                                <a href="#">
+                                    <h5 class="mb-1">Kraftwerk - The Robots </h5>
+                                </a>
+                                <p class="text-secondary">
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                </p>
+                                <button class="btn btn-primary" type="submit">Lire la suite</button>
+                                <i class="fas fa-calendar ml-3"> 18/03/19 12:34:34 </i>
+                                <i class="fas fa-tags ml-3"></i>
+                                <a href="#">
+                                    Electro
+                                </a>
+                            </div>
+                        </li>
+                        <li class="media bg-light mr-4 mb-4">
+                            <img src="~/images/kraftwerk.jpg" class="img-thumbnail ml-3 mt-3" width="200" height="200">
+                            <div class="media-body p-3 mb-2">
+                                <a href="#">
+                                    <h5 class="mb-1">Kraftwerk - The Robots </h5>
+                                </a>
+                                <p class="text-secondary">
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                </p>
+                                <button class="btn btn-primary" type="submit">Lire la suite</button>
+                                <i class="fas fa-calendar ml-3"> 18/03/19 12:34:34 </i>
+                                <i class="fas fa-tags ml-3"></i>
+                                <a href="#">
+                                    Electro
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+
+                </div>
+                <div class="row">
+
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+            <div class="row">
+                @* Titres les plus populaires *@
+                <h1>Titres les plus populaires</h1>
+                <div class="card-deck mb-4">
+                    <div class="card">
+                        <img src="~/images/kraftwerk.jpg" class="card-img-top" height="300"/>
+                        <div class="card-body">
+                            <a href="#">
+                                <h3 class="card-title">Titre Zik</h3>
+                            </a>
+                            par
+                            <a href="#">
+                                Artiste
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="~/images/kraftwerk.jpg" class="card-img-top" height="300"/>
+                        <div class="card-body">
+                            <a href="#">
+                                <h3 class="card-title">Titre Zik</h3>
+                            </a>
+                            par
+                            <a href="#">
+                                Artiste
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="~/images/kraftwerk.jpg" class="card-img-top" height="300"/>
+                        <div class="card-body">
+                            <a href="#">
+                                <h3 class="card-title">Titre Zik</h3>
+                            </a>
+                            par
+                            <a href="#">
+                                Artiste
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
-        <script src="~/lib/jquery/jquery.js"></script>
-        <script src="~/lib/popper.js/popper.js"></script>
-    </body>
+        </div>
+        <div class="col-sm-2">
+            @* colonne A propos *@
+            @Html.Partial("Sidebar")
+        </div>
+    </div>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/popper.js/popper.js"></script>
+</body>
 </html>
