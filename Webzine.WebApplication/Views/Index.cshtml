@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    @{ Layout = "_header";}
+    <div class="row mt-5">
+        <div class="col ml-5">
+            <div class="row">
+                <h2> Résultats de la recherche pour "azerty" </h2>
+            </div>
+            <div class="row">
+                Artistes
+            </div>
+            <div class="row">
+                Titres
+            </div>
+        </div>
+        <div class="col-sm-2">
+            @Html.Partial("Sidebar")
+
+        </div>
+    </div>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/popper.js/popper.js"></script>
+</body>
+
+</html>

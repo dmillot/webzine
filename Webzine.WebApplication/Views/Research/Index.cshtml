@@ -1,0 +1,29 @@
+﻿@using Webzine.WebApplication.ViewModels
+@model ResearchViewModel
+<div class="row m-0 p-0">
+    <h2> Résultats de la recherche pour "azerty" </h2>
+</div>
+<div class="row m-0 p-0 mt-3">
+    <h2> Artistes </h2>
+</div>
+@foreach (var objet in Model.Artistes)
+{
+    <div class="row m-0 p-0 d-flex align-items-center">
+        <i class="fas fa-user m-0 p-0"></i>
+        <a href="#" class="ml-2"> @objet.Name </a>
+    </div>
+}
+
+<div class="row m-0 p-0 mt-3">
+    <h2> Titres </h2>
+</div>
+@foreach (var objet in Model.Titres)
+{
+    <div class="media mb-3">
+        <img src="@objet.AlbumPicture" class="mr-3" height="64">
+        <div class="media-body">
+            <a href="#"><h5 class="mt-0"> @objet.Title </h5></a>
+            Durée : @objet.Duration
+        </div>
+    </div>
+}
