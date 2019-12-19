@@ -54,6 +54,13 @@ namespace Webzine.WebApplication
                     name: "default",
                     pattern: "{controller=home}/{action=index}"
                     );
+
+
+                endpoints.MapControllerRoute(
+                name: "adminTitre",
+                pattern: "administration/titre/{id}",
+                defaults: new {area = "Administration", controller = "Title", action = "Index" }
+                );
             });
         }
     }

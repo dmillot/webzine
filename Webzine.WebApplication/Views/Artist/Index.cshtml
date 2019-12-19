@@ -35,7 +35,7 @@
                     <tr>
                         <td><img class="m-auto" src="@titre.AlbumPicture" style="display:block; height:100px;"/></td>
                         <td class="align-middle">@titre.Title</td>
-                        <td class="align-middle">@titre.Duration</td>
+                        <td class="align-middle">@titre.DurationToString()</td>
                         <td class="align-middle"><a href="@Url.Action("Index", "Titre")/@titre.Id"><i class="fa fa-link"></i></a></td>
                     </tr>
                 }

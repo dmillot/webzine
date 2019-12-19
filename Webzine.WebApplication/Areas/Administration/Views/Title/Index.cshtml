@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Editer un Titre";
+}
+@model Webzine.WebApplication.Areas.Administration.ViewModels.TitleViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <title>Titres</title>
+</head>
+<body>
+    <div>
+        <h1>Titres</h1>
+        <hr class="style1">
+
+        <button class="btn btn-primary my-3"><span class="fa fa-plus"></span> Ajouter un nouveau titre</button>
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Artiste</th>
+                    <th scope="col">Libellé</th>
+                    <th scope="col">Duree</th>
+                    <th scope="col">Date de sortie</th>
+                    <th scope="col"><span class="fa fa-eye"></span></th>
+                    <th scope="col"><span class="fa fa-thumbs-up"></span></th>
+                    <th scope="col"><span class="fa fa-comments"></span></th>
+                    <th scope="col" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var titre in Model.Titles)
+                {
+                <tr>
+                    <td>@titre.Author.Name</td>
+                    <td>@titre.Title</td>
+                    <td>@titre.DurationToString()</td>
+                    <td>@titre.ReleaseDate.ToShortDateString()</td>
+                    <td>@titre.ReadingCounter.ToString()</td>
+                    <td>@titre.LikeCounter.ToString()</td>
+                    <td>@titre.Comments.Count.ToString()</td>
+                    <td class="d-flex justify-content-around"><a class="fa fa-edit text-primary" href="#"></a><a class="fa fa-trash text-primary" href="#"></a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    </body>
+</html>

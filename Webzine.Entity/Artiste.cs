@@ -11,7 +11,7 @@ namespace Webzine.Entity
         public string Name { get; set; }
         public string Biography { get; set; }
         public List<Titre> Tracks { get; set; }
-
+        public int Id { get; set; }
         /// <summary>
         /// Nouvel artiste instancié sans paramètres
         /// </summary>
