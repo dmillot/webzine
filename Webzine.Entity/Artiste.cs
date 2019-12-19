@@ -8,13 +8,9 @@ namespace Webzine.Entity
     /// </summary>
     public class Artiste
     {
-        private string _nomArtiste;
-        private string _biographieArtiste;
-        private List<Titre> _tracks;
-
-        public string NomArtiste { get => _nomArtiste; set => _nomArtiste = value; }
-        public string BiographieArtiste { get => _biographieArtiste; set => _biographieArtiste = value; }
-        public List<Titre> Tracks { get => _tracks; set => _tracks = value; }
+        public string Name { get; set; }
+        public string Biography { get; set; }
+        public List<Titre> Tracks { get; set; }
 
         /// <summary>
         /// Nouvel artiste instancié sans paramètres
@@ -27,8 +23,8 @@ namespace Webzine.Entity
         /// <param name="biographieArtiste">Elements décrivant le parcours d'un artiste</param>
         public Artiste(string nomArtiste, string biographieArtiste) : base()
         {
-            NomArtiste = nomArtiste;
-            BiographieArtiste = biographieArtiste;
+            Name = nomArtiste;
+            Biography = biographieArtiste;
         }
     }
 }

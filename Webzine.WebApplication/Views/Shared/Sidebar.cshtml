@@ -1,5 +1,5 @@
-﻿@using Webzine.Entity;
-@model List<Style>
+﻿@*@using Webzine.Entity;
+@model List<Style>*@
 <div class="row container">
     <h2>A propos</h2>
     <p>Retrouvez les pépites sur notre webzine</p>
@@ -7,8 +7,8 @@
 <div class="row container">
     <h3>Styles</h3>
     <ul>
-        @foreach(Style style in Model) {
+        @*@foreach(Style style in Model) {
             @Html.DisplayFor(s => style.NomStyle);
-        }
+        }*@
 </ul>
     </div>

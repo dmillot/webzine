@@ -33,8 +33,17 @@ namespace Webzine.WebApplication
 
             app.UseRouting();
 
+
+
             app.UseEndpoints(endpoints =>
             {
+
+                endpoints.MapControllerRoute(
+                  name: "titre",
+                  pattern: "titre/{id:int}",
+                  defaults: new { controller = "Titre", action = "Index" }
+                  );
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=home}/{action=index}"

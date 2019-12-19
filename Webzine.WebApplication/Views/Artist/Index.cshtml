@@ -9,14 +9,14 @@
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
-    <title>@Model.NomArtiste</title>
+    <title>@Model.Name</title>
 </head>
 <body>
     <div>
-        <h1>@Model.NomArtiste</h1>
+        <h1>@Model.Name</h1>
         <hr class="style1">
 
-        <p>@Model.BiographieArtiste</p>
+        <p>@Model.Biography</p>
         <h1>Titres</h1>
         <hr class="style1">
 
@@ -30,13 +30,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var titre in Model.Tracks)
+                @foreach (var titre in Model.Titles)
                 {
                     <tr>
                         <td><img src="@titre.AlbumPicture" style="display:block; height:50px;"/></td>
-                        <td>@titre.TrackTitle</td>
-                        <td>@titre.Duree</td>
-                        <td><a href="@titre.TrackTitle"><i class="fa fa-link"></i></a></td>
+                        <td>@titre.Title</td>
+                        <td>@titre.Duration</td>
+                        <td><a href="@titre.Title"><i class="fa fa-link"></i></a></td>
                     </tr>
                 }
             </tbody>

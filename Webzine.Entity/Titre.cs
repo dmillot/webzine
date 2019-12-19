@@ -9,32 +9,24 @@ namespace Webzine.Entity
     /// </summary>
     public class Titre
     {
-        private string _trackTitle;
-        private string _trackDescription;
-        private Artiste _author;
-        private List<Commentaire> _comments;
-        private List<Style> _styles;
-        private string _duree;
-        private int _id;
-        private string _trackLink;
-        private DateTime _creationDate;
-        private DateTime _releaseDate;
-        private int _readingCounter;
-        private int _likeCounter;
-
-        public string TrackTitle { get => _trackTitle; set => _trackTitle = value; }
-        public string TrackDescription { get => _trackDescription; set => _trackDescription = value; }
-        public Artiste Author { get => _author; set => _author = value; }
-        public List<Commentaire> Comments { get => _comments; set => _comments = value; }
-        public List<Style> Styles { get => _styles; set => _styles = value; }
-        public string Duree { get => _duree; set => _duree = value; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public Artiste Author { get; set; }
+        public List<Commentaire> Comments { get; set; }
+        public List<Style> Styles { get; set; }
+        public string Duration { get; set; }
         public string AlbumPicture { get; set; }
-        public int Id { get => _id; set => _id = value; }
-        public string TrackLink { get => _trackLink; set => _trackLink = value; }
-        public DateTime CreationDate { get => _creationDate; set => _creationDate = value; }
-        public DateTime ReleaseDate { get => _releaseDate; set => _releaseDate = value; }
-        public int ReadingCounter { get => _readingCounter; set => _readingCounter = value; }
-        public int LikeCounter { get => _likeCounter; set => _likeCounter = value; }
+        public string AlbumTitle { get; set; }
+        public string VideoLink { get; set; }
+        /// <summary>
+        /// Date à laquelle l'article du titre à été crée.
+        /// </summary>
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public int ReadingCounter { get; set; }
+        public int LikeCounter { get; set; }
 
         /// <summary>
         /// Constructeur vide
@@ -52,8 +44,8 @@ namespace Webzine.Entity
         /// <param name="artist">L'artite ayant réalisé la musique</param>
         public Titre(string title, string description, Artiste artist) : base()
         {
-            TrackTitle = title;
-            TrackDescription = description;
+            Title = title;
+            Description = description;
             Author = artist;
         }
 

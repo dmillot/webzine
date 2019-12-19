@@ -9,15 +9,10 @@ namespace Webzine.Entity
     /// </summary>
     public class Commentaire
     {
-        private string _messageCommentaire;
-        private Titre _titre;
-        private string _username;
-        private DateTime _creationDate;
-
-        public string MessageCommentaire { get => _messageCommentaire; set => _messageCommentaire = value; }
-        public Titre Titre { get => _titre; set => _titre = value; }
-        public string Username { get => _username; set => _username = value; }
-        public DateTime CreationDate { get => _creationDate; set => _creationDate = value; }
+        public string Message { get; set; }
+        public Titre Title { get; set; }
+        public string Username { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// Constructeur vide
@@ -35,8 +30,8 @@ namespace Webzine.Entity
         public Commentaire(string nomUtilisateur, string message, Titre titre)
         {
             Username = nomUtilisateur;
-            MessageCommentaire = message;
-            Titre = titre;
+            Message = message;
+            Title = titre;
         }
     }
 }
