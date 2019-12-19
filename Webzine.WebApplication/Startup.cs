@@ -45,6 +45,12 @@ namespace Webzine.WebApplication
                   );
 
                 endpoints.MapControllerRoute(
+                name: "artiste",
+                pattern: "artiste/{name}",
+                defaults: new { controller = "Artist", action = "Index" }
+                );
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=home}/{action=index}"
                     );
