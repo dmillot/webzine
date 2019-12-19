@@ -6,8 +6,10 @@ using Webzine.Entity;
 
 namespace Webzine.WebApplication.ViewModels
 {
-    public class StyleViewModel
+    public class HomeViewModel
     {
-        public List<Titre> Titres { get; set; }
+        public List<Titre> Titres_chroniques { get; set; }
+        public List<Titre> Titres_populaires { get; set; }
+
     }
 }
