@@ -16,7 +16,7 @@ namespace Webzine.WebApplication
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
             services.AddControllersWithViews();
         }
 
@@ -49,6 +49,12 @@ namespace Webzine.WebApplication
                 pattern: "artiste/{name}",
                 defaults: new { controller = "Artist", action = "Index" }
                 );
+
+                endpoints.MapControllerRoute(
+            name: "adminStyles",
+            pattern: "administration/styles",
+            defaults: new { area = "Administration", controller = "AdminStyle", action = "Index" }
+            );
 
                 endpoints.MapControllerRoute(
                     name: "default",
