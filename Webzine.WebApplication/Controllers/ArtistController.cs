@@ -24,6 +24,7 @@ namespace Webzine.WebApplication.Controllers
                 {
                     new Titre()
                     {
+                        Id = 1,
                         Title = "blade runner - end titles",
                         Duration = "4:39",
                        AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg"
