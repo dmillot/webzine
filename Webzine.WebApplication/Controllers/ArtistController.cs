@@ -10,7 +10,7 @@ namespace Webzine.WebApplication.Controllers
 {
     public class ArtistController : Controller
     {
-        [HttpGet, Route("artiste/{artistName}")]
+       
         public IActionResult Index(string artistName)
         {
             ArtistViewModel artist = new ArtistViewModel()
