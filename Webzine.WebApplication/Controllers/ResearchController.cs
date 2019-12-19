@@ -13,7 +13,7 @@ namespace Webzine.WebApplication.Controllers
 
         public IActionResult Index(string mot)
         {
-            ResearchViewModel search = new ResearchViewModel()
+            ResearchViewModel recherche = new ResearchViewModel()
             {
                 Artistes = new List<Artiste>()
                 {
@@ -48,7 +48,7 @@ namespace Webzine.WebApplication.Controllers
                     }
                 }
             };
-            this.ViewData.Model = search;
+            this.ViewData.Model = recherche;
             return View();
         }
     }
