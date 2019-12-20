@@ -45,16 +45,28 @@ namespace Webzine.WebApplication
                   );
 
                 endpoints.MapControllerRoute(
-                name: "artiste",
-                pattern: "artiste/{name}",
-                defaults: new { controller = "Artist", action = "Index" }
-                );
+                    name: "artiste",
+                    pattern: "artiste/{name}",
+                    defaults: new { controller = "Artist", action = "Index" }
+                    );
 
                 endpoints.MapControllerRoute(
-            name: "adminStyles",
-            pattern: "administration/styles",
-            defaults: new { area = "Administration", controller = "AdminStyle", action = "Index" }
-            );
+                    name: "adminStyles",
+                    pattern: "administration/styles",
+                    defaults: new { area = "Administration", controller = "AdminStyle", action = "Index" }
+                    );
+
+                endpoints.MapControllerRoute(
+                   name: "adminStyleEdit",
+                   pattern: "administration/style/edit/{Id}",
+                   defaults: new { area = "Administration", controller = "AdminStyle", action = "EditStyle" }
+                   );
+
+                endpoints.MapControllerRoute(
+                   name: "adminStyleDelete",
+                   pattern: "administration/style/Delete/{Id}",
+                   defaults: new { area = "Administration", controller = "AdminStyle", action = "DeleteStyle" }
+                   );
 
                 endpoints.MapControllerRoute(
                     name: "default",

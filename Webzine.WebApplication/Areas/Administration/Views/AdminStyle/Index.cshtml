@@ -5,8 +5,9 @@
 
 <div>
     <h2>Styles</h2>
-    <button class="btn btn-primary"><i class="fas fa-plus"></i>Ajouter un nouveau style</button>
-    <table class="table">
+    <hr class="style1"/>
+    <button class="btn btn-primary mb-2"><i class="fas fa-plus"></i>Ajouter un nouveau style</button>
+    <table class="table table-striped">
         <thead class="thead-light">
             <tr>
                 <th  scope="col">Libellé</th>
@@ -18,7 +19,7 @@
             {
             <tr >
                 <td>@element.Name</td>
-                <td class="text-center"><a href="#" class="col"><i class="fas fa-edit"></i></a><a href="#" class="col"><i class="fas fa-trash"></i></a></td>
+                <td class="text-center"><a href="/administration/style/edit/@element.Id" class="col"><i class="fas fa-edit"></i></a><a href="#" class="col"><i class="fas fa-trash"></i></a></td>
             </tr>
             }
         </tbody>
