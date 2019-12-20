@@ -37,6 +37,22 @@ namespace Webzine.WebApplication
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                  name: "areasParam",
+                  pattern: "{area}/{controller=Home}/{action=Index}/{id}"            
+                );
+
+                endpoints.MapControllerRoute(
+                  name: "adminArtist",
+                  pattern: "administration/artiste/edit/{id}",
+                  defaults: new { area = "Administration", controller = "AdminArtist", action = "Edit" }
+                  );
+
+                endpoints.MapControllerRoute(
+                  name: "adminArtist",
+                  pattern: "administration/artiste/delete/{id}",
+                  defaults: new { area = "Administration", controller = "AdminArtist", action = "Delete" }
+                  );
 
                 endpoints.MapControllerRoute(
                   name: "titre",
@@ -50,10 +66,24 @@ namespace Webzine.WebApplication
                 defaults: new { controller = "Artist", action = "Index" }
                 );
 
+
+                endpoints.MapControllerRoute(
+                  name: "adminArtist",
+                  pattern: "administration/artiste/create",
+                  defaults: new { area = "Administration", controller = "AdminArtist", action = "Create" }
+                  );
+
+                endpoints.MapControllerRoute(
+                  name: "adminArtist",               
+                  pattern: "administration/artistes",
+                  defaults : new {area = "Administration", controller = "AdminArtist", action = "Index" }
+                  );
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=home}/{action=index}"
                     );
+
             });
         }
     }
