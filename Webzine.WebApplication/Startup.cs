@@ -73,6 +73,12 @@ namespace Webzine.WebApplication
                 pattern: "administration/titre/edit/{id}",
                 defaults: new { area = "Administration", controller = "Title", action = "EditTitle" }
                 );
+
+                endpoints.MapControllerRoute(
+                name: "adminDeleteTitre",
+                pattern: "administration/titre/delete/{id}",
+                defaults: new { area = "Administration", controller = "Title", action = "DeleteTitle" }
+                );
             });
         }
     }

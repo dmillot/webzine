@@ -15,10 +15,10 @@
         <h1>Editer un titre</h1>
         <hr class="style1">
 
-        <form asp-controller="Title" asp-action="CreateTitle" method="post">
+        <form  method="post">
             <div class="form-group row">
                 <label for="Author" class="col-2 col-form-label">Nom de l'artiste</label>
-                <select class="form-control col-10" asp-items="@Model.ArtistsSelectList">
+                <select class="form-control col-10">
                     @foreach (var artist in Model.Artistes)
                     {
                         <option value="@artist.Id" @(artist.Id == Model.Title.Author.Id ? "selected" : "") >@artist.Name</option>

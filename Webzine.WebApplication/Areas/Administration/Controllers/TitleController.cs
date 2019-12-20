@@ -28,5 +28,11 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             TitleViewModel titles = new TitleViewModel();
             return View("EditTitle", titles);
         }
+
+        public IActionResult DeleteTitle(int id)
+        {
+            TitleViewModel titles = new TitleViewModel();
+            return View("DeleteTitle", titles);
+        }
     }
 }
