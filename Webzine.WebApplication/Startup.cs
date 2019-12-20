@@ -38,6 +38,12 @@ namespace Webzine.WebApplication
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "contact",
+                    pattern: "contact",
+                    defaults: new { controller = "contact", action="Index" }
+                    );
+
+                endpoints.MapControllerRoute(
                     name: "style",
                     pattern: "titres/style/{style}",
                     defaults: new { controller = "Style", action = "Index" }
@@ -46,7 +52,7 @@ namespace Webzine.WebApplication
                 endpoints.MapControllerRoute(
                     name: "recherche",
                     pattern: "recherche",
-                    defaults: new { controller = "Search", action = "Index" }
+                    defaults: new { controller = "Research", action = "Index" }
                     );
 
                 endpoints.MapControllerRoute(
