@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "Editer un titre";
+}
+@model Webzine.WebApplication.Areas.Administration.ViewModels.TitleViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <title>Titres</title>
+</head>
+<body>
+    <div>
+        <h1>Editer un titre</h1>
+        <hr class="style1">
+
+        <form asp-controller="Title" asp-action="CreateTitle" method="post">
+            <div class="form-group row">
+                <label for="Author" class="col-2 col-form-label">Nom de l'artiste</label>
+                <select class="form-control col-10" asp-items="@Model.ArtistsSelectList">
+                    @foreach (var artist in Model.Artistes)
+                    {
+                        <option value="@artist.Id" @(artist.Id == Model.Title.Author.Id ? "selected" : "") >@artist.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group row">
+                <label for="Title" class="col-2">Titre</label>
+                <input type="text" class="form-control col-10" placeholder="@Model.Title.Title"/>
+            </div>
+
+            <div class="form-group row">
+                <label for="Description" class="col-2">Chronique</label>
+                <textarea class="form-control col-10" placeholder="@Model.Title.Description"></textarea>
+            </div>
+
+            <div class="form-group row">
+                <label for="ReleaseDate" class="col-2">Date de sortie</label>
+                <input type="date" value="@Model.Title.ReleaseDate.ToString("yyyy-MM-dd")" class="col-4 form-control" />
+                <label for="Duration" class="col-2">Duree en secondes</label>
+                <div class="input-group col-4">
+                    <input type="number" class="form-control" value="@Model.Title.Duration">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="inputGroupPrepend">Secondes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="AlbumPicture" class="col-2">Jaquette de l'album</label>
+                <input type="text" class="form-control col-10" placeholder="@Model.Title.AlbumPicture"/>
+            </div>
+
+            <div class="form-group row">
+                <label for="UrlListen" class="col-2">URL d'écoute</label>
+                <input type="text" class="form-control col-10" placeholder="@Model.Title.VideoLink"/>
+            </div>
+
+            <div class="form-group row">
+                <label for="Styles" class="col-2">Styles</label>
+                <div class="col-10">
+                    @foreach (var style in Model.Styles)
+                    {
+                        <text>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="@style.Id" value="@style.Id" @(Model.Title.Styles.Any(s=>s.Id==style.Id)?"checked":"") >
+                                <label class="form-check-label" for="@style.Id">@style.Name</label>
+                            </div>
+                        </text>
+                    }
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <label for="ReadCounter" class="col-2">Nombre de lectures</label>
+                <span class="col-4">@Model.Title.ReadingCounter.ToString()</span>
+                <label for="LikeCounter" class="col-2">Nombre de likes</label>
+                <span class="col-4">@Model.Title.LikeCounter.ToString()</span>
+            </div>
+
+            <div class="row">
+                <span class="col-2"></span>
+                <span class="col-10"><input type="submit" class="btn btn-primary" value="Sauvegarder" /></span>
+            </div>
+
+        </form>
+
+        <br />
+
+        <a href="#">Retour a l'administration des titres</a>
+
+    </div>
+</body>
+</html>
+
+

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
         public List<Artiste> Artistes { get; set; }
         public List<Style> Styles { get; set; }
         public List<Titre> Titles { get; set; }
+        public Titre Title { get; set; }
 
         /// <summary>
         /// Contient les artistes pour selectionner un artiste sur un titre
@@ -31,13 +33,13 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
                 new Artiste()
                 {
                     Biography = "cest un ouf",
-                    Name = "jean jakc",
+                    Name = "jean ja",
                     Id = 2
                 },
                 new Artiste()
                 {
                     Biography = "cest un ouf",
-                    Name = "jean jakc",
+                    Name = "jean",
                     Id = 3
                 },
             };
@@ -102,6 +104,8 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
                     LikeCounter = 60
                 }
             };
+
+            Title = Titles[0];
         }
     }
 }

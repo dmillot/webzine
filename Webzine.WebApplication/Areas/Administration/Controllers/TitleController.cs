@@ -10,11 +10,23 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
 {
     public class TitleController : Controller
     {
-        public IActionResult Index(int id)
+        public IActionResult Index()
         {
 
             TitleViewModel titles = new TitleViewModel();
             return View(titles);
+        }
+
+        public IActionResult CreateTitle()
+        {
+            TitleViewModel titles = new TitleViewModel();
+            return View("CreateTitle", titles);
+        }
+
+        public IActionResult EditTitle(int id)
+        {
+            TitleViewModel titles = new TitleViewModel();
+            return View("EditTitle", titles);
         }
     }
 }
