@@ -16,7 +16,6 @@ namespace Webzine.WebApplication
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllersWithViews();
         }
 
@@ -38,6 +37,7 @@ namespace Webzine.WebApplication
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+
                     name: "contact",
                     pattern: "contact",
                     defaults: new { controller = "contact", action="Index" }
@@ -56,6 +56,25 @@ namespace Webzine.WebApplication
                     );
 
                 endpoints.MapControllerRoute(
+
+                  name: "areasParam",
+                  pattern: "{area}/{controller=Home}/{action=Index}/{id}"            
+                );
+
+                endpoints.MapControllerRoute(
+                  name: "adminArtist",
+                  pattern: "administration/artiste/edit/{id}",
+                  defaults: new { area = "Administration", controller = "AdminArtist", action = "Edit" }
+                  );
+
+                endpoints.MapControllerRoute(
+                  name: "adminArtist",
+                  pattern: "administration/artiste/delete/{id}",
+                  defaults: new { area = "Administration", controller = "AdminArtist", action = "Delete" }
+                  );
+
+                endpoints.MapControllerRoute(
+
                   name: "titre",
                   pattern: "titre/{id:int}",
                   defaults: new { controller = "Titre", action = "Index" }
@@ -65,6 +84,7 @@ namespace Webzine.WebApplication
                     name: "artiste",
                     pattern: "artiste/{name}",
                     defaults: new { controller = "Artist", action = "Index" }
+
                     );
 
                 endpoints.MapControllerRoute(
@@ -77,6 +97,23 @@ namespace Webzine.WebApplication
                    name: "adminStyleEdit",
                    pattern: "administration/style/edit/{Id}",
                    defaults: new { area = "Administration", controller = "AdminStyle", action = "EditStyle" }
+                   );
+
+                );
+
+
+                endpoints.MapControllerRoute(
+                  name: "adminArtist",
+                  pattern: "administration/artiste/create",
+                  defaults: new { area = "Administration", controller = "AdminArtist", action = "Create" }
+                  );
+
+                endpoints.MapControllerRoute(
+                  name: "adminArtist",               
+                  pattern: "administration/artistes",
+                  defaults : new {area = "Administration", controller = "AdminArtist", action = "Index" }
+                  );
+
                    );
 
                 endpoints.MapControllerRoute(
@@ -120,6 +157,7 @@ namespace Webzine.WebApplication
                 pattern: "administration/commentaires",
                 defaults: new { area = "Administration", controller = "Comment", action = "Index" }
                 );
+
             });
         }
     }
