@@ -16,7 +16,7 @@ namespace Webzine.WebApplication
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
             services.AddControllersWithViews();
         }
 
@@ -37,6 +37,23 @@ namespace Webzine.WebApplication
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "contact",
+                    pattern: "contact",
+                    defaults: new { controller = "contact", action="Index" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    name: "style",
+                    pattern: "titres/style/{style}",
+                    defaults: new { controller = "Style", action = "Index" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    name: "recherche",
+                    pattern: "recherche",
+                    defaults: new { controller = "Research", action = "Index" }
+                    );
 
                 endpoints.MapControllerRoute(
                   name: "titre",
@@ -45,15 +62,64 @@ namespace Webzine.WebApplication
                   );
 
                 endpoints.MapControllerRoute(
-                name: "artiste",
-                pattern: "artiste/{name}",
-                defaults: new { controller = "Artist", action = "Index" }
-                );
+                    name: "artiste",
+                    pattern: "artiste/{name}",
+                    defaults: new { controller = "Artist", action = "Index" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    name: "adminStyles",
+                    pattern: "administration/styles",
+                    defaults: new { area = "Administration", controller = "AdminStyle", action = "Index" }
+                    );
+
+                endpoints.MapControllerRoute(
+                   name: "adminStyleEdit",
+                   pattern: "administration/style/edit/{Id}",
+                   defaults: new { area = "Administration", controller = "AdminStyle", action = "EditStyle" }
+                   );
+
+                endpoints.MapControllerRoute(
+                   name: "adminStyleDelete",
+                   pattern: "administration/style/Delete/{Id}",
+                   defaults: new { area = "Administration", controller = "AdminStyle", action = "DeleteStyle" }
+                   );
 
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=home}/{action=index}"
                     );
+
+
+                endpoints.MapControllerRoute(
+                name: "adminTitres",
+                pattern: "administration/titres",
+                defaults: new {area = "Administration", controller = "Title", action = "Index" }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "adminCreateTitre",
+                pattern: "administration/titre/create",
+                defaults: new { area = "Administration", controller = "Title", action = "CreateTitle" }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "adminEditTitre",
+                pattern: "administration/titre/edit/{id}",
+                defaults: new { area = "Administration", controller = "Title", action = "EditTitle" }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "adminDeleteTitre",
+                pattern: "administration/titre/delete/{id}",
+                defaults: new { area = "Administration", controller = "Title", action = "DeleteTitle" }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "adminComments",
+                pattern: "administration/commentaires",
+                defaults: new { area = "Administration", controller = "Comment", action = "Index" }
+                );
             });
         }
     }

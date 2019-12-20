@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>
@@ -13,30 +12,22 @@
 
 </head>
 <body>
-
     @Html.Partial("Navbar")
-    <div class="row m-0 p-0 mt-5">
-        <div class="col ml-5">
+    <div class="row mt-5">
+        <div class="col">
             @RenderBody()
 
         </div>
-        <div class="col-sm-2">
-            @* colonne A propos *@
-            @Html.Partial("Sidebar")
-            
-        </div>
     </div>
 
-    <p>Projet web app Diiage promo 2022</p>
+
+ 
+
 
 </body>
 <script src="~/lib/jquery/jquery.slim.min.js"></script>
 <script src="~/lib/popper.js/popper.min.js"></script>
 <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
 </html>
-
-
-
-
 
 
