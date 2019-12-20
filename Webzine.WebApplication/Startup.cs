@@ -65,6 +65,31 @@ namespace Webzine.WebApplication
                     name: "default",
                     pattern: "{controller=home}/{action=index}"
                     );
+
+
+                endpoints.MapControllerRoute(
+                name: "adminTitres",
+                pattern: "administration/titres",
+                defaults: new {area = "Administration", controller = "Title", action = "Index" }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "adminCreateTitre",
+                pattern: "administration/titre/create",
+                defaults: new { area = "Administration", controller = "Title", action = "CreateTitle" }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "adminEditTitre",
+                pattern: "administration/titre/edit/{id}",
+                defaults: new { area = "Administration", controller = "Title", action = "EditTitle" }
+                );
+
+                endpoints.MapControllerRoute(
+                name: "adminDeleteTitre",
+                pattern: "administration/titre/delete/{id}",
+                defaults: new { area = "Administration", controller = "Title", action = "DeleteTitle" }
+                );
             });
         }
     }

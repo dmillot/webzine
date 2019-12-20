@@ -15,7 +15,7 @@ namespace Webzine.Entity
         public Artiste Author { get; set; }
         public List<Commentaire> Comments { get; set; }
         public List<Style> Styles { get; set; }
-        public string Duration { get; set; }
+        public int Duration { get; set; }
         public string AlbumPicture { get; set; }
         public string AlbumTitle { get; set; }
         public string VideoLink { get; set; }
@@ -47,6 +47,19 @@ namespace Webzine.Entity
             Title = title;
             Description = description;
             Author = artist;
+        }
+
+        /// <summary>
+        /// return the duration in string to format minutes: secondes (4:30)
+        /// </summary>
+        /// <returns></returns>
+        public string DurationToString()
+        {
+            TimeSpan time = TimeSpan.FromSeconds(Duration);
+
+            string str = time.ToString(@"mm\:ss");
+
+            return str;
         }
 
     }
