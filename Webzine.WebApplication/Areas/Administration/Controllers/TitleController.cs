@@ -13,26 +13,26 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         public IActionResult Index()
         {
 
-            TitleViewModel titles = new TitleViewModel();
-            return View(titles);
+            TitleViewModel model = new TitleViewModel();
+            return View(model);
         }
 
         public IActionResult CreateTitle()
         {
-            TitleViewModel titles = new TitleViewModel();
-            return View("CreateTitle", titles);
+            TitleViewModel model = new TitleViewModel();
+            return View("CreateTitle", model);
         }
 
         public IActionResult EditTitle(int id)
         {
-            TitleViewModel titles = new TitleViewModel();
-            return View("EditTitle", titles);
+            TitleViewModel model = new TitleViewModel();
+            return View("EditTitle", model);
         }
 
         public IActionResult DeleteTitle(int id)
         {
-            TitleViewModel titles = new TitleViewModel();
-            return View("DeleteTitle", titles);
+            TitleViewModel model = new TitleViewModel();
+            return View("DeleteTitle", model);
         }
     }
 }
