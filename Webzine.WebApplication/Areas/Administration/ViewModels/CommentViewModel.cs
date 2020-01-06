@@ -14,8 +14,8 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
         {
             Titre titre = new Titre()
             {
-                Title = "la bonne zic",
-                Id = 1
+                Libelle = "la bonne zic",
+                IdTitre = 1
             };
 
             Comments = new List<Commentaire>()

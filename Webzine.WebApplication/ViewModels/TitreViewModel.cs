@@ -9,12 +9,12 @@ namespace Webzine.WebApplication.ViewModels
     public class TitreViewModel
     {
         public string Title { get; set; }
-        public int Duration { get; set; }
         public string Description { get; set; }
         public Artiste Author { get; set; }
         public List<Commentaire> Comments { get; set; }
         public List<Style> Styles { get; set; }
         public string AlbumPicture { get; set; }
+        public int Duree { get; set; }
         public string AlbumTitle { get; set; }
         public string VideoLink { get; set; }
         public DateTime UpdatedAt { get; set; }
@@ -40,7 +40,7 @@ namespace Webzine.WebApplication.ViewModels
         /// <returns></returns>
         public string DurationToString()
         {
-            TimeSpan time = TimeSpan.FromSeconds(Duration);
+            TimeSpan time = TimeSpan.FromSeconds(Duree);
             string str = time.ToString(@"mm\:ss");
             return str;
         }

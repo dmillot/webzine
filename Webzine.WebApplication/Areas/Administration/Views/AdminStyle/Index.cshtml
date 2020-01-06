@@ -18,8 +18,8 @@
             @foreach(var element in Model.Styles)
             {
             <tr >
-                <td>@element.Name</td>
-                <td class="text-center"><a href="/administration/style/edit/@element.Id" class="col"><i class="fas fa-edit"></i></a><a href="#" class="col"><i class="fas fa-trash"></i></a></td>
+                <td>@element.Libelle</td>
+                <td class="text-center"><a href="/administration/style/edit/@element.IdStyle" class="col"><i class="fas fa-edit"></i></a><a href="#" class="col"><i class="fas fa-trash"></i></a></td>
             </tr>
             }
         </tbody>

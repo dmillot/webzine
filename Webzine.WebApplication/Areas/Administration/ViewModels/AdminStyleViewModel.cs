@@ -16,12 +16,12 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
         {
             Styles = new List<Style>
             {
-                new Style { Description = "Une musique rythmée" , Name ="EroticoDisco" , Id= 1 },
-                new Style { Description = "Une musique rythmée" , Name ="JazzCountry" , Id= 2 },
-                new Style { Description = "Une musique rythmée" , Name ="CrabRave" , Id= 3 },
-                new Style { Description = "Une musique rythmée" , Name ="HeavyDisco" , Id= 4 },
-                new Style { Description = "Une musique rythmée" , Name ="NeoCyber" , Id= 5 },
-                new Style { Description = "Une musique rythmée" , Name ="Cyberpunk" , Id= 6 },
+                new Style { Libelle ="JazzCountry" , IdStyle= 2 },
+                new Style { Libelle ="EroticoDisco" , IdStyle= 1 },
+                new Style { Libelle ="CrabRave" , IdStyle= 3 },
+                new Style { Libelle ="HeavyDisco" , IdStyle= 4 },
+                new Style { Libelle ="NeoCyber" , IdStyle= 5 },
+                new Style { Libelle ="Cyberpunk" , IdStyle= 6 },
             };
         }
     }

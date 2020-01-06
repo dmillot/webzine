@@ -29,7 +29,7 @@
                 @foreach (var comment in Model.Comments)
                 {
                     <tr>
-                        <td><a href="#">@comment.Title.Title</a></td>
+                        <td><a href="#">@comment.Title.Libelle</a></td>
                         <td>@comment.Username</td>
                         <td>@comment.Message</td>
                         <td>@comment.CreatedAt.ToShortDateString() @comment.CreatedAt.ToShortTimeString()</td>
