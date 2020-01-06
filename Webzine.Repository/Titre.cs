@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Webzine.Entity
@@ -11,42 +9,45 @@ namespace Webzine.Entity
     /// </summary>
     public class Titre
     {
-        [Key]
         public int Id { get; set; }
-
         public string Title { get; set; }
-
         public string Description { get; set; }
-
+        public Artiste Author { get; set; }
+        public List<Commentaire> Comments { get; set; }
+        public List<Style> Styles { get; set; }
         public string Duration { get; set; }
-
         public string AlbumPicture { get; set; }
-
         public string AlbumTitle { get; set; }
-
         public string VideoLink { get; set; }
-
         /// <summary>
         /// Date à laquelle l'article du titre à été crée.
         /// </summary>
         public DateTime CreatedAt { get; set; }
-
         public DateTime UpdatedAt { get; set; }
-
         public DateTime ReleaseDate { get; set; }
-
         public int ReadingCounter { get; set; }
-
         public int LikeCounter { get; set; }
 
-        [ForeignKey("Artiste")]
-        public int ArtistId { get; set; }
-
-        public Artiste Artist { get; set; }
-
-        public List<Commentaire> Comments { get; set; }
-
-        public List<Style> Styles { get; set; }
+        /// <summary>
+        /// Constructeur vide
+        /// </summary>
+        public Titre()
+        {
+            Comments = new List<Commentaire>();
+            Styles = new List<Style>();
+        }
+        /// <summary>
+        /// Constructeur paramétré
+        /// </summary>
+        /// <param name="title">Définit le titre d'une musique</param>
+        /// <param name="description">La description d'un titre</param>
+        /// <param name="artist">L'artite ayant réalisé la musique</param>
+        public Titre(string title, string description, Artiste artist) : base()
+        {
+            Title = title;
+            Description = description;
+            Author = artist;
+        }
 
     }
 }
