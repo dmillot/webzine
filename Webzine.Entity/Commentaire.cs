@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Webzine.Entity
@@ -9,29 +11,18 @@ namespace Webzine.Entity
     /// </summary>
     public class Commentaire
     {
-        public string Message { get; set; }
-        public Titre Title { get; set; }
+        [Key]
+        public int Id { get; set; }
+
         public string Username { get; set; }
+
+        public string Message { get; set; }
+
         public DateTime CreatedAt { get; set; }
 
-        /// <summary>
-        /// Constructeur vide
-        /// </summary>
-        public Commentaire()
-        {
+        [ForeignKey("Titre")]
+        public int TitleId { get; set; }
 
-        }
-        /// <summary>
-        /// Constructeur paramétré pour la création d'un commentaire
-        /// </summary>
-        /// <param name="nomUtilisateur">Le nom de l'utilisateur ayant posté le commentaire</param>
-        /// <param name="message">Le commentaire en lui même</param>
-        /// <param name="titre">Le titre sur lequel le commentaire a été publié</param>
-        public Commentaire(string nomUtilisateur, string message, Titre titre)
-        {
-            Username = nomUtilisateur;
-            Message = message;
-            Title = titre;
-        }
+        public Titre Title { get; set; }
     }
 }
