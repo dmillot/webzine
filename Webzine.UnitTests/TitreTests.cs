@@ -1,4 +1,4 @@
-﻿namespace Webzine.Entity.Tests
+﻿namespace Webzine.UnitTests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Webzine.Entity;

@@ -16,7 +16,7 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         {
             AdminArtistViewModel artists = new AdminArtistViewModel()
             {
-                artists = new List<Artiste>(){
+                Artists = new List<Artiste>(){
                     new Artiste(){ Id = 1, Name = "Queen" },
                     new Artiste(){ Id = 2, Name = "Stromae" },
                     new Artiste(){ Id = 3, Name = "Damso" },

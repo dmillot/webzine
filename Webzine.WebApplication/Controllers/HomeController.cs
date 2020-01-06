@@ -36,7 +36,7 @@ namespace Webzine.WebApplication.Controllers
                         {
                             new Style
                             {
-                                Name = "Electro"
+                                Libelle = "Electro"
                             }
                         }
                     },
@@ -54,7 +54,7 @@ namespace Webzine.WebApplication.Controllers
                         {
                             new Style
                             {
-                                Name = "Electro"
+                                Libelle = "Electro"
                             }
                         }
                     },
@@ -72,7 +72,7 @@ namespace Webzine.WebApplication.Controllers
                         {
                             new Style
                             {
-                                Name = "Electro"
+                                Libelle = "Electro"
                             }
                         }
                     }

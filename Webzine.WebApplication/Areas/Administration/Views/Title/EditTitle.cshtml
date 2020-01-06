@@ -21,7 +21,8 @@
                 <select class="form-control col-10">
                     @foreach (var artist in Model.Artistes)
                     {
-                        <option value="@artist.Id" @(artist.Id == Model.Title.Artiste.Id ? "selected" : "") >@artist.Name</option>
+                        string isSelected = artist.Id == Model.Title.Artiste.Id ? "selected" : "";
+                        <option value="@artist.Id" isSelected>@artist.Name</option>
                     }
                 </select>
             </div>
@@ -65,8 +66,8 @@
                     {
                         <text>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="@style.Id" value="@style.Id" @(Model.Title.TitresStyles.Any(s=>s.Id==style.Id)?"checked":"") >
-                                <label class="form-check-label" for="@style.Id">@style.Name</label>
+                                <input class="form-check-input" type="checkbox" id="@style.IdStyle" value="@style.IdStyle" @(Model.Title.TitresStyles.Any(s=>s.IdStyle==style.IdStyle)?"checked":"") >
+                                <label class="form-check-label" for="@style.IdStyle">@style.Libelle</label>
                             </div>
                         </text>
                     }

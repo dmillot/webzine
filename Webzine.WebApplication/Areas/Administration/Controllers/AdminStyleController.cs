@@ -18,13 +18,13 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         }
         public IActionResult EditStyle(int Id)
         {
-            var result = _adminStyleViewModel.Styles.Where(s => s.Id == Id).FirstOrDefault();
+            var result = _adminStyleViewModel.Styles.Where(s => s.IdStyle == Id).FirstOrDefault();
             this.ViewData.Model = result;
             return View("EditStylePage");
         }
         public IActionResult DeleteStyle(int Id)
         {
-            var result = _adminStyleViewModel.Styles.Where(s => s.Id == Id).FirstOrDefault();
+            var result = _adminStyleViewModel.Styles.Where(s => s.IdStyle == Id).FirstOrDefault();
             this.ViewData.Model = result;
             return View("DeleteStylePage");
         }

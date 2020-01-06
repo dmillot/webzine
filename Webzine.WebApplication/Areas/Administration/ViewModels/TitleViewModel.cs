@@ -48,28 +48,28 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
             {
                 new Style()
                 {
-                    Name = "Hard Rock",
-                    Id = 1
+                    Libelle = "Hard Rock",
+                    IdStyle = 1
                 },
                 new Style()
                 {
-                    Name = "Hard Rock",
-                    Id = 2
+                    Libelle = "Hard Rock",
+                    IdStyle = 2
                 },
                 new Style()
                 {
-                    Name = "Hard Rock",
-                    Id = 3
+                    Libelle = "Hard Rock",
+                    IdStyle = 3
                 },
                 new Style()
                 {
-                    Name = "Hard Rock",
-                    Id = 4
+                    Libelle = "Hard Rock",
+                    IdStyle = 4
                 },
                 new Style()
                 {
-                    Name = "Hard Rock",
-                    Id = 5
+                    Libelle = "Hard Rock",
+                    IdStyle = 5
                 },
             };
 
