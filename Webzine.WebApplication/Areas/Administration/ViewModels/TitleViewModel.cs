@@ -77,31 +77,31 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
             {
                 new Titre()
                 {
-                    Id = 1,
-                    Author = Artistes[1],
-                    Title = "A Quiet Grass",
-                    Description = "blablablablalbalalblallalblbablablbalblalbalblbalbalabbalabl",
-                    ReleaseDate = DateTime.Now,
-                    Duration = 185,
-                    AlbumPicture = "http://dergrtevcgctrgvr.png",
-                    VideoLink = "http://edfreyvgcrvre.com",
-                    Styles = new List<Style>(){Styles[1], Styles[3]},
-                    ReadingCounter = 1,
-                    LikeCounter = 6
+                    IdTitre = 1,
+                    Artiste = Artistes[1],
+                    Libelle = "A Quiet Grass",
+                    Chronique = "blablablablalbalalblallalblbablablbalblalbalblbalbalabbalabl",
+                    DateSortie = DateTime.Now,
+                    Duree = 185,
+                    UrlJaquette = "http://dergrtevcgctrgvr.png",
+                    UrlEcoute = "http://edfreyvgcrvre.com",
+                    TitresStyles = new List<Style>(){Styles[1], Styles[3]},
+                    NbLectures = 1,
+                    NbLikes = 6
                 },
                 new Titre()
                 {
-                    Id = 2,
-                    Author = Artistes[0],
-                    Title = "ziiiiik",
-                    Description = "blablablablalbalalblallalblbablablbalblalbalblbalbalabbalabl",
-                    ReleaseDate = DateTime.Now,
-                    Duration = 15,
-                    AlbumPicture = "http://dergrtevcgctrgvr.png",
-                    VideoLink = "http://edfreyvgcrvre.com",
-                    Styles = new List<Style>(){Styles[0], Styles[2]},
-                    ReadingCounter = 10,
-                    LikeCounter = 60
+                    IdTitre = 2,
+                    Artiste = Artistes[0],
+                    Libelle = "ziiiiik",
+                    Chronique = "blablablablalbalalblallalblbablablbalblalbalblbalbalabbalabl",
+                    DateSortie = DateTime.Now,
+                    Duree = 15,
+                    UrlJaquette = "http://dergrtevcgctrgvr.png",
+                    UrlEcoute = "http://edfreyvgcrvre.com",
+                    TitresStyles = new List<Style>(){Styles[0], Styles[2]},
+                    NbLectures = 10,
+                    NbLikes = 60
                 }
             };
 

@@ -11,19 +11,19 @@
             @foreach (var objet in Model.Titres_chroniques)
             {
                 <li class="media bg-light mr-4 mb-4">
-                    <img src="@objet.AlbumPicture" class="img-thumbnail ml-3 mt-3" width="200" height="200">
+                    <img src="@objet.UrlJaquette" class="img-thumbnail ml-3 mt-3" width="200" height="200">
                     <div class="media-body p-3 mb-2">
                         <a href="#">
-                            <h5 class="mb-1"> @objet.Author.Name  @objet.Title </h5>
+                            <h5 class="mb-1"> @objet.Artiste.Name  @objet.Libelle </h5>
                         </a>
                         <p class="text-secondary">
-                            @objet.Description
+                            @objet.Chronique
                         </p>
                         <button class="btn btn-primary" type="submit">Lire la suite</button>
-                        <i class="fas fa-calendar ml-3"> @objet.ReleaseDate.ToString("dd/MM/yyyy HH:mm:ss") </i>
+                        <i class="fas fa-calendar ml-3"> @objet.DateSortie.ToString("dd/MM/yyyy HH:mm:ss") </i>
                         <i class="fas fa-tags ml-3"></i>
                         <a href="#">
-                            @objet.Styles[0].Name
+                            @objet.TitresStyles[0].Name
                         </a>
                     </div>
                 </li>
@@ -38,14 +38,14 @@
         @foreach (var objet in Model.Titres_populaires)
         {
             <div class="card">
-                <img src="@objet.AlbumPicture" class="card-img-top" height="300" />
+                <img src="@objet.UrlJaquette" class="card-img-top" height="300" />
                 <div class="card-body">
                     <a href="#">
-                        <h3 class="card-title">@objet.Title</h3>
+                        <h3 class="card-title">@objet.Libelle</h3>
                     </a>
                     par
                     <a href="#">
-                        @objet.Author.Name
+                        @objet.Artiste.Name
                     </a>
                 </div>
             </div>

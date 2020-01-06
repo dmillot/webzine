@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Webzine.WebApplication.Areas.Administration.ViewModels;
-using System.Linq;
 using Webzine.Entity;
 
 namespace Webzine.WebApplication.Areas.Administration.Controllers

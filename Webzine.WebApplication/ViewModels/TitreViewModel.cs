@@ -14,6 +14,7 @@ namespace Webzine.WebApplication.ViewModels
         public List<Commentaire> Comments { get; set; }
         public List<Style> Styles { get; set; }
         public string AlbumPicture { get; set; }
+        public int Duree { get; set; }
         public string AlbumTitle { get; set; }
         public string VideoLink { get; set; }
         public DateTime UpdatedAt { get; set; }
@@ -31,6 +32,17 @@ namespace Webzine.WebApplication.ViewModels
             {
                 return UpdatedAt.ToString("hh:mm");
             }
+        }
+
+        /// <summary>
+        /// return the duration in string to format minutes: secondes (4:30)
+        /// </summary>
+        /// <returns></returns>
+        public string DurationToString()
+        {
+            TimeSpan time = TimeSpan.FromSeconds(Duree);
+            string str = time.ToString(@"mm\:ss");
+            return str;
         }
     }
 }
