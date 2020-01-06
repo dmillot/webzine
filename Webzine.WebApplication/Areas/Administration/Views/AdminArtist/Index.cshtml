@@ -32,10 +32,10 @@
                 @foreach (var item in Model.artists)
                 {
                     <tr>
-                        <td>@item.Name</td>
+                        <td>@item.Nom</td>
                         <td class="text-center">
-                            <a asp-area="administration" asp-controller="artiste" asp-action="edit" asp-route-id="@item.Id" class="mr-1"><i class="fas fa-edit"></i></a>
-                            <a asp-area="administration" asp-controller="artiste" asp-action="delete" asp-route-id="@item.Id" class="mr-1"><i class="fas fa-trash"></i></a>
+                            <a asp-area="administration" asp-controller="artiste" asp-action="edit" asp-route-id="@item.IdArtiste" class="mr-1"><i class="fas fa-edit"></i></a>
+                            <a asp-area="administration" asp-controller="artiste" asp-action="delete" asp-route-id="@item.IdArtiste" class="mr-1"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 }

@@ -18,7 +18,7 @@ namespace Webzine.Entity
 
         public string Description { get; set; }
 
-        public string Duration { get; set; }
+        public int Duration { get; set; }
 
         public string AlbumPicture { get; set; }
 
@@ -48,5 +48,15 @@ namespace Webzine.Entity
 
         public List<Style> Styles { get; set; }
 
+        /// <summary>
+        /// return the duration in string to format minutes: secondes (4:30)
+        /// </summary>
+        /// <returns></returns>
+        public string DurationToString()
+        {
+            TimeSpan time = TimeSpan.FromSeconds(Duration);
+            string str = time.ToString(@"mm\:ss");
+            return str;
+        }
     }
 }

@@ -62,8 +62,8 @@ Curabitur tincidunt ipsum id congue dictum.Mauris vitae porttitor leo.Mauris ege
                 eget tincidunt nisi justo non justo.",
                 Author = new Artiste()
                 {
-                    Name = "Silicone Soul",
-                    Biography = "Lorem"
+                    Nom = "Silicone Soul",
+                    Biographie = "Lorem"
                 },
                 Comments = new List<Commentaire>()
                 {

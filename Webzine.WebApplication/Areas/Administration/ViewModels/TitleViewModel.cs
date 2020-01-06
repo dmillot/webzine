@@ -26,21 +26,21 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
             {
                 new Artiste()
                 {
-                    Biography = "cest un ouf",
-                    Name = "jean jakc",
-                    Id = 1
+                    Biographie = "cest un ouf",
+                    Nom = "jean jakc",
+                    IdArtiste = 1
                 },
                 new Artiste()
                 {
-                    Biography = "cest un ouf",
-                    Name = "jean ja",
-                    Id = 2
+                    Biographie = "cest un ouf",
+                    Nom = "jean ja",
+                    IdArtiste = 2
                 },
                 new Artiste()
                 {
-                    Biography = "cest un ouf",
-                    Name = "jean",
-                    Id = 3
+                    Biographie = "cest un ouf",
+                    Nom = "jean",
+                    IdArtiste = 3
                 },
             };
 
@@ -78,7 +78,7 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
                 new Titre()
                 {
                     Id = 1,
-                    Author = Artistes[1],
+                    Artist = Artistes[1],
                     Title = "A Quiet Grass",
                     Description = "blablablablalbalalblallalblbablablbalblalbalblbalbalabbalabl",
                     ReleaseDate = DateTime.Now,
@@ -92,7 +92,7 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
                 new Titre()
                 {
                     Id = 2,
-                    Author = Artistes[0],
+                    Artist = Artistes[0],
                     Title = "ziiiiik",
                     Description = "blablablablalbalalblallalblbablablbalblalbalblbalbalabbalabl",
                     ReleaseDate = DateTime.Now,

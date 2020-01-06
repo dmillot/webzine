@@ -34,7 +34,7 @@
                 @foreach (var titre in Model.Titles)
                 {
                 <tr>
-                    <td>@titre.Author.Name</td>
+                    <td>@titre.Artist.Nom</td>
                     <td>@titre.Title</td>
                     <td>@titre.DurationToString()</td>
                     <td>@titre.ReleaseDate.ToShortDateString()</td>

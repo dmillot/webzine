@@ -24,9 +24,9 @@ namespace Webzine.WebApplication.Controllers
                 {
                     new Titre()
                     {
-                        Author = new Artiste
+                        Artist = new Artiste
                         {
-                            Name = "Silicone Soul"
+                            Nom = "Silicone Soul"
                         },
                         Title = "Right on, Right on",
                         AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
@@ -42,9 +42,9 @@ namespace Webzine.WebApplication.Controllers
                     },
                     new Titre()
                     {
-                        Author = new Artiste
+                        Artist = new Artiste
                         {
-                            Name = "Kraftwerk"
+                            Nom = "Kraftwerk"
                         },
                         Title = "The Robots",
                         AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
@@ -60,9 +60,9 @@ namespace Webzine.WebApplication.Controllers
                     },
                     new Titre()
                     {
-                        Author = new Artiste
+                        Artist = new Artiste
                         {
-                            Name = "Miles Davis"
+                            Nom = "Miles Davis"
                         },
                         Title = "Shhh / Paceful",
                         AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
@@ -81,9 +81,9 @@ namespace Webzine.WebApplication.Controllers
                 {
                     new Titre()
                     {
-                        Author = new Artiste
+                        Artist = new Artiste
                         {
-                            Name = "Kraftwerk"
+                            Nom = "Kraftwerk"
                         },
                         Title = "The Robots",
                         AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
@@ -91,18 +91,18 @@ namespace Webzine.WebApplication.Controllers
                     },
                     new Titre()
                     {
-                        Author = new Artiste
+                        Artist = new Artiste
                         {
-                            Name = "Silicone Soul"
+                            Nom = "Silicone Soul"
                         },
                         Title = "Right on, Right on",
                         AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
                     },
                     new Titre()
                     {
-                        Author = new Artiste
+                        Artist = new Artiste
                         {
-                            Name = "Miles Davis"
+                            Nom = "Miles Davis"
                         },
                         Title = "Shhh / Paceful",
                         AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",

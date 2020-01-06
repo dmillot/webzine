@@ -9,6 +9,7 @@ namespace Webzine.WebApplication.ViewModels
     public class TitreViewModel
     {
         public string Title { get; set; }
+        public int Duration { get; set; }
         public string Description { get; set; }
         public Artiste Author { get; set; }
         public List<Commentaire> Comments { get; set; }
@@ -31,6 +32,17 @@ namespace Webzine.WebApplication.ViewModels
             {
                 return UpdatedAt.ToString("hh:mm");
             }
+        }
+
+        /// <summary>
+        /// return the duration in string to format minutes: secondes (4:30)
+        /// </summary>
+        /// <returns></returns>
+        public string DurationToString()
+        {
+            TimeSpan time = TimeSpan.FromSeconds(Duration);
+            string str = time.ToString(@"mm\:ss");
+            return str;
         }
     }
 }

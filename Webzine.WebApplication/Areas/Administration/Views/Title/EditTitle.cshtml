@@ -21,7 +21,7 @@
                 <select class="form-control col-10">
                     @foreach (var artist in Model.Artistes)
                     {
-                        <option value="@artist.Id" @(artist.Id == Model.Title.Author.Id ? "selected" : "") >@artist.Name</option>
+                        <option value="@artist.IdArtiste" @(artist.IdArtiste == Model.Title.Artist.IdArtiste ? "selected" : "") >@artist.Nom</option>
                     }
                 </select>
             </div>

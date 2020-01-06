@@ -19,11 +19,11 @@ namespace Webzine.WebApplication.Controllers
                 {
                     new Artiste()
                     {
-                        Name = "Toto"
+                        Nom = "Toto"
                     },
                      new Artiste()
                     {
-                        Name = "Angèle"
+                        Nom = "Angèle"
                     }
                 },
                 Titres = new List<Titre>()
