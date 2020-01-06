@@ -11,6 +11,6 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
         public int Id { get; set; }
         public string Name { get; set; }
         public string Biography { get; set; }
-        public List<Artiste> artists { get; set; }
+        public List<Artiste> Artists { get; set; }
     }
 }

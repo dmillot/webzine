@@ -12,41 +12,76 @@ namespace Webzine.Entity
     public class Titre
     {
         [Key]
-        public int Id { get; set; }
+        public int IdTitre { get; set; }
 
-        public string Title { get; set; }
+        [Required]
+        [MaxLength(200)]
+        [MinLength(1)]
+        [Display(Name = "Titre")]
+        public string Libelle { get; set; }
 
-        public string Description { get; set; }
+        [Required]
+        [MaxLength(4000)]
+        [MinLength(10)]
+        public string Chronique { get; set; }
 
-        public string Duration { get; set; }
+        [Display(Name = "Durée en secondes")]
+        public int Duree { get; set; }
 
-        public string AlbumPicture { get; set; }
+        [Required]
+        [Display(Name = "Jaquette de l'album")]
+        [MaxLength(250)]
+        public string UrlJaquette { get; set; }
 
-        public string AlbumTitle { get; set; }
+        /// <summary>
+        /// Album Title
+        /// </summary>
+        [Required]
+        public string Album { get; set; }
 
-        public string VideoLink { get; set; }
+        [Display(Name = "URL d'écoute")]
+        [MaxLength(250)]
+        [MinLength(13)]
+        public string UrlEcoute { get; set; }
 
         /// <summary>
         /// Date à laquelle l'article du titre à été crée.
         /// </summary>
-        public DateTime CreatedAt { get; set; }
+        [Required]
+        [Display(Name = "Date de création")]
+        public DateTime DateCreation { get; set; }
 
-        public DateTime UpdatedAt { get; set; }
+        [Required]
+        [Display(Name = "Date de sortie")]
+        public DateTime DateSortie { get; set; }
 
-        public DateTime ReleaseDate { get; set; }
+        [Required]
+        [Display(Name = "Nombre de lectures")]
+        public int NbLectures { get; set; }
 
-        public int ReadingCounter { get; set; }
-
-        public int LikeCounter { get; set; }
+        [Required]
+        [Display(Name = "Nombre de likes")]
+        public int NbLikes { get; set; }
 
         [ForeignKey("Artiste")]
-        public int ArtistId { get; set; }
+        public int IdArtiste { get; set; }
 
-        public Artiste Artist { get; set; }
+        public Artiste Artiste { get; set; }
 
-        public List<Commentaire> Comments { get; set; }
+        public List<Commentaire> Commentaires { get; set; }
 
-        public List<Style> Styles { get; set; }
+        public List<Style> TitresStyles { get; set; }
+
+        /// <summary>
+        /// return the duration in string to format minutes: secondes (4:30)
+        /// </summary>
+        /// <returns></returns>
+        public string DurationToString()
+        {
+            TimeSpan time = TimeSpan.FromSeconds(Duree);
+            string str = time.ToString(@"mm\:ss");
+            return str;
+        }
 
     }
 }

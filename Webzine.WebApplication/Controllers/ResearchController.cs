@@ -19,32 +19,32 @@ namespace Webzine.WebApplication.Controllers
                 {
                     new Artiste()
                     {
-                        Name = "Toto"
+                        Nom = "Toto"
                     },
                      new Artiste()
                     {
-                        Name = "Angèle"
+                        Nom = "Angèle"
                     }
                 },
                 Titres = new List<Titre>()
                 {
                     new Titre()
                     {
-                        Title = "Tata",
-                        Duration = 200,
-                        AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg"
+                        Libelle = "Tata",
+                        Duree = 200,
+                        UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg"
                     },
                      new Titre()
                     {
-                        Title = "Lolilop",
-                        Duration = 200,
-                        AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg"
+                        Libelle = "Lolilop",
+                        Duree = 200,
+                        UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg"
                     },
                       new Titre()
                     {
-                        Title = "Fifi",
-                        Duration = 200,
-                        AlbumPicture = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg"
+                        Libelle = "Fifi",
+                        Duree = 200,
+                        UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg"
                     }
                 }
             };

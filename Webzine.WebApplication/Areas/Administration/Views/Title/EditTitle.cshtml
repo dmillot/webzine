@@ -21,27 +21,28 @@
                 <select class="form-control col-10">
                     @foreach (var artist in Model.Artistes)
                     {
-                        <option value="@artist.Id" @(artist.Id == Model.Title.Author.Id ? "selected" : "") >@artist.Name</option>
+                        string isSelected = artist.IdArtiste == Model.Title.Artiste.IdArtiste ? "selected" : "";
+                        <option value="@artist.IdArtiste" isSelected >@artist.Nom</option>
                     }
                 </select>
             </div>
 
             <div class="form-group row">
                 <label for="Title" class="col-2">Titre</label>
-                <input type="text" class="form-control col-10" placeholder="@Model.Title.Title"/>
+                <input type="text" class="form-control col-10" placeholder="@Model.Title.Libelle"/>
             </div>
 
             <div class="form-group row">
                 <label for="Description" class="col-2">Chronique</label>
-                <textarea class="form-control col-10" placeholder="@Model.Title.Description"></textarea>
+                <textarea class="form-control col-10" placeholder="@Model.Title.Chronique"></textarea>
             </div>
 
             <div class="form-group row">
                 <label for="ReleaseDate" class="col-2">Date de sortie</label>
-                <input type="date" value="@Model.Title.ReleaseDate.ToString("yyyy-MM-dd")" class="col-4 form-control" />
+                <input type="date" value="@Model.Title.DateSortie.ToString("yyyy-MM-dd")" class="col-4 form-control" />
                 <label for="Duration" class="col-2">Duree en secondes</label>
                 <div class="input-group col-4">
-                    <input type="number" class="form-control" value="@Model.Title.Duration">
+                    <input type="number" class="form-control" value="@Model.Title.Duree">
                     <div class="input-group-append">
                         <span class="input-group-text" id="inputGroupPrepend">Secondes</span>
                     </div>
@@ -50,12 +51,12 @@
 
             <div class="form-group row">
                 <label for="AlbumPicture" class="col-2">Jaquette de l'album</label>
-                <input type="text" class="form-control col-10" placeholder="@Model.Title.AlbumPicture"/>
+                <input type="text" class="form-control col-10" placeholder="@Model.Title.UrlJaquette"/>
             </div>
 
             <div class="form-group row">
                 <label for="UrlListen" class="col-2">URL d'écoute</label>
-                <input type="text" class="form-control col-10" placeholder="@Model.Title.VideoLink"/>
+                <input type="text" class="form-control col-10" placeholder="@Model.Title.UrlEcoute"/>
             </div>
 
             <div class="form-group row">
@@ -65,8 +66,8 @@
                     {
                         <text>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="@style.Id" value="@style.Id" @(Model.Title.Styles.Any(s=>s.Id==style.Id)?"checked":"") >
-                                <label class="form-check-label" for="@style.Id">@style.Name</label>
+                                <input class="form-check-input" type="checkbox" id="@style.IdStyle" value="@style.IdStyle" @(Model.Title.TitresStyles.Any(s=>s.IdStyle==style.IdStyle)?"checked":"") >
+                                <label class="form-check-label" for="@style.IdStyle">@style.Libelle</label>
                             </div>
                         </text>
                     }
@@ -76,9 +77,9 @@
 
             <div class="form-group row">
                 <label for="ReadCounter" class="col-2">Nombre de lectures</label>
-                <span class="col-4">@Model.Title.ReadingCounter.ToString()</span>
+                <span class="col-4">@Model.Title.NbLectures.ToString()</span>
                 <label for="LikeCounter" class="col-2">Nombre de likes</label>
-                <span class="col-4">@Model.Title.LikeCounter.ToString()</span>
+                <span class="col-4">@Model.Title.NbLikes.ToString()</span>
             </div>
 
             <div class="row">

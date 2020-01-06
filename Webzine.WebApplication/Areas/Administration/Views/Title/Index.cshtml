@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Titres";
 }
-@model Webzine.WebApplication.Areas.Administration.ViewModels.TitleViewModel
+@model TitleViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,13 +34,13 @@
                 @foreach (var titre in Model.Titles)
                 {
                 <tr>
-                    <td>@titre.Author.Name</td>
-                    <td>@titre.Title</td>
+                    <td>@titre.Artiste.Nom</td>
+                    <td>@titre.Libelle</td>
                     <td>@titre.DurationToString()</td>
-                    <td>@titre.ReleaseDate.ToShortDateString()</td>
-                    <td>@titre.ReadingCounter.ToString()</td>
-                    <td>@titre.LikeCounter.ToString()</td>
-                    <td>@titre.Comments.Count.ToString()</td>
+                    <td>@titre.DateSortie.ToShortDateString()</td>
+                    <td>@titre.NbLectures.ToString()</td>
+                    <td>@titre.NbLikes.ToString()</td>
+                    <td>@titre.Commentaires.Count.ToString()</td>
                     <td class="d-flex justify-content-around"><a class="fa fa-edit text-primary" href="#"></a><a class="fa fa-trash text-primary" href="#"></a></td>
                 </tr>
                 }

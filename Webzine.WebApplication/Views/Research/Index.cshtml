@@ -10,7 +10,7 @@
 {
     <div class="row m-0 p-0 d-flex align-items-center">
         <i class="fas fa-user m-0 p-0"></i>
-        <a href="#" class="ml-2"> @objet.Name </a>
+        <a href="#" class="ml-2"> @objet.Nom </a>
     </div>
 }
 
@@ -20,10 +20,10 @@
 @foreach (var objet in Model.Titres)
 {
     <div class="media mb-3">
-        <img src="@objet.AlbumPicture" class="mr-3" height="64">
+        <img src="@objet.UrlJaquette" class="mr-3" height="64">
         <div class="media-body">
-            <a href="#"><h5 class="mt-0"> @objet.Title </h5></a>
-            Durée : @objet.Duration
+            <a href="#"><h5 class="mt-0"> @objet.Libelle </h5></a>
+            Durée : @objet.Duree
         </div>
     </div>
 }

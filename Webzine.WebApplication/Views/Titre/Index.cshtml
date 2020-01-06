@@ -4,7 +4,7 @@
 <div class="row m-0 mt-3">
     <div class="col">
         <div class="container-fluid">
-            <h1 class="text-primary">@Model.Author.Name - @Model.Title, @Model.AlbumTitle</h1>
+            <h1 class="text-primary">@Model.Author.Nom - @Model.Title, @Model.AlbumTitle</h1>
 
             <div class="row d-flex align-items-center">
                 <p class="m-0 ml-3"><i class="fas fa-calendar"></i> Le @Model.GetDate à @Model.GetTime</p>
@@ -13,7 +13,7 @@
                     <i class="fas fa-tags"></i> Styles :
                     @foreach (var item in Model.Styles)
                     {
-                        <a href="#">@item.Name</a>
+                        <a href="#">@item.Libelle</a>
                         @if (Model.Styles.Last() != item)
                         {
                             <text>-</text>

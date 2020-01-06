@@ -10,12 +10,16 @@ namespace Webzine.Entity
     public class Artiste
     {
         [Key]
-        public int Id { get; set; }
+        public int IdArtiste { get; set; }
 
-        public string Name { get; set; }
+        [MinLength(1)]
+        [MaxLength(50)]
+        [Display(Name = "Nom de l'artiste")]
 
-        public string Biography { get; set; }
+        public string Nom { get; set; }
 
-        public List<Titre> Titles { get; set; }
+        public string Biographie { get; set; }
+
+        public List<Titre> Titres { get; set; }
     }
 }

@@ -6,9 +6,9 @@
 @foreach (var objet in Model.Titres)
 {
     <div class="media mb-4">
-        <img src="@objet.AlbumPicture" class="mr-3" height="64">
+        <img src="@objet.UrlJaquette" class="mr-3" height="64">
         <div class="media-body">
-            <a href="#"><h5 class="mt-0"> @objet.Title </h5></a>
+            <a href="#"><h5 class="mt-0"> @objet.Libelle </h5></a>
             Durée : @objet.DurationToString()
         </div>
     </div>
