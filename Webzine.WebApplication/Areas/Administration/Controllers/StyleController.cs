@@ -8,7 +8,8 @@ using Webzine.Entity;
 
 namespace Webzine.WebApplication.Areas.Administration.Controllers
 {
-    public class AdminStyleController : Controller
+    [Area("Administration")]
+    public class StyleController : Controller
     {
         AdminStyleViewModel _adminStyleViewModel = new AdminStyleViewModel();
         public IActionResult Index()
@@ -16,17 +17,17 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             this.ViewData.Model = _adminStyleViewModel;
             return View();
         }
-        public IActionResult EditStyle(int Id)
+        public IActionResult Edit(int Id)
         {
             var result = _adminStyleViewModel.Styles.Where(s => s.IdStyle == Id).FirstOrDefault();
             this.ViewData.Model = result;
-            return View("EditStylePage");
+            return View();
         }
-        public IActionResult DeleteStyle(int Id)
+        public IActionResult Delete(int Id)
         {
             var result = _adminStyleViewModel.Styles.Where(s => s.IdStyle == Id).FirstOrDefault();
             this.ViewData.Model = result;
-            return View("DeleteStylePage");
+            return View();
         }
     
     }

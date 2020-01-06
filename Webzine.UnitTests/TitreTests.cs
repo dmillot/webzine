@@ -2,7 +2,6 @@
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Webzine.Entity;
-    using System.Data;
 
     /// <summary>
     /// Tests de l'entité <see cref="Titre"/>.

@@ -9,7 +9,7 @@ namespace Webzine.WebApplication.ViewModels
 {
     public class StyleController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(string libelle)
         {
             StyleViewModel style = new StyleViewModel
             {

@@ -63,7 +63,8 @@ namespace Webzine.Entity
         [Display(Name = "Nombre de likes")]
         public int NbLikes { get; set; }
 
-        [ForeignKey("Artiste")]
+        [ForeignKey(nameof(Titre.Artiste))]
+        [Column("id_artiste")]
         public int IdArtiste { get; set; }
 
         public Artiste Artiste { get; set; }
