@@ -26,7 +26,7 @@ namespace Webzine.WebApplication.Controllers
                     {
                         Artiste = new Artiste
                         {
-                            Name = "Silicone Soul"
+                            Nom = "Silicone Soul"
                         },
                         Libelle = "Right on, Right on",
                         UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
@@ -44,7 +44,7 @@ namespace Webzine.WebApplication.Controllers
                     {
                         Artiste = new Artiste
                         {
-                            Name = "Kraftwerk"
+                            Nom = "Kraftwerk"
                         },
                         Libelle = "The Robots",
                         UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
@@ -62,7 +62,7 @@ namespace Webzine.WebApplication.Controllers
                     {
                         Artiste = new Artiste
                         {
-                            Name = "Miles Davis"
+                            Nom = "Miles Davis"
                         },
                         Libelle = "Shhh / Paceful",
                         UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
@@ -83,7 +83,7 @@ namespace Webzine.WebApplication.Controllers
                     {
                         Artiste = new Artiste
                         {
-                            Name = "Kraftwerk"
+                            Nom = "Kraftwerk"
                         },
                         Libelle = "The Robots",
                         UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
@@ -93,7 +93,7 @@ namespace Webzine.WebApplication.Controllers
                     {
                         Artiste = new Artiste
                         {
-                            Name = "Silicone Soul"
+                            Nom = "Silicone Soul"
                         },
                         Libelle = "Right on, Right on",
                         UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
@@ -102,7 +102,7 @@ namespace Webzine.WebApplication.Controllers
                     {
                         Artiste = new Artiste
                         {
-                            Name = "Miles Davis"
+                            Nom = "Miles Davis"
                         },
                         Libelle = "Shhh / Paceful",
                         UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg",
