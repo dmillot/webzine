@@ -99,7 +99,7 @@ namespace Webzine.WebApplication
                    defaults: new { area = "Administration", controller = "AdminStyle", action = "EditStyle" }
                    );
 
-                );
+              
 
 
                 endpoints.MapControllerRoute(
@@ -114,7 +114,7 @@ namespace Webzine.WebApplication
                   defaults : new {area = "Administration", controller = "AdminArtist", action = "Index" }
                   );
 
-                   );
+                   
 
                 endpoints.MapControllerRoute(
                    name: "adminStyleDelete",
