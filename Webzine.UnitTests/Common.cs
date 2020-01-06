@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Webzine.Entity.Tests
+namespace Webzine.UnitTests
 {
     using System.ComponentModel.DataAnnotations;
     using System.Linq;

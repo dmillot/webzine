@@ -73,8 +73,8 @@ Curabitur tincidunt ipsum id congue dictum.Mauris vitae porttitor leo.Mauris ege
                 },
                 Styles = new List<Style>()
                 {
-                    new Style() { Name = "Funk" },
-                    new Style() { Name = "Electro" }
+                    new Style() { Libelle = "Funk" },
+                    new Style() { Libelle = "Electro" }
                 },
                 AlbumPicture = "https://images-na.ssl-images-amazon.com/images/I/51%2B1xjXXesL._SX355_.jpg",
                 AlbumTitle = "Right On!",
