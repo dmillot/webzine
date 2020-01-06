@@ -11,18 +11,31 @@ namespace Webzine.Entity
     /// </summary>
     public class Commentaire
     {
+       
+
         [Key]
-        public int Id { get; set; }
+        public int IdCommentaire { get; set; }
 
-        public string Username { get; set; }
+        [Display(Name = "Nom")]
+        [MinLength(2)]
+        [MaxLength(30)]
+        [Required]
+        public string Auteur { get; set; }
 
-        public string Message { get; set; }
+        [Required]
+        [MinLength(10)]
+        [MaxLength(1000)]
+        [Display(Name = "Commentaire")]
+        public string Contenu { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        [Required]
+        [Display(Name = "Date de création")]
+        public DateTime DateCreation { get; set; }
 
         [ForeignKey("Titre")]
-        public int TitleId { get; set; }
+        public int IdTitre { get; set; }
 
         public Titre Title { get; set; }
+     
     }
 }

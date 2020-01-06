@@ -23,30 +23,34 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
                 new Commentaire()
                 {
                     Title = titre,
-                    CreatedAt = DateTime.Now,
-                    Message = "JUUUUUUUULLLLLLL",
-                    Username = "JEFFFFFF"
+                    IdTitre = titre.Id,
+                    DateCreation = DateTime.Now,
+                    Contenu = "JUUUUUUUULLLLLLL",
+                    Auteur = "JEFFFFFF"
                 },
                 new Commentaire()
                 {
-                    Title = titre,
-                    CreatedAt = DateTime.Now,
-                    Message = "DJU DJU DJUUUUULLLL",
-                    Username = "JEFFFFFF"
+                     Title = titre,
+                    IdTitre = titre.Id,
+                    DateCreation = DateTime.Now,
+                    Contenu = "DJU DJU DJUUUUULLLL",
+                    Auteur = "JEFFFFFF"
                 },
                 new Commentaire()
                 {
-                    Title = titre,
-                    CreatedAt = DateTime.Now,
-                    Message = "cette musique me fais saigner des orzeilles",
-                    Username = "JEFFFFFF"
+                     Title = titre,
+                    IdTitre = titre.Id,
+                    DateCreation = DateTime.Now,
+                    Contenu = "cette musique me fais saigner des orzeilles",
+                    Auteur = "JEFFFFFF"
                 },
                 new Commentaire()
                 {
-                    Title = titre,
-                    CreatedAt = DateTime.Now,
-                    Message = "cette musique me fais saigner des orzeilles",
-                    Username = "JEFFFFFF"
+                     Title = titre,
+                    IdTitre = titre.Id,
+                    DateCreation = DateTime.Now,
+                    Contenu = "cette musique me fais saigner des orzeilles",
+                    Auteur = "JEFFFFFF"
                 },
             };
         }
