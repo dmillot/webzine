@@ -127,6 +127,13 @@ namespace Webzine.WebApplication
                     pattern: "{controller=home}/{action=index}"
                     );
 
+                //new route to get a parameter page for the homepage pagination
+                endpoints.MapControllerRoute(
+                    name: "homepagePagination",
+                    pattern: "page/{page}",
+                    defaults: new { controller = "Home", action = "Page" }
+                    );
+
 
                 endpoints.MapControllerRoute(
                 name: "adminTitres",

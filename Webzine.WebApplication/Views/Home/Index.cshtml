@@ -31,6 +31,25 @@
         </ul>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-2">
+        @if (Model.Page > 1)
+        {
+            <a class=" href="page/2"><button class="btn btn-secondary">Page precedente</button></a>
+        }
+        
+    </div>
+
+    <div class="col-2 ml-auto">
+        @if (Model.MaxPage > Model.Page)
+        {
+            <a asp-action=""><button class="btn btn-secondary">Page suivante</button></a>
+        }
+        
+    </div>
+            
+
 <div class="row">
     @* Titres les plus populaires *@
     <h1>Titres les plus populaires</h1>
@@ -52,4 +71,5 @@
         }
     </div>
 </div>
+
 
