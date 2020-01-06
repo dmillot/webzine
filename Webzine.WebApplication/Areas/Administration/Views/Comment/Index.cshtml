@@ -3,6 +3,7 @@
     ViewData["Title"] = "Commentaires";
 }
 @model Webzine.WebApplication.Areas.Administration.ViewModels.CommentViewModel
+@{ Layout = "_LayoutAdm"; }
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,9 +31,9 @@
                 {
                     <tr>
                         <td><a href="#">@comment.Title.Libelle</a></td>
-                        <td>@comment.Username</td>
-                        <td>@comment.Message</td>
-                        <td>@comment.CreatedAt.ToShortDateString() @comment.CreatedAt.ToShortTimeString()</td>
+                        <td>@comment.Auteur</td>
+                        <td>@comment.Contenu</td>
+                        <td>@comment.DateCreation.ToShortDateString() @comment.DateCreation.ToShortTimeString()</td>
                         <td class="d-flex justify-content-around"><a class="fa fa-trash text-primary" href="#"></a></td>
                     </tr>
                 }

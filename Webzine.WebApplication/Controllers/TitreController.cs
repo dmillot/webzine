@@ -67,9 +67,9 @@ Curabitur tincidunt ipsum id congue dictum.Mauris vitae porttitor leo.Mauris ege
                 },
                 Comments = new List<Commentaire>()
                 {
-                    new Commentaire() { Username = "Damien", Message = "Trop bien" },
-                    new Commentaire() { Username = "Kim", Message = "Excellent" },
-                    new Commentaire() { Username = "Nicolas", Message = "Mhh.. j'ai vu mieux" }
+                    new Commentaire() { Auteur = "Damien", Contenu = "Trop bien" },
+                    new Commentaire() { Auteur = "Kim", Contenu = "Excellent" },
+                    new Commentaire() { Auteur = "Nicolas", Contenu = "Mhh.. j'ai vu mieux" }
                 },
                 Styles = new List<Style>()
                 {

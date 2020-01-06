@@ -14,9 +14,10 @@
                     Administration
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Artistes</a>
-                    <a class="dropdown-item" href="#">Titres</a>
-                    <a class="dropdown-item" href="administration/styles">Styles</a>
+                    <a asp-area="Administration" asp-controller="AdminArtist"  class="dropdown-item">Artistes</a>
+                    <a asp-area="Administration" asp-controller="Title"  class="dropdown-item">Titres</a>
+                    <a asp-area="Administration" asp-controller="AdminStyle"  class="dropdown-item">Styles</a>
+                    </div>
             </li>
             <li class="nav-item">
 

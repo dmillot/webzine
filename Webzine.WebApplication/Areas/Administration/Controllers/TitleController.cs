@@ -12,7 +12,6 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
     {
         public IActionResult Index()
         {
-
             TitleViewModel model = new TitleViewModel();
             return View(model);
         }
