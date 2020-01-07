@@ -16,17 +16,39 @@ namespace Webzine.Repository
                 Contenu = "c trop bi1",
                 DateCreation = DateTime.Now,
                 IdCommentaire = 1,
-                IdTitre = 1,
-                Titre = FactoryTitre.Titres.First(t=>t.IdTitre == 1)
+                IdTitre = 1
             },
             new Commentaire()
             {
                 Auteur = "Jean louis",
-                Contenu = "c trop bi1",
+                Contenu = "c trop bigergergerger1",
                 DateCreation = DateTime.Now,
                 IdCommentaire = 2,
-                IdTitre = 1,
-                Titre = FactoryTitre.Titres.First(t=>t.IdTitre == 1)
+                IdTitre = 1
+            },
+            new Commentaire()
+            {
+                Auteur = "Jean louis",
+                Contenu = "gergergegerc trop bi1",
+                DateCreation = DateTime.Now,
+                IdCommentaire = 2,
+                IdTitre = 2
+            },
+            new Commentaire()
+            {
+                Auteur = "Jean louis",
+                Contenu = "c gergegergertrop bi1",
+                DateCreation = DateTime.Now,
+                IdCommentaire = 2,
+                IdTitre = 3
+            },
+            new Commentaire()
+            {
+                Auteur = "Jean louis",
+                Contenu = "c tropgtrgegrege bi1",
+                DateCreation = DateTime.Now,
+                IdCommentaire = 2,
+                IdTitre = 4
             },
         };
     }

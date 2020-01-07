@@ -4,6 +4,8 @@ namespace Webzine.WebApplication
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Webzine.Repository.Contracts;
+    using Webzine.Repository.Local;
 
     public class Startup
     {
@@ -12,6 +14,10 @@ namespace Webzine.WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton(typeof(IStyleRepository), new LocalStyleRepository());
+            services.AddSingleton(typeof(ITitreRepository), new LocalTitreRepository());
+            services.AddSingleton(typeof(IArtisteRepository), new LocalArtisteRepository());
+            services.AddSingleton(typeof(ICommentaireRepository), new LocalCommentaireRepository());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
