@@ -8,11 +8,11 @@
     public class ArtisteController : Controller
     {
        
-        public IActionResult Index(string name)
+        public IActionResult Index(string libelle)
         {
             ArtistViewModel artist = new ArtistViewModel()
             {
-                Name = name,
+                Name = libelle,
                 Biography = @"Vangelis (Βαγγέλης, diminutif d’Evángelos, à prononcer Vanguélis), Evángelos Odysséas Papathanassíou (en grec : Ευάγγελος Οδυσσέας Παπαθανασίου), né le 29 mars 1943 à Vólos en Grèce1, est un musicien et compositeur, connu dans les domaines de la musique new age et électronique, et auteur de musiques de films.
                 Ses compositions les plus connues sont la musique du film Les Chariots de feu(qui a reçu l'oscar de la meilleure musique en 1981), la bande originale du film Antarctica, ainsi que la totalité de la bande originale du film Blade Runner et de 1492 : Christophe Colomb.
                 Il a également composé l'hymne de la Coupe du monde de football de 20022.
