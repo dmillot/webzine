@@ -4,6 +4,8 @@ namespace Webzine.WebApplication
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Webzine.Repository.Contracts;
+    using Webzine.Repository.Local;
 
     public class Startup
     {
@@ -12,11 +14,15 @@ namespace Webzine.WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IStyleRepository , LocalStyleRepository>();
+            services.AddScoped<ITitreRepository , LocalTitreRepository>();
+            services.AddScoped<IArtisteRepository , LocalArtisteRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
+        {   
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -27,7 +33,7 @@ namespace Webzine.WebApplication
 
             app.UseRouting();
 
-
+            
 
             app.UseEndpoints(endpoints =>
             {

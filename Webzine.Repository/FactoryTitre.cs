@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Webzine.Entity;
 
 namespace Webzine.Repository
@@ -49,7 +48,6 @@ namespace Webzine.Repository
         public static int GetCountPages()
         {
             return Titres.Count % 3 > 0 ? Titres.Count / 3 + 1 : Titres.Count / 3;
-
         }
 
     }

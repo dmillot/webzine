@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Webzine.Entity;
 
 namespace Webzine.Repository.Contracts
 {
-    public interface IStyleRepository
+    public interface IStyleRepository 
     {
         void Add(Style style);
         void Delete(Style style);

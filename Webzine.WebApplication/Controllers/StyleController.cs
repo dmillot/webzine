@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Webzine.Entity;
 
@@ -11,6 +8,7 @@ namespace Webzine.WebApplication.ViewModels
     {
         public IActionResult Index(string libelle)
         {
+            
             StyleViewModel style = new StyleViewModel
             {
                 Titres = new List<Titre>()

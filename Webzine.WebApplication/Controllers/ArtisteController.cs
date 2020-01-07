@@ -1,11 +1,12 @@
-﻿namespace Webzine.WebApplication.Controllers
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Webzine.Entity;
+using Webzine.Repository;
+using Webzine.WebApplication.ViewModels;
+
+namespace Webzine.WebApplication.Controllers
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using Microsoft.AspNetCore.Mvc;
-    using Webzine.Entity;
-    using Webzine.Repository;
-    using Webzine.WebApplication.ViewModels;
 
     public class ArtisteController : Controller
     {

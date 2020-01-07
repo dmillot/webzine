@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Webzine.Entity;
+﻿using Microsoft.AspNetCore.Mvc;
 using Webzine.Repository;
 using Webzine.WebApplication.ViewModels;
 
@@ -17,7 +12,6 @@ namespace Webzine.WebApplication.Controllers
         /// 
         /// <returns>Return the index page</returns>
         /// 
-
         public IActionResult Index(int id = 1)
         {
             HomeViewModel titre = new HomeViewModel()
