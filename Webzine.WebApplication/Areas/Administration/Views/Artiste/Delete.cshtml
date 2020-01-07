@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Admin"] = true;
+}
+
+<div class="container-fluid">
+    <h1 class="mt-2">Supprimer un artiste</h1>
+
+    <hr />
+
+    <p>Etes-vous sûr de vouloir supprimer l'artiste "Queen" ?</p>
+
+    <button type="button" class="btn btn-danger">Supprimer</button>
+
+    <div class="row m-0 p-0 mt-5">
+        <a href="@Url.Action("Index", "AdminArtist")">Retour à l'administration des artistes</a>
+    </div>
+
+
+</div>

@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 namespace Webzine.WebApplication
 {
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -36,134 +31,49 @@ namespace Webzine.WebApplication
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-
-                    name: "contact",
-                    pattern: "contact",
-                    defaults: new { controller = "contact", action="Index" }
-                    );
 
                 endpoints.MapControllerRoute(
-                    name: "style",
-                    pattern: "titres/style/{style}",
-                    defaults: new { controller = "Style", action = "Index" }
-                    );
+                    name: "titre-style",
+                    pattern: "titre/style/{libelle}",
+                    defaults: new { controller = "Style", action = "Index" });
 
                 endpoints.MapControllerRoute(
-                    name: "recherche",
-                    pattern: "recherche",
-                    defaults: new { controller = "Research", action = "Index" }
-                    );
+                    name: "titre",
+                    pattern: "titre/{id}",
+                    defaults: new { controller = "Titre", action = "Index" });
 
                 endpoints.MapControllerRoute(
-
-                  name: "areasParam",
-                  pattern: "{area}/{controller=Home}/{action=Index}/{id}"            
-                );
-
-                endpoints.MapControllerRoute(
-                  name: "adminArtist",
-                  pattern: "administration/artiste/edit/{id}",
-                  defaults: new { area = "Administration", controller = "AdminArtist", action = "Edit" }
-                  );
+                    name: "home",
+                    pattern: "page/{id}",
+                    defaults: new { controller = "Home", action = "Index"});
 
                 endpoints.MapControllerRoute(
-                  name: "adminArtist",
-                  pattern: "administration/artiste/delete/{id}",
-                  defaults: new { area = "Administration", controller = "AdminArtist", action = "Delete" }
-                  );
+                    name: "administration-commentaires",
+                    pattern: "administration/commentaires",
+                    defaults: new { area = "Administration", controller = "Commentaire", action = "Index" });
 
                 endpoints.MapControllerRoute(
-
-                  name: "titre",
-                  pattern: "titre/{id:int}",
-                  defaults: new { controller = "Titre", action = "Index" }
-                  );
-
-                endpoints.MapControllerRoute(
-                    name: "artiste",
-                    pattern: "artiste/{name}",
-                    defaults: new { controller = "Artist", action = "Index" }
-
-                    );
-
-                endpoints.MapControllerRoute(
-                    name: "adminStyles",
+                    name: "administration-styles",
                     pattern: "administration/styles",
-                    defaults: new { area = "Administration", controller = "AdminStyle", action = "Index" }
-                    );
+                    defaults: new { area = "Administration", controller = "Style", action = "Index" });
 
                 endpoints.MapControllerRoute(
-                   name: "adminStyleEdit",
-                   pattern: "administration/style/edit/{Id}",
-                   defaults: new { area = "Administration", controller = "AdminStyle", action = "EditStyle" }
-                   );
-
-              
-
+                    name: "administration-titres",
+                    pattern: "administration/titres",
+                    defaults: new { area = "Administration", controller = "Titre", action = "Index" });
 
                 endpoints.MapControllerRoute(
-                  name: "adminArtist",
-                  pattern: "administration/artiste/create",
-                  defaults: new { area = "Administration", controller = "AdminArtist", action = "Create" }
-                  );
+                    name: "administration-artistes",
+                    pattern: "administration/artistes",
+                    defaults: new { area = "Administration", controller = "Artiste", action = "Index" });
 
                 endpoints.MapControllerRoute(
-                  name: "adminArtist",               
-                  pattern: "administration/artistes",
-                  defaults : new {area = "Administration", controller = "AdminArtist", action = "Index" }
-                  );
-
-                   
-
-                endpoints.MapControllerRoute(
-                   name: "adminStyleDelete",
-                   pattern: "administration/style/Delete/{Id}",
-                   defaults: new { area = "Administration", controller = "AdminStyle", action = "DeleteStyle" }
-                   );
+                    name: "administration",
+                    pattern: "{area:exists}/{controller=artiste}/{action=index}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=home}/{action=index}"
-                    );
-
-                //new route to get a parameter page for the homepage pagination
-                endpoints.MapControllerRoute(
-                    name: "homepagePagination",
-                    pattern: "page/{page}",
-                    defaults: new { controller = "Home", action = "Page" }
-                    );
-
-
-                endpoints.MapControllerRoute(
-                name: "adminTitres",
-                pattern: "administration/titres",
-                defaults: new {area = "Administration", controller = "Title", action = "Index" }
-                );
-
-                endpoints.MapControllerRoute(
-                name: "adminCreateTitre",
-                pattern: "administration/titre/create",
-                defaults: new { area = "Administration", controller = "Title", action = "CreateTitle" }
-                );
-
-                endpoints.MapControllerRoute(
-                name: "adminEditTitre",
-                pattern: "administration/titre/edit/{id}",
-                defaults: new { area = "Administration", controller = "Title", action = "EditTitle" }
-                );
-
-                endpoints.MapControllerRoute(
-                name: "adminDeleteTitre",
-                pattern: "administration/titre/delete/{id}",
-                defaults: new { area = "Administration", controller = "Title", action = "DeleteTitle" }
-                );
-
-                endpoints.MapControllerRoute(
-                name: "adminComments",
-                pattern: "administration/commentaires",
-                defaults: new { area = "Administration", controller = "Comment", action = "Index" }
-                );
+                    pattern: "{controller=home}/{action=index}/{id?}");
 
             });
         }

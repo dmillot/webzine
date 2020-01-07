@@ -1,0 +1,8 @@
+﻿@model List<Artiste>
+
+<select class="form-control col-10">
+    @foreach (var artist in Model)
+    {
+        <option value="@artist.IdArtiste">@artist.Nom</option>
+    }
+</select>

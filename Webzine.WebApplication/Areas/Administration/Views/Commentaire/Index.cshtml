@@ -1,0 +1,35 @@
+﻿@model CommentViewModel
+@{
+    ViewData["Title"] = "Commentaires";
+    ViewData["Admin"] = true;
+}
+
+<div>
+    <h1>Liste des derniers commentaires</h1>
+    <hr class="style1">
+
+    <table class="table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Commentaire</th>
+                <th scope="col">Date de création</th>
+                <th scope="col" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var comment in Model.Comments)
+            {
+                <tr>
+                    <td><a href="#">@comment.Titre.Libelle</a></td>
+                    <td>@comment.Auteur</td>
+                    <td>@comment.Contenu</td>
+                    <td>@comment.DateCreation.ToShortDateString() @comment.DateCreation.ToShortTimeString()</td>
+                    <td class="d-flex justify-content-around"><a class="fa fa-trash text-primary" href="#"></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

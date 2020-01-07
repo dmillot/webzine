@@ -1,0 +1,9 @@
+﻿@model List<Style>
+
+@foreach (var style in Model)
+{
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="@style.IdStyle" value="@style.IdStyle">
+        <label class="form-check-label" for="@style.IdStyle">@style.Libelle</label>
+    </div>
+}

@@ -9,7 +9,8 @@ using Webzine.WebApplication.Areas.Administration.ViewModels;
 
 namespace Webzine.WebApplication.Areas.Administration.Controllers
 {
-    public class AdminArtistController : Controller
+    [Area("Administration")]
+    public class ArtisteController : Controller
     {
         // GET: Artist
         public ActionResult Index()
