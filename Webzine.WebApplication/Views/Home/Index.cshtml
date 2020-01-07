@@ -11,18 +11,18 @@
             @foreach (var objet in Model.Titres_chroniques)
             {
                 <li class="media bg-light mr-4 mb-4">
-                    <img src="@objet.UrlJaquette" class="img-thumbnail ml-3 mt-3" width="200" height="200">
+                    <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre"><img src="@objet.UrlJaquette" class="img-thumbnail ml-3 mt-3" width="200" height="200"></a>
                     <div class="media-body p-3 mb-2">
-                        <a href="#">
+                        <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre">
                             <h5 class="mb-1"> @objet.Artiste.Nom  @objet.Libelle </h5>
                         </a>
                         <p class="text-secondary">
                             @objet.Chronique
                         </p>
-                        <button class="btn btn-primary" type="submit">Lire la suite</button>
+                        <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre" class="btn btn-primary">Lire la suite</a>
                         <i class="fas fa-calendar ml-3"> @objet.DateSortie.ToString("dd/MM/yyyy HH:mm:ss") </i>
                         <i class="fas fa-tags ml-3"></i>
-                        <a href="#">
+                        <a asp-controller="style" asp-action="index" asp-route-libelle="@objet.TitresStyles[0].Libelle">
                             @objet.TitresStyles[0].Libelle
                         </a>
                     </div>

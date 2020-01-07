@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Webzine.Entity;
-using Webzine.WebApplication.ViewModels;
-
-namespace Webzine.WebApplication.Controllers
+﻿namespace Webzine.WebApplication.Controllers
 {
-    public class ArtistController : Controller
+    using System.Collections.Generic;
+    using Microsoft.AspNetCore.Mvc;
+    using Webzine.Entity;
+    using Webzine.WebApplication.ViewModels;
+
+    public class ArtisteController : Controller
     {
        
         public IActionResult Index(string name)
