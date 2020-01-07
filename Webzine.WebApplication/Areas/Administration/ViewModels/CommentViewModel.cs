@@ -22,7 +22,7 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
             {
                 new Commentaire()
                 {
-                    Title = titre,
+                    Titre = titre,
                     IdTitre = titre.IdTitre,
                     DateCreation = DateTime.Now,
                     Contenu = "JUUUUUUUULLLLLLL",
@@ -30,7 +30,7 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
                 },
                 new Commentaire()
                 {
-                     Title = titre,
+                     Titre = titre,
                     IdTitre = titre.IdTitre,
                     DateCreation = DateTime.Now,
                     Contenu = "DJU DJU DJUUUUULLLL",
@@ -38,7 +38,7 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
                 },
                 new Commentaire()
                 {
-                     Title = titre,
+                     Titre = titre,
                     IdTitre = titre.IdTitre,
                     DateCreation = DateTime.Now,
                     Contenu = "cette musique me fais saigner des orzeilles",
@@ -46,7 +46,7 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
                 },
                 new Commentaire()
                 {
-                     Title = titre,
+                     Titre = titre,
                     IdTitre = titre.IdTitre,
                     DateCreation = DateTime.Now,
                     Contenu = "cette musique me fais saigner des orzeilles",
