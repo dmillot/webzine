@@ -18,7 +18,7 @@ namespace Webzine.WebApplication.Controllers
         /// <returns>Return the index page</returns>
         /// 
 
-        public IActionResult Index(int id)
+        public IActionResult Index(int id = 1)
         {
             HomeViewModel titre = new HomeViewModel()
             {
