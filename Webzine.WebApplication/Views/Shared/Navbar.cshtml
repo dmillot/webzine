@@ -3,10 +3,10 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarWebzine">
-        <a asp-controller="home" asp-action="index" class="navbar-brand">Webzine</a>
+        <a asp-area="" asp-controller="home" asp-action="index" class="navbar-brand">Webzine</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a asp-controller="home" asp-action="index" class="nav-link"><i class=" fas fa-home"></i> Accueil<span class="sr-only">(current)</span></a>
+                <a asp-area="" asp-controller="home" asp-action="index" class="nav-link"><i class=" fas fa-home"></i> Accueil<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
                 <a asp-area="administration" asp-controller="artiste" asp-action="index" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,7 +21,7 @@
             </li>
             <li class="nav-item">
 
-                <a asp-controller="contact" asp-action="index" class="nav-link" tabindex="-1" aria-disabled="true"><i class="fas fa-envelope"></i> Contact</a>
+                <a asp-area="" asp-controller="contact" asp-action="index" class="nav-link" tabindex="-1" aria-disabled="true"><i class="fas fa-envelope"></i> Contact</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
