@@ -15,5 +15,11 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             CommentViewModel model = new CommentViewModel();
             return View(model);
         }
+
+        
+        public IActionResult Delete()
+        {
+            return null;
+        }
     }
 }

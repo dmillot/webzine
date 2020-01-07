@@ -43,6 +43,11 @@ namespace Webzine.WebApplication
                     defaults: new { controller = "Titre", action = "Index" });
 
                 endpoints.MapControllerRoute(
+                    name: "commenter",
+                    pattern: "titre/commenter",
+                    defaults: new { controller = "Titre", action = "Commenter" });
+
+                endpoints.MapControllerRoute(
                     name: "artiste",
                     pattern: "artiste/{libelle}",
                     defaults: new { controller = "Artiste", action = "Index" });

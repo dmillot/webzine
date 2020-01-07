@@ -84,5 +84,12 @@ Curabitur tincidunt ipsum id congue dictum.Mauris vitae porttitor leo.Mauris ege
             };
             return View(titre);
         }
+
+        [HttpPost]
+        public IActionResult Commenter([Bind("Auteur,Contenu,DateCreation,IdTitre")] Commentaire commentaire)
+        {
+
+            return View("../Titre/Index");
+        }
     }
 }
