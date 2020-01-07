@@ -1,17 +1,17 @@
 ﻿@using Webzine.WebApplication.ViewModels
 @model HomeViewModel
 @* colonne Chronique *@
-<div class="row">
+<div class="container-fluid">
     @* Derniers titres chroniqués *@
     <div class="row">
         <h1>Derniers titres chroniqués</h1>
     </div>
     <div class="row">
-        <ul class="list-unstyled">
+        <ul class="list-unstyled col-12 m-0 p-0">
             @foreach (var objet in Model.Titres_chroniques)
             {
-                <li class="media bg-light mr-4 mb-4">
-                    <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre"><img src="@objet.UrlJaquette" class="img-thumbnail ml-3 mt-3" width="200" height="200"></a>
+                <li class="media bg-light mb-4">
+                    <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre" class="ml-5 mt-3"><img src="@objet.UrlJaquette" class="img-thumbnail" width="200" height="200"></a>
                     <div class="media-body p-3 mb-2">
                         <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre">
                             <h5 class="mb-1"> @objet.Artiste.Nom  @objet.Libelle </h5>
@@ -30,45 +30,44 @@
             }
         </ul>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-2">
-        @if (Model.Page > 1)
-        {
-            <a asp-controller="home" asp-action="index" asp-route-id="@(Model.Page-1)"><button class="btn btn-secondary">Page precedente</button></a>
-        }
-        
-    </div>
+    <div class="row mb-4">
+        <div class="col-6 p-0 m-0">
+            @if (Model.Page > 1)
+            {
+                <a asp-controller="home" asp-action="index" asp-route-id="@(Model.Page-1)" class="btn btn-secondary">Page precedente</a>
+            }
+        </div>
 
-    <div class="col-2 ml-auto">
-        @if (Model.MaxPage > Model.Page)
-        {
-            <a asp-controller="home" asp-action="index" asp-route-id="@(Model.Page+1)"><button class="btn btn-secondary">Page suivante</button></a>
-        }
-        
+        <div class="col-6 d-flex justify-content-end m-0 p-0">
+            @if (Model.MaxPage > Model.Page)
+            {
+                <a asp-controller="home" asp-action="index" asp-route-id="@(Model.Page+1)" class="btn btn-secondary">Page suivante</a>
+            }
+        </div>
     </div>
             
 
-<div class="row">
-    @* Titres les plus populaires *@
-    <h1>Titres les plus populaires</h1>
-    <div class="card-deck mb-4">
-        @foreach (var objet in Model.Titres_populaires)
-        {
-            <div class="card">
-                <img src="@objet.UrlJaquette" class="card-img-top" height="300" />
-                <div class="card-body">
-                    <a href="#">
-                        <h3 class="card-title">@objet.Libelle</h3>
-                    </a>
-                    par
-                    <a href="#">
-                        @objet.Artiste.Nom
-                    </a>
+    <div class="row">
+        @* Titres les plus populaires *@
+        <h1>Titres les plus populaires</h1>
+        <div class="card-deck mb-4">
+            @foreach (var objet in Model.Titres_populaires)
+            {
+                <div class="card">
+                    <img src="@objet.UrlJaquette" class="card-img-top" height="300" />
+                    <div class="card-body">
+                        <a href="#">
+                            <h3 class="card-title">@objet.Libelle</h3>
+                        </a>
+                        par
+                        <a href="#">
+                            @objet.Artiste.Nom
+                        </a>
+                    </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
 </div>
 
