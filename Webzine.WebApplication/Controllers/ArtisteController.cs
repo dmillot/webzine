@@ -21,11 +21,11 @@
             {
                 if (!albums.ContainsKey(titre.Album))
                 {
-                    albums.Add(titre.Album, titre.UrlJaquette);
+                    albums.Add(titre.Album, titre.UrlJaquette); //set ulbum name as key and url image as value
                 }
             }
 
-            ArtistViewModel model = new ArtistViewModel()
+            ArtistViewModel model = new ArtistViewModel() // model for the view
             {
                 Artist = artist,
                 Albums = albums

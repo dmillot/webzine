@@ -20,7 +20,7 @@ namespace Webzine.WebApplication.Controllers
 
         public IActionResult Index(int id = 1)
         {
-            HomeViewModel titre = new HomeViewModel()
+            HomeViewModel titre = new HomeViewModel() // model for the view
             {
                 MaxPage = FactoryTitre.GetCountPages(),
                 Page = id,
