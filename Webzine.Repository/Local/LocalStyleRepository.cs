@@ -41,7 +41,7 @@ namespace Webzine.Repository.Local
         /// <summary>
         /// Retourne les styles présents dans notre jeu de données
         /// </summary>
-        /// <returns> Retourne une liste de Style </returns>
+        /// <returns> Retourne une liste de Styles </returns>
         public IEnumerable<Style> FindAll()
         {
             return FactoryStyle.Styles; 
