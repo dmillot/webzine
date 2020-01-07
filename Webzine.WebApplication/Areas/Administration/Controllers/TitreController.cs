@@ -14,8 +14,7 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
     {
         public IActionResult Index()
         {
-            FactoryTitre factory = new FactoryTitre();
-            List<Titre> titles = factory.Titres;
+            List<Titre> titles = FactoryTitre.Titres;
 
             return View(titles);
         }

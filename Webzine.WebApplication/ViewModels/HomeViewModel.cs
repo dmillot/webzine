@@ -10,6 +10,7 @@ namespace Webzine.WebApplication.ViewModels
     {
         public List<Titre> Titres_chroniques { get; set; }
         public List<Titre> Titres_populaires { get; set; }
-
+        public int Page { get; set; }
+        public int MaxPage { get; set; }
     }
 }

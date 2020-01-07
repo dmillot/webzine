@@ -13,8 +13,7 @@ namespace Webzine.WebApplication.Components
     {
         public IViewComponentResult Invoke()
         {
-            FactoryArtiste factory = new FactoryArtiste();
-            List<Artiste> artistes = factory.Artistes;
+            List<Artiste> artistes = FactoryArtiste.Artistes;
 
             return this.View(artistes);
         }

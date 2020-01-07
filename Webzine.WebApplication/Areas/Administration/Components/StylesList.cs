@@ -13,8 +13,7 @@ namespace Webzine.WebApplication.Components
     {
         public IViewComponentResult Invoke()
         {
-            FactoryStyle factory = new FactoryStyle();
-            List<Style> styles = factory.Styles;
+            List<Style> styles = FactoryStyle.Styles;
 
             return this.View(styles);
         }
