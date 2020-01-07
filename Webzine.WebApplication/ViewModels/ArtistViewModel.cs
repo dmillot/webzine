@@ -8,10 +8,8 @@ namespace Webzine.WebApplication.ViewModels
 {
     public class ArtistViewModel
     {
-        public string Name { get; set; }
-        public string Biography { get; set; }
-        public List<Titre> Titles { get; set; }
-
+        public Artiste Artist { get; set; }
+        public Dictionary<string, string> Albums { get; set; }
 
     }
 }

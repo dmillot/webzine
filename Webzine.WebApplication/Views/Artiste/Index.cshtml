@@ -4,44 +4,53 @@
 }
 @model ArtistViewModel
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
-    <title>@Model.Name</title>
-</head>
-<body>
     <div>
-        <h1>@Model.Name</h1>
+        <h1>@Model.Artist.Nom</h1>
         <hr class="style1">
 
-        <p>@Model.Biography</p>
+        <p>@Model.Artist.Biographie</p>
         <h1>Titres</h1>
         <hr class="style1">
 
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">Album Picture</th>
-                    <th scope="col">Titre</th>
-                    <th scope="col">Duree</th>
-                    <th scope="col">Chronique</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var titre in Model.Titles)
-                {
-                    <tr>
-                        <td><img class="m-auto" src="@titre.UrlJaquette" style="display:block; height:100px;"/></td>
-                        <td class="align-middle">@titre.Libelle</td>
-                        <td class="align-middle">@titre.DurationToString()</td>
-                        <td class="align-middle"><a href="@Url.Action("Index", "Titre")/@titre.IdTitre"><i class="fa fa-link"></i></a></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        @foreach (KeyValuePair<string, string> album in @Model.Albums)
+        {
+            <div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <h1 class="col-8">@album.Key</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <img class="w-100" src="@album.Value" alt="Album cover" />
+                    </div>
+                    <div class="col-8">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Titre</th>
+                                    <th scope="col">Durée</th>
+                                    <th scope="col">Chronique</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var titre in Model.Artist.Titres.Where(t=>t.Album == @album.Key).ToList())
+                                {
+                                <tr>
+                                    <td>@titre.Libelle</td>
+                                    <td>@titre.DurationToString()</td>
+                                    <td><a asp-controller="titre" asp-action="index" asp-route-id="@titre.IdTitre" class="fa fa-link"></a></td>
+
+                                 </tr>
+                                }
+                                </tbody>
+                            </table>
+
+                    </div>
+                </div>
+            </div>
+        }
+
     </div>
-</body>
-</html>
+
 
