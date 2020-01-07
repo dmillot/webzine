@@ -27,8 +27,8 @@ namespace Webzine.WebApplication.Controllers
                 Titres_chroniques = FactoryTitre.GetTitresFromPage(id-1),
                 Titres_populaires = FactoryTitre.GetTitresFromPage()
             };
-            this.ViewData.Model = titre;
-            return this.View();
+
+            return this.View(titre);
         }
 
 
