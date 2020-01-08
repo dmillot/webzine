@@ -26,7 +26,7 @@
                     <td>@comment.Auteur</td>
                     <td>@comment.Contenu</td>
                     <td>@comment.DateCreation.ToShortDateString() @comment.DateCreation.ToShortTimeString()</td>
-                    <td class="d-flex justify-content-around"><a class="fa fa-trash text-primary" href="#"></a></td>
+                    <td class="d-flex justify-content-around"><a class="fa fa-trash text-primary" asp-area="administration" asp-controller="commentaire" asp-action="delete" asp-route-id="@comment.IdCommentaire"></a></td>
                 </tr>
             }
         </tbody>

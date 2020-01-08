@@ -14,9 +14,11 @@ namespace Webzine.WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
             services.AddScoped<IStyleRepository , LocalStyleRepository>();
             services.AddScoped<ITitreRepository , LocalTitreRepository>();
             services.AddScoped<IArtisteRepository , LocalArtisteRepository>();
+
             
         }
 
@@ -47,6 +49,11 @@ namespace Webzine.WebApplication
                     name: "titre",
                     pattern: "titre/{id}",
                     defaults: new { controller = "Titre", action = "Index" });
+
+                endpoints.MapControllerRoute(
+                    name: "commenter",
+                    pattern: "titre/commenter",
+                    defaults: new { controller = "Titre", action = "Commenter" });
 
                 endpoints.MapControllerRoute(
                     name: "artiste",
