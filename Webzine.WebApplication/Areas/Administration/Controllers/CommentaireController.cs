@@ -26,11 +26,16 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// delete the comment from id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            _commentaireRepository.Delete(_commentaireRepository.FindAll().FirstOrDefault(c=>c.IdCommentaire==id));
+            _commentaireRepository.Delete(_commentaireRepository.Find(id));
             return Redirect("/administration/commentaires");
         }
     }

@@ -8,5 +8,6 @@ namespace Webzine.Repository.Contracts
         void Add(Commentaire commentaire);
         void Delete(Commentaire commentaire);
         IEnumerable<Commentaire> FindAll();
+        Commentaire Find(int id);
     }
 }
