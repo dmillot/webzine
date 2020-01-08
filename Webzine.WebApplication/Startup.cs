@@ -18,6 +18,7 @@ namespace Webzine.WebApplication
             services.AddScoped<IStyleRepository , LocalStyleRepository>();
             services.AddScoped<ITitreRepository , LocalTitreRepository>();
             services.AddScoped<IArtisteRepository , LocalArtisteRepository>();
+            services.AddScoped<ICommentaireRepository, LocalCommentaireRepository>();
 
             
         }

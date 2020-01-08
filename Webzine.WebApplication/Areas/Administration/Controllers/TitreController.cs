@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Webzine.Entity;
 using Webzine.Repository;
+using Webzine.Repository.Contracts;
 using Webzine.WebApplication.Areas.Administration.ViewModels;
 
 namespace Webzine.WebApplication.Areas.Administration.Controllers
@@ -12,10 +13,18 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
     [Area("Administration")]
     public class TitreController : Controller
     {
+        private readonly ITitreRepository _titreRepository;
+        private readonly IStyleRepository _styleRepository;
+        private readonly IArtisteRepository _artisteRepository;
+        public TitreController(ITitreRepository titreRepository , IStyleRepository styleRepository , IArtisteRepository artisteRepository)
+        {
+            _titreRepository = titreRepository;
+            _styleRepository = styleRepository;
+            _artisteRepository = artisteRepository;
+        }
         public IActionResult Index()
         {
-            List<Titre> titles = FactoryTitre.Titres;
-
+            List<Titre> titles = (List<Titre>)_titreRepository.FindAll();
             return View(titles);
         }
 
@@ -26,8 +35,15 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
 
         public IActionResult Edit(int id)
         {
-            TitleViewModel model = new TitleViewModel();
-            return View(model);
+            TitleViewModel titleViewModel = new TitleViewModel()
+            {
+                Artistes = _artisteRepository.FindAll(),
+                Titre = _titreRepository.Find(id),
+                Styles = _styleRepository.FindAll()
+
+            };
+            this.ViewData.Model = titleViewModel;
+            return View();
         }
 
         public IActionResult Delete(int id)

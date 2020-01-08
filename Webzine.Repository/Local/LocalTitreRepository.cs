@@ -28,7 +28,7 @@ namespace Webzine.Repository.Local
         /// <param name="titre"></param>
         public void Delete(Titre titre)
         {
-            FactoryTitre.Titres.Remove(titre);
+            FactoryTitre.Titres.Remove(FactoryTitre.Titres.Where(t=>t.IdTitre == titre.IdTitre).FirstOrDefault());
         }
 
         /// <summary>

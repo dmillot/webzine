@@ -32,16 +32,12 @@ namespace Webzine.WebApplication.Controllers
                 Description = t.Chronique,
                 Author = t.Artiste,
                 Comments = t.Commentaires,
-                Styles = new List<Style>()
-                {
-                    new Style() { Libelle = "Funk" },
-                    new Style() { Libelle = "Electro" }
-                },
-                AlbumPicture = "https://images-na.ssl-images-amazon.com/images/I/51%2B1xjXXesL._SX355_.jpg",
+                Styles = t.TitresStyles,
+                AlbumPicture = t.UrlJaquette,
                 AlbumTitle = "Right On!",
-                VideoLink = "https://www.youtube.com/embed/bV2Bm7kj3cM",
+                VideoLink = t.UrlEcoute,
                 UpdatedAt = DateTime.Now,
-                LikeCounter = 6,
+                LikeCounter = t.NbLikes,
                 IdTitre = id
             };
             return View(titre);
