@@ -43,7 +43,7 @@ namespace Webzine.WebApplication
 
                 endpoints.MapControllerRoute(
                     name: "titre-style",
-                    pattern: "titre/style/{libelle}",
+                    pattern: "titres/style/{libelle}",
                     defaults: new { controller = "Style", action = "Index" });
 
                 endpoints.MapControllerRoute(
@@ -70,6 +70,11 @@ namespace Webzine.WebApplication
                     name: "rechercher",
                     pattern: "rechercher",
                     defaults: new { controller = "Research", action = "Index" });
+
+                endpoints.MapControllerRoute(
+                    name: "liker",
+                    pattern: "titre/liker",
+                    defaults: new { controller = "Titre", action = "Liker" });
 
                 endpoints.MapControllerRoute(
                     name: "administration-commentaires",
