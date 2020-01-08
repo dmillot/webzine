@@ -14,7 +14,7 @@
                     @foreach (var item in Model.TitresStyles)
                     {
                         <a asp-controller="style" asp-action="index" asp-route-libelle="@item.Libelle">@item.Libelle</a>
-                        @if (Model.Styles.Last() != item)
+                        @if (Model.TitresStyles.Last() != item)
                         {
                             <text>-</text>
                         }
