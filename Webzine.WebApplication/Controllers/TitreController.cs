@@ -53,5 +53,11 @@ namespace Webzine.WebApplication.Controllers
             _commentaireRepository.Add(commentaire);
             return Redirect("/titre/" + commentaire.IdTitre);
         }
+
+        [HttpPost]
+        public IActionResult Liker(int idTitre)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

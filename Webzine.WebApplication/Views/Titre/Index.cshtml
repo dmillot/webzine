@@ -13,15 +13,19 @@
                     <i class="fas fa-tags"></i> Styles :
                     @foreach (var item in Model.TitresStyles)
                     {
-                        <a href="#">@item.Libelle</a>
-                        @if (Model.TitresStyles.Last() != item)
+                        <a asp-controller="style" asp-action="index" asp-route-libelle="@item.Libelle">@item.Libelle</a>
+                        @if (Model.Styles.Last() != item)
                         {
                             <text>-</text>
                         }
                     }
                 </p>
-                <button type="button" class="btn btn-outline-primary ml-3"><i class="fas fa-thumbs-up"></i> Like</button>
-                <a class="m-0 ml-4" href="#"><i class="fas fa-edit"></i> Editer</a>
+                <form asp-controller="titre" asp-action="liker" method="post">
+                    <input type="hidden" asp-for="IdTitre" value="@Model.IdTitre" />
+                    <button type="submit" class="btn btn-outline-primary ml-3"><i class="fas fa-thumbs-up"></i> Like</button>
+                </form>
+
+                <a class="m-0 ml-4" asp-area="administration" asp-controller="titre" asp-action="edit" asp-route-id="@Model.IdTitre"><i class="fas fa-edit"></i> Editer</a>
             </div>
             <div class="mt-4">
                 <img class="float-right ml-2 mb-2" height="200"
