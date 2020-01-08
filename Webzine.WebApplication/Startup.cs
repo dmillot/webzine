@@ -67,6 +67,11 @@ namespace Webzine.WebApplication
                     defaults: new { controller = "Home", action = "Index"});
 
                 endpoints.MapControllerRoute(
+                    name: "rechercher",
+                    pattern: "rechercher",
+                    defaults: new { controller = "Research", action = "Index" });
+
+                endpoints.MapControllerRoute(
                     name: "administration-commentaires",
                     pattern: "administration/commentaires",
                     defaults: new { area = "Administration", controller = "Commentaire", action = "Index" });

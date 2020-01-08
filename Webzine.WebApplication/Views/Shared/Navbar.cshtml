@@ -25,8 +25,8 @@
                 <a asp-area="" asp-controller="contact" asp-action="index" class="nav-link" tabindex="-1" aria-disabled="true"><i class="fas fa-envelope"></i> Contact</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Trouver un artiste/titre" aria-label="Search">
+        <form asp-controller="research" asp-action="index" method="post" class="form-inline my-2 my-lg-0">
+            <input class="form-control" type="search" placeholder="Trouver un artiste/titre" aria-label="Search" id="mot" name="mot">
             <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>

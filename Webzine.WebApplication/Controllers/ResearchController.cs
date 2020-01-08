@@ -7,7 +7,7 @@ namespace Webzine.WebApplication.Controllers
 {
     public class ResearchController : Controller
     {
-
+        [HttpPost]
         public IActionResult Index(string mot)
         {
             ResearchViewModel recherche = new ResearchViewModel()
