@@ -27,13 +27,23 @@ namespace Webzine.Repository.Local
         }
 
         /// <summary>
-        /// Permet de trouver un style précis dans notre jeu de données 
+        /// Permet de trouver un style précis grâce à son id dans notre jeu de données 
         /// </summary>
         /// <param name="id"></param>
         /// <returns> Retourne un Style </returns>
         public Style Find(int id)
         {
             return FactoryStyle.Styles.Where(s => s.IdStyle == id).FirstOrDefault();
+        }
+
+        /// <summary>
+        ///  Permet de trouver un style précis grâce à son libelle dans notre jeu de données
+        /// </summary>
+        /// <param name="libelle"></param>
+        /// <returns> Retourne  un Style </returns>
+        public Style Find(string libelle)
+        {
+            return FactoryStyle.Styles.Where(s => s.Libelle == libelle).FirstOrDefault();
         }
 
         /// <summary>

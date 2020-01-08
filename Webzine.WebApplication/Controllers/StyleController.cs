@@ -1,33 +1,28 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Webzine.Entity;
+using Webzine.Repository.Contracts;
 
 namespace Webzine.WebApplication.ViewModels
 {
     public class StyleController : Controller
     {
+        private readonly IStyleRepository _styleRepository;
+        private readonly ITitreRepository _titreRepository;
+
+        public StyleController(IStyleRepository styleRepository, ITitreRepository titreRepository)
+        {
+            _styleRepository = styleRepository;
+            _titreRepository = titreRepository;
+        }
+
         public IActionResult Index(string libelle)
         {
-            
-            StyleViewModel style = new StyleViewModel
+
+            this.ViewData.Model = new StyleViewModel
             {
-                Titres = new List<Titre>()
-                {
-                    new Titre()
-                    {
-                        Libelle = "Tata",
-                        Duree = 200,
-                        UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg"
-                    },
-                    new Titre
-                    {
-                        Libelle = "Fifou",
-                        Duree = 200,
-                        UrlJaquette = "https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/013/066/original/7e7f95.jpeg"
-                    }
-                }
+                Titres = (List<Titre>)_titreRepository.SearchByStyle(libelle)
             };
-            this.ViewData.Model = style;
             return View();
         }
     }

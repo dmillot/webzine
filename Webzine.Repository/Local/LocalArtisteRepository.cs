@@ -35,6 +35,16 @@ namespace Webzine.Repository.Local
         /// </summary>
         /// <returns>Retourne une liste d'Artistes</returns>
         public IEnumerable<Artiste> FindAll() => FactoryArtiste.Artistes;
+
+        /// <summary>
+        ///  Permet de rechercher un artiste dans notre jeu de données
+        /// </summary>
+        /// <param name="mot"></param>
+        /// <returns> Retourne une liste d'Artistes </returns>
+        public IEnumerable<Artiste> Search(string mot)
+        {
+            return FactoryArtiste.Artistes.FindAll(a => a.Nom.Contains(mot));
+        }
        
         /// <summary>
         /// Permet de mettre à jour un artiste dans notre jeu de données

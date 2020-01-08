@@ -7,5 +7,6 @@ namespace Webzine.WebApplication.ViewModels
     {
         public List<Titre> Titres { get; set; }
         public List<Artiste> Artistes { get; set; }
+        public string Recherche { get; set; }
     }
 }

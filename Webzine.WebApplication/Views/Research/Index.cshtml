@@ -1,11 +1,15 @@
 ﻿@using Webzine.WebApplication.ViewModels
 @model ResearchViewModel
 <div class="row m-0 p-0">
-    <h2> Résultats de la recherche pour "azerty" </h2>
+    <h2> Résultats de la recherche pour "@Model.Recherche" </h2>
 </div>
 <div class="row m-0 p-0 mt-3">
     <h2> Artistes </h2>
 </div>
+@if (@Model.Artistes.Count == 0)
+{
+    <p>Aucun artiste.</p>
+}
 @foreach (var objet in Model.Artistes)
 {
     <div class="row m-0 p-0 d-flex align-items-center">
@@ -17,6 +21,10 @@
 <div class="row m-0 p-0 mt-3">
     <h2> Titres </h2>
 </div>
+@if (@Model.Titres.Count == 0)
+{
+    <p>Aucun titre.</p>
+}
 @foreach (var objet in Model.Titres)
 {
     <div class="media mb-3">

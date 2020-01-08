@@ -9,8 +9,9 @@ namespace Webzine.WebApplication.Controllers
 {
     public class TitreController : Controller
     {
-        private ICommentaireRepository _commentaireRepository;
-        ITitreRepository _titreRepository;
+        private readonly ICommentaireRepository _commentaireRepository;
+        private readonly ITitreRepository _titreRepository;
+
         public TitreController(ICommentaireRepository commentaireRepository, ITitreRepository titreRepository)
         {
             _commentaireRepository = commentaireRepository;
@@ -20,7 +21,7 @@ namespace Webzine.WebApplication.Controllers
         /// <summary>
         /// Return the index page to be displayed
         /// </summary>
-        /// 
+        ///
         /// <returns>Return the index page</returns>
         /// 
         public IActionResult Index(int id)
@@ -28,19 +29,21 @@ namespace Webzine.WebApplication.Controllers
             Titre t = _titreRepository.Find(id);
             TitreViewModel titre = new TitreViewModel()
             {
-                Title = t.Libelle,
-                Description = t.Chronique,
-                Author = t.Artiste,
-                Comments = t.Commentaires,
-                Styles = t.TitresStyles,
-                AlbumPicture = t.UrlJaquette,
-                AlbumTitle = "Right On!",
-                VideoLink = t.UrlEcoute,
-                UpdatedAt = DateTime.Now,
-                LikeCounter = t.NbLikes,
+                Libelle = t.Libelle,
+                Chronique = t.Chronique,
+                Artiste = t.Artiste,
+                Commentaires = t.Commentaires,
+                TitresStyles = t.TitresStyles,
+                UrlJaquette = t.UrlJaquette,
+                Album = "Right On!",
+                UrlEcoute = t.UrlEcoute,
+                DateCreation = DateTime.Now,
+                NbLikes = t.NbLikes,
                 IdTitre = id
             };
-            return View(titre);
+            this.ViewData.Model = titre;
+            return View();
+
         }
 
         [HttpPost]
