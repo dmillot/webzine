@@ -52,8 +52,18 @@ namespace Webzine.Repository.Local
         /// <param name="artiste">L'artiste concerné par la modification</param>
         public void Update(Artiste artiste)
         {
-            this.Delete(artiste);
-            this.Add(artiste);
+
+            var rank = 0;
+            foreach (var item in FactoryArtiste.Artistes)
+            {
+                if (item.IdArtiste == artiste.IdArtiste)
+                {
+                    artiste.Titres = item.Titres;
+                    FactoryArtiste.Artistes[rank] = artiste;
+                    break;
+                }
+                rank++;
+            }
         }
     }
 }

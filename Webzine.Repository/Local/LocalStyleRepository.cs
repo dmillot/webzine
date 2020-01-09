@@ -52,7 +52,7 @@ namespace Webzine.Repository.Local
         /// <returns> Retourne une liste de Styles </returns>
         public IEnumerable<Style> FindAll()
         {
-            return FactoryStyle.Styles; 
+            return FactoryStyle.Styles;
         }
 
         /// <summary>
@@ -62,9 +62,9 @@ namespace Webzine.Repository.Local
         public void Update(Style style)
         {
             var pos = 0;
-           foreach(var item in FactoryStyle.Styles)
+            foreach (var item in FactoryStyle.Styles)
             {
-                if(item.IdStyle == style.IdStyle)
+                if (item.IdStyle == style.IdStyle)
                 {
                     style.TitresStyles = item.TitresStyles;
                     FactoryStyle.Styles[pos] = style;
