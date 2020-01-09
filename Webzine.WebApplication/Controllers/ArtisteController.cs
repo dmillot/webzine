@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Webzine.Entity;
 using Webzine.Repository;
+using Webzine.Repository.Contracts;
 using Webzine.WebApplication.ViewModels;
 
 namespace Webzine.WebApplication.Controllers
@@ -10,10 +11,14 @@ namespace Webzine.WebApplication.Controllers
 
     public class ArtisteController : Controller
     {
-       
+        private readonly IArtisteRepository _artisteRepository;
+        public ArtisteController(IArtisteRepository artistRepository)
+        {
+            _artisteRepository = artistRepository;
+        }
         public IActionResult Index(string name)
         {
-            Artiste artist = FactoryArtiste.Artistes[0];
+            Artiste artist = _artisteRepository.Find(1);
             artist.Titres.OrderBy(t => t.Album);
 
             //get all albulms names by distinct names
