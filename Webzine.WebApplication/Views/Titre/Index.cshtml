@@ -4,32 +4,36 @@
 <div class="row m-0 mt-3">
     <div class="col">
         <div class="container-fluid">
-            <h1 class="text-primary">@Model.Author.Nom - @Model.Title, @Model.AlbumTitle</h1>
+            <h1 class="text-primary">@Model.Artiste.Nom - @Model.Libelle, @Model.Album</h1>
 
             <div class="row d-flex align-items-center">
                 <p class="m-0 ml-3"><i class="fas fa-calendar"></i> Le @Model.GetDate à @Model.GetTime</p>
-                <p class="m-0 ml-4"><i class="fas fa-heart"></i> @Model.LikeCounter</p>
+                <p class="m-0 ml-4"><i class="fas fa-heart"></i> @Model.NbLikes</p>
                 <p class="m-0 ml-4">
                     <i class="fas fa-tags"></i> Styles :
-                    @foreach (var item in Model.Styles)
+                    @foreach (var item in Model.TitresStyles)
                     {
-                        <a href="#">@item.Libelle</a>
-                        @if (Model.Styles.Last() != item)
+                        <a asp-controller="style" asp-action="index" asp-route-libelle="@item.Libelle">@item.Libelle</a>
+                        @if (Model.TitresStyles.Last() != item)
                         {
                             <text>-</text>
                         }
                     }
                 </p>
-                <button type="button" class="btn btn-outline-primary ml-3"><i class="fas fa-thumbs-up"></i> Like</button>
-                <a class="m-0 ml-4" href="#"><i class="fas fa-edit"></i> Editer</a>
+                <form asp-controller="titre" asp-action="liker" method="post">
+                    <input type="hidden" asp-for="IdTitre" value="@Model.IdTitre" />
+                    <button type="submit" class="btn btn-outline-primary ml-3"><i class="fas fa-thumbs-up"></i> Like</button>
+                </form>
+
+                <a class="m-0 ml-4" asp-area="administration" asp-controller="titre" asp-action="edit" asp-route-id="@Model.IdTitre"><i class="fas fa-edit"></i> Editer</a>
             </div>
             <div class="mt-4">
                 <img class="float-right ml-2 mb-2" height="200"
-                     src="@Model.AlbumPicture">
-                <p class="text-justify">@Model.Description</p>
+                     src="@Model.UrlJaquette">
+                <p class="text-justify">@Model.Chronique</p>
             </div>
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="@Model.VideoLink"
+                <iframe class="embed-responsive-item" src="@Model.UrlEcoute"
                         allowfullscreen></iframe>
             </div>
 
@@ -56,7 +60,7 @@
             </form>
 
             <h2 class="mt-4">Commentaires</h2>
-            @foreach (var item in Model.Comments)
+            @foreach (var item in Model.Commentaires)
             {
                 <div class="row mb-4">
                     <div class="col-2 text-center overflow-hidden">

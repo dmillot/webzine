@@ -8,6 +8,7 @@ namespace Webzine.Repository.Contracts
         void Add(Style style);
         void Delete(Style style);
         Style Find(int id);
+        Style Find(string libelle);
         IEnumerable<Style> FindAll();
         void Update(Style style);
     }

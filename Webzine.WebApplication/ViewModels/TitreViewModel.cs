@@ -6,29 +6,29 @@ namespace Webzine.WebApplication.ViewModels
 {
     public class TitreViewModel
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public Artiste Author { get; set; }
-        public List<Commentaire> Comments { get; set; }
-        public List<Style> Styles { get; set; }
-        public string AlbumPicture { get; set; }
+        public string Libelle { get; set; }
+        public string Chronique { get; set; }
+        public Artiste Artiste { get; set; }
+        public List<Commentaire> Commentaires { get; set; }
+        public List<Style> TitresStyles { get; set; }
+        public string UrlJaquette { get; set; }
         public int Duree { get; set; }
-        public string AlbumTitle { get; set; }
-        public string VideoLink { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public int LikeCounter { get; set; }
+        public string Album { get; set; }
+        public string UrlEcoute { get; set; }
+        public DateTime DateCreation { get; set; }
+        public int NbLikes { get; set; }
         public string GetDate
         {
             get
             {
-                return UpdatedAt.ToString("dd/MM/yyyy");
+                return DateCreation.ToString("dd/MM/yyyy");
             }
         }
         public string GetTime
         {
             get
             {
-                return UpdatedAt.ToString("hh:mm");
+                return DateCreation.ToString("hh:mm");
             }
         }
 
