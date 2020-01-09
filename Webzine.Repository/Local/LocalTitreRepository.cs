@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Webzine.Entity;
 using Webzine.Repository.Contracts;
@@ -40,7 +41,16 @@ namespace Webzine.Repository.Local
         {
             return FactoryTitre.Titres.Where(t => t.IdTitre == id).FirstOrDefault();
         }
-
+        /// <summary>
+        /// Permet de récuperer une séquence de titre limitée à partir à partir 
+        /// </summary>
+        /// <param name="offset">Nombre d'éléments à ignorer</param>
+        /// <param name="limit">Nombre d'éléments à récupérer</param>
+        /// <returns>Renvoie un nombre de titre définit par la limite</returns>
+        public IEnumerable<Titre> FindTitres(int offset, int limit)
+        {
+            return FactoryTitre.Titres.OrderByDescending(t => t.DateCreation.Date).Skip(offset).Take(limit).ToList();
+        }
         /// <summary>
         /// Retourne les titres présents dans notre jeu de données
         /// </summary>
@@ -66,7 +76,7 @@ namespace Webzine.Repository.Local
         /// <param name="titre"></param>
         public void IncrementNbLikes(Titre titre)
         {
-            int nblikes = FactoryTitre.Titres.Where(t => t == titre).Select(r => r.NbLikes).FirstOrDefault();
+            var nblikes = FactoryTitre.Titres.Where(t => t == titre).Select(r => r.NbLikes).FirstOrDefault();
             nblikes++;
         }
 
@@ -96,8 +106,27 @@ namespace Webzine.Repository.Local
         /// <param name="titre"></param>
         public void Update(Titre titre)
         {
-            this.Delete(titre);
-            this.Add(titre);
+            var rank = 0;
+            foreach (var item in FactoryTitre.Titres)
+            {
+                if (item.IdTitre == titre.IdTitre)
+                {
+                    titre.TitresStyles = item.TitresStyles;
+                    titre.Commentaires = item.Commentaires;
+                    FactoryTitre.Titres[rank] = titre;
+                    break;
+                }
+                rank++;
+            }
+        }
+        /// <summary>
+        /// Permet de récupérer les 3 titres les plus aimés à partir d'une certaine date
+        /// </summary>
+        /// <param name="dateRecherche">La date après laquelle on souhaite récuperer nos titres</param>
+        /// <returns>Retourne une liste de 3 titres classé du plus aimé au moins aimé</returns>
+        public IEnumerable<Titre> GetPopular(DateTime dateRecherche)
+        {
+            return FactoryTitre.Titres.OrderByDescending(t => t.NbLikes).Where(r => r.DateCreation > dateRecherche).Take(3).ToList();
         }
     }
 }

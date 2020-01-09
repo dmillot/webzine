@@ -35,6 +35,16 @@ namespace Webzine.Repository.Local
         /// </summary>
         /// <returns>Retourne une liste d'Artistes</returns>
         public IEnumerable<Artiste> FindAll() => FactoryArtiste.Artistes;
+
+        /// <summary>
+        ///  Permet de rechercher un artiste dans notre jeu de données
+        /// </summary>
+        /// <param name="mot"></param>
+        /// <returns> Retourne une liste d'Artistes </returns>
+        public IEnumerable<Artiste> Search(string mot)
+        {
+            return FactoryArtiste.Artistes.FindAll(a => a.Nom.Contains(mot));
+        }
        
         /// <summary>
         /// Permet de mettre à jour un artiste dans notre jeu de données
@@ -42,8 +52,18 @@ namespace Webzine.Repository.Local
         /// <param name="artiste">L'artiste concerné par la modification</param>
         public void Update(Artiste artiste)
         {
-            this.Delete(artiste);
-            this.Add(artiste);
+
+            var rank = 0;
+            foreach (var item in FactoryArtiste.Artistes)
+            {
+                if (item.IdArtiste == artiste.IdArtiste)
+                {
+                    artiste.Titres = item.Titres;
+                    FactoryArtiste.Artistes[rank] = artiste;
+                    break;
+                }
+                rank++;
+            }
         }
     }
 }

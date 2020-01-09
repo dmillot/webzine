@@ -23,11 +23,11 @@ namespace Webzine.Repository.Local
         /// <param name="style"></param>
         public void Delete(Style style)
         {
-            FactoryStyle.Styles.Remove(style);
+            FactoryStyle.Styles.Remove(Find(style.IdStyle));
         }
 
         /// <summary>
-        /// Permet de trouver un style précis dans notre jeu de données 
+        /// Permet de trouver un style précis grâce à son id dans notre jeu de données 
         /// </summary>
         /// <param name="id"></param>
         /// <returns> Retourne un Style </returns>
@@ -37,12 +37,22 @@ namespace Webzine.Repository.Local
         }
 
         /// <summary>
+        ///  Permet de trouver un style précis grâce à son libelle dans notre jeu de données
+        /// </summary>
+        /// <param name="libelle"></param>
+        /// <returns> Retourne  un Style </returns>
+        public Style Find(string libelle)
+        {
+            return FactoryStyle.Styles.Where(s => s.Libelle == libelle).FirstOrDefault();
+        }
+
+        /// <summary>
         /// Retourne les styles présents dans notre jeu de données
         /// </summary>
         /// <returns> Retourne une liste de Styles </returns>
         public IEnumerable<Style> FindAll()
         {
-            return FactoryStyle.Styles; 
+            return FactoryStyle.Styles;
         }
 
         /// <summary>
@@ -51,8 +61,18 @@ namespace Webzine.Repository.Local
         /// <param name="style"></param>
         public void Update(Style style)
         {
-            this.Delete(style);
-            this.Add(style);
+            var pos = 0;
+            foreach (var item in FactoryStyle.Styles)
+            {
+                if (item.IdStyle == style.IdStyle)
+                {
+                    style.TitresStyles = item.TitresStyles;
+                    FactoryStyle.Styles[pos] = style;
+                    break;
+                }
+                pos++;
+            }
         }
+
     }
 }

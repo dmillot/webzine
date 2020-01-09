@@ -6,8 +6,11 @@
 <div>
     <h2>Confirmer la suppression</h2>
     <p>Etes-vous sûr de vouloir supprimer le style de musique "@Model.Libelle"</p>
-    <form action="#" method="post">
-        <input type="text" name="Id" value="@Model.IdStyle" hidden />
+    <form asp-action="delete" method="post">
+        <input type="text" asp-for="@Model.IdStyle" hidden />
         <button class="btn btn-danger" type="submit">Supprimer</button>
     </form>
+
 </div>
+<br />  
+@Html.ActionLink("Retour à l'administration des styles", "Index")

@@ -5,30 +5,60 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Webzine.WebApplication.Areas.Administration.ViewModels;
 using Webzine.Entity;
+using Webzine.Repository.Contracts;
+using Microsoft.AspNetCore.Http;
 
 namespace Webzine.WebApplication.Areas.Administration.Controllers
 {
     [Area("Administration")]
     public class StyleController : Controller
     {
-        AdminStyleViewModel _adminStyleViewModel = new AdminStyleViewModel();
+        private readonly IStyleRepository _styleRepository;
+        public StyleController(IStyleRepository styleRepository)
+        {
+            _styleRepository = styleRepository;
+        }
+   
         public IActionResult Index()
         {
-            this.ViewData.Model = _adminStyleViewModel;
+            this.ViewData.Model = _styleRepository.FindAll() ;
             return View();
         }
+        
         public IActionResult Edit(int Id)
         {
-            var result = _adminStyleViewModel.Styles.Where(s => s.IdStyle == Id).FirstOrDefault();
-            this.ViewData.Model = result;
+            this.ViewData.Model = _styleRepository.Find(Id);
             return View();
         }
         public IActionResult Delete(int Id)
         {
-            var result = _adminStyleViewModel.Styles.Where(s => s.IdStyle == Id).FirstOrDefault();
-            this.ViewData.Model = result;
+           
+            this.ViewData.Model = _styleRepository.Find(Id);
             return View();
         }
-    
+        public IActionResult Create()
+        {
+            this.ViewData.Model = new Style();
+            return View();
+        }
+        [HttpPost , ActionName("Edit")]
+        public IActionResult EditPost(Style style)
+        {
+            _styleRepository.Update(style);
+            return Redirect("/administration/styles");
+        }
+        [HttpPost , ActionName("Create") ]
+        public IActionResult CreatePost(Style style)
+        {
+            _styleRepository.Add(style);
+            return Redirect("/administration/styles");
+        }
+        [HttpPost , ActionName("Delete")]
+        public IActionResult DeletePost(Style style)
+        {
+            _styleRepository.Delete(style);
+            return Redirect("/administration/styles");
+        }
+
     }
 }
