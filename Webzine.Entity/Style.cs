@@ -14,13 +14,13 @@ namespace Webzine.Entity
     public class Style
     {
         /// <summary>
-        /// Obtient ou définit l'index d'un style.
+        /// Obtient ou définit l'index du style.
         /// </summary>
         [Key]
         public int IdStyle { get; set; }
         
         /// <summary>
-        /// Obtient ou définit le nom d'un style.
+        /// Obtient ou définit le nom du style.
         /// </summary>
         [Display(Name = "Libellé")]
         [MaxLength(50)]

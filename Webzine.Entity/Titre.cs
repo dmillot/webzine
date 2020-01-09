@@ -16,13 +16,13 @@ namespace Webzine.Entity
     public class Titre
     {
         /// <summary>
-        /// Obtient ou définit l'index d'un titre.
+        /// Obtient ou définit l'index du titre.
         /// </summary>
         [Key]
         public int IdTitre { get; set; }
 
         /// <summary>
-        /// Obtient ou définit le nom d'un titre.
+        /// Obtient ou définit le nom du titre.
         /// </summary>
         [Required]
         [MaxLength(200)]
@@ -31,7 +31,7 @@ namespace Webzine.Entity
         public string Libelle { get; set; }
 
         /// <summary>
-        /// Obtient ou définit la description d'un titre.
+        /// Obtient ou définit la description du titre.
         /// </summary>
         [Required]
         [MaxLength(4000)]
@@ -39,13 +39,13 @@ namespace Webzine.Entity
         public string Chronique { get; set; }
 
         /// <summary>
-        /// Obtient ou définit la durée d'un titre.
+        /// Obtient ou définit la durée du titre.
         /// </summary>
         [Display(Name = "Durée en secondes")]
         public int Duree { get; set; }
 
         /// <summary>
-        /// Obtient ou définit le lien URL de la couverture d'album d'un titre.
+        /// Obtient ou définit le lien URL de la couverture d'album du titre.
         /// </summary>
         [Required]
         [Display(Name = "Jaquette de l'album")]
@@ -53,13 +53,13 @@ namespace Webzine.Entity
         public string UrlJaquette { get; set; }
 
         /// <summary>
-        /// Obtient ou définit le nom de l'album d'un titre.
+        /// Obtient ou définit le nom de l'album du titre.
         /// </summary>
         [Required]
         public string Album { get; set; }
 
         /// <summary>
-        /// Obtient ou définit le lien URL d'écoute d'un titre.
+        /// Obtient ou définit le lien URL d'écoute du titre.
         /// </summary>
         [Display(Name = "URL d'écoute")]
         [MaxLength(250)]
@@ -67,52 +67,52 @@ namespace Webzine.Entity
         public string UrlEcoute { get; set; }
 
         /// <summary>
-        /// Obtient ou définit la date de création de la chronique d'un titre.
+        /// Obtient ou définit la date de création de la chronique du titre.
         /// </summary>
         [Required]
         [Display(Name = "Date de création")]
         public DateTime DateCreation { get; set; }
 
         /// <summary>
-        /// Obtient ou définit la date de sortie d'un titre.
+        /// Obtient ou définit la date de sortie du titre.
         /// </summary>
         [Required]
         [Display(Name = "Date de sortie")]
         public DateTime DateSortie { get; set; }
 
         /// <summary>
-        /// Obtient ou définit le nombre de lectures d'un titre.
+        /// Obtient ou définit le nombre de lectures du titre.
         /// </summary>
         [Required]
         [Display(Name = "Nombre de lectures")]
         public int NbLectures { get; set; }
 
         /// <summary>
-        /// Obtient ou définit le nombre de likes d'un titre.
+        /// Obtient ou définit le nombre de likes du titre.
         /// </summary>
         [Required]
         [Display(Name = "Nombre de likes")]
         public int NbLikes { get; set; }
 
         /// <summary>
-        /// Obtient ou définit l'index de l'artiste d'un titre.
+        /// Obtient ou définit l'index de l'artiste du titre.
         /// </summary>
         [ForeignKey(nameof(Titre.Artiste))]
         [Column("id_artiste")]
         public int IdArtiste { get; set; }
 
         /// <summary>
-        /// Obtient ou définit l'artiste d'un titre.
+        /// Obtient ou définit l'artiste du titre.
         /// </summary>
         public Artiste Artiste { get; set; }
 
         /// <summary>
-        /// Obtient ou définit la liste des commentaires d'un titre.
+        /// Obtient ou définit la liste des commentaires du titre.
         /// </summary>
         public List<Commentaire> Commentaires { get; set; }
 
         /// <summary>
-        /// Obtient ou définit la liste des styles d'un titre.
+        /// Obtient ou définit la liste des styles du titre.
         /// </summary>
         public List<Style> TitresStyles { get; set; }
 

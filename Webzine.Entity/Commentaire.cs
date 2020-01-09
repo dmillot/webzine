@@ -15,13 +15,13 @@ namespace Webzine.Entity
     public class Commentaire
     {
         /// <summary>
-        /// Obtient ou définit l'index d'un commentaire.
+        /// Obtient ou définit l'index du commentaire.
         /// </summary>
         [Key]
         public int IdCommentaire { get; set; }
 
         /// <summary>
-        /// Obtient ou définit l'auteur d'un commentaire.
+        /// Obtient ou définit l'auteur du commentaire.
         /// </summary>
         [Display(Name = "Nom")]
         [MinLength(2)]
@@ -30,7 +30,7 @@ namespace Webzine.Entity
         public string Auteur { get; set; }
 
         /// <summary>
-        /// Obtient ou définit le contenu d'un commentaire.
+        /// Obtient ou définit le contenu du commentaire.
         /// </summary>
         [Required]
         [MinLength(10)]
@@ -39,7 +39,7 @@ namespace Webzine.Entity
         public string Contenu { get; set; }
 
         /// <summary>
-        /// Obtient ou définit la date de publication d'un commentaire.
+        /// Obtient ou définit la date de publication du commentaire.
         /// </summary>
         [Required]
         [Display(Name = "Date de création")]
