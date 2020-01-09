@@ -35,7 +35,7 @@ namespace Webzine.Repository.Contracts
         /// <summary>
         /// Méthode pour rechercher un titre par son index.
         /// </summary>
-        /// <param name="id">L'index a chercher.</param>
+        /// <param name="id">L'index à chercher.</param>
         /// <returns>Le titre ayant l'index envoyé.</returns>
         Titre Find(int id);
 
