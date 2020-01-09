@@ -42,10 +42,19 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             return View();
         }
 
+        [HttpGet]   
         public IActionResult Delete(int id)
         {
-            TitleViewModel model = new TitleViewModel();
-            return View(model);
+            Titre titre = _titreRepository.Find(id);
+            return View(titre);
+        }
+
+        [HttpPost]
+        [Route("administration/titre/delete/{IdTitre}")]
+        public IActionResult DeleteTitre(int IdTitre)
+        {
+            throw new NotImplementedException();
+            //return Redirect("administration/titre");
         }
     }
 }

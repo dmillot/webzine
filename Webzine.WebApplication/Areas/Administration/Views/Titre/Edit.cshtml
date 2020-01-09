@@ -9,7 +9,7 @@
     <h1>Editer un titre</h1>
     <hr class="style1">
 
-    <form method="post">
+    <form method="post" asp-area="administration" asp-controller="titre" asp-action="edit">
         <div class="form-group row">
             <label for="Author" class="col-2 col-form-label">Nom de l'artiste</label>
             <select class="form-control col-10">
@@ -84,6 +84,6 @@
 
     <br />
 
-    <a href="#">Retour a l'administration des titres</a>
+    <a asp-area="administration" asp-controller="titre" asp-action="index">Retour a l'administration des titres</a>
 
 </div>
