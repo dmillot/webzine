@@ -11,7 +11,7 @@ namespace Webzine.Entity
     using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
-    /// Title représente un titre musical appartenant à un artiste
+    /// Classe représentant un titre musical appartenant à un artiste.
     /// </summary>
     public class Titre
     {
