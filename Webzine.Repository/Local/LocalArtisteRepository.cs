@@ -43,7 +43,7 @@ namespace Webzine.Repository.Local
         /// <returns> Retourne une liste d'Artistes </returns>
         public IEnumerable<Artiste> Search(string mot)
         {
-            return FactoryArtiste.Artistes.FindAll(a => a.Nom.Contains(mot));
+            return FactoryArtiste.Artistes.FindAll(a => a.Nom.Contains(mot, System.StringComparison.OrdinalIgnoreCase));
         }
        
         /// <summary>
