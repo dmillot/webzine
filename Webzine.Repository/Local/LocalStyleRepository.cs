@@ -14,6 +14,7 @@ namespace Webzine.Repository.Local
         /// <param name="style"></param>
         public void Add(Style style)
         {
+            style.IdStyle = FactoryStyle.Styles.Count()+1;
             FactoryStyle.Styles.Add(style);
         }
 
