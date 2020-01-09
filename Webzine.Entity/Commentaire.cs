@@ -1,21 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Commentaire.cs" company="WebZinc">
+//     Copyright (c) WebZinc. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Webzine.Entity
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     /// <summary>
-    /// Une réaction à une chronique sur un titre
+    /// Classe représentant une réaction (commentaire) à une chronique d'un titre.
     /// </summary>
     public class Commentaire
     {
+        /// <summary>
+        /// Obtient ou définit l'index du commentaire.
+        /// </summary>
         [Key]
         public int IdCommentaire { get; set; }
+
         /// <summary>
-        /// Nom de l'individu ayant rédigé le commentaire
-        /// Exemple : Kim Dole
+        /// Obtient ou définit l'auteur du commentaire.
         /// </summary>
         [Display(Name = "Nom")]
         [MinLength(2)]
@@ -24,7 +30,7 @@ namespace Webzine.Entity
         public string Auteur { get; set; }
 
         /// <summary>
-        /// Contenu du commentaire
+        /// Obtient ou définit le contenu du commentaire.
         /// </summary>
         [Required]
         [MinLength(10)]
@@ -33,22 +39,21 @@ namespace Webzine.Entity
         public string Contenu { get; set; }
 
         /// <summary>
-        /// Date à de création du commentaire
+        /// Obtient ou définit la date de publication du commentaire.
         /// </summary>
         [Required]
         [Display(Name = "Date de création")]
         public DateTime DateCreation { get; set; }
 
         /// <summary>
-        /// Identifiant du titre musical auquel le commentaire est destiné
+        /// Obtient ou définit l'index du titre musical auquel le commentaire est rattaché.
         /// </summary>
         [ForeignKey(nameof(Commentaire.Titre))]
         public int IdTitre { get; set; }
 
         /// <summary>
-        /// Obtien ou définit le titre concerné par le commentaire
+        /// Obtient ou définit le titre rattaché au commentaire.
         /// </summary>
         public Titre Titre { get; set; }
-     
     }
 }
