@@ -106,8 +106,18 @@ namespace Webzine.Repository.Local
         /// <param name="titre"></param>
         public void Update(Titre titre)
         {
-            this.Delete(titre);
-            this.Add(titre);
+            var rank = 0;
+            foreach (var item in FactoryTitre.Titres)
+            {
+                if (item.IdTitre == titre.IdTitre)
+                {
+                    titre.TitresStyles = item.TitresStyles;
+                    titre.Commentaires = item.Commentaires;
+                    FactoryTitre.Titres[rank] = titre;
+                    break;
+                }
+                rank++;
+            }
         }
         /// <summary>
         /// Permet de récupérer les 3 titres les plus aimés à partir d'une certaine date
