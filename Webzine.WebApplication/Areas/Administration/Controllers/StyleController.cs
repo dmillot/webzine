@@ -45,15 +45,19 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         public IActionResult EditPost(Style style)
         {
             _styleRepository.Update(style);
-            this.ViewData.Model = _styleRepository.FindAll();
-            return View("Index");
+            return Redirect("/administration/styles");
         }
         [HttpPost , ActionName("Create") ]
         public IActionResult CreatePost(Style style)
         {
             _styleRepository.Add(style);
-            this.ViewData.Model = _styleRepository.FindAll();
-            return View("Index");
+            return Redirect("/administration/styles");
+        }
+        [HttpPost , ActionName("Delete")]
+        public IActionResult DeletePost(Style style)
+        {
+            _styleRepository.Delete(style);
+            return Redirect("/administration/styles");
         }
 
     }
