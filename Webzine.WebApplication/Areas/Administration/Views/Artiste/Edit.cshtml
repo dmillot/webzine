@@ -6,10 +6,11 @@
 <div class="container-fluid">
     <h1 class="mt-2">Édition d'un artiste</h1>
 
-    <form>
+    <form asp-action="Edit" method="post">
         <div class="form-group row">
             <label for="artistName" class="col-sm-2 col-form-label">Nom de l'artiste</label>
             <div class="col-sm-10">
+                <input asp-for="@Model.IdArtiste" hidden/>
                 <input type="text" class="form-control" id="artistName" asp-for="@Model.Nom">
             </div>
         </div>

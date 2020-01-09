@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Webzine.WebApplication.Areas.Administration.ViewModels
+@model Artiste
+
+@{
     ViewData["Admin"] = true;
 }
 
@@ -7,10 +10,11 @@
 
     <hr />
 
-    <p>Etes-vous sûr de vouloir supprimer l'artiste "Queen" ?</p>
-
-    <button type="button" class="btn btn-danger">Supprimer</button>
-
+    <p>Etes-vous sûr de vouloir supprimer l'artiste "@Model.Nom" ?</p>
+    <form asp-action="Delete" method="post">
+        <input asp-for="@Model.IdArtiste" hidden />
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+    </form>
     <div class="row m-0 p-0 mt-5">
         <a href="@Url.Action("Index", "AdminArtist")">Retour à l'administration des artistes</a>
     </div>

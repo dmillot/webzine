@@ -78,12 +78,11 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         /// <returns> En cas de réussite retourne sur la page index artiste, en cas d'échecs retourne sur la page edit artiste </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Artiste artiste)
         {
             try
             {
-                // TODO: Add update logic here
-
+                _artisteRepository.Update(artiste);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -99,6 +98,7 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         /// <returns> Retourne la vue delete artiste </returns>
         public ActionResult Delete(int id)
         {
+            this.ViewData.Model = _artisteRepository.Find(id);
             return View();
         }
 
@@ -110,12 +110,11 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         /// <returns> En cas de réussite retourne sur la page index artiste, en cas d'échecs retourne sur la page delete artiste</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(Artiste artiste)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                _artisteRepository.Delete(artiste);
                 return RedirectToAction(nameof(Index));
             }
             catch
