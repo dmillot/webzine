@@ -36,10 +36,22 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             this.ViewData.Model = _styleRepository.Find(Id);
             return View();
         }
+        public IActionResult Create()
+        {
+            this.ViewData.Model = new Style();
+            return View();
+        }
         [HttpPost , ActionName("Edit")]
         public IActionResult EditPost(Style style)
         {
             _styleRepository.Update(style);
+            this.ViewData.Model = _styleRepository.FindAll();
+            return View("Index");
+        }
+        [HttpPost , ActionName("Create") ]
+        public IActionResult CreatePost(Style style)
+        {
+            _styleRepository.Add(style);
             this.ViewData.Model = _styleRepository.FindAll();
             return View("Index");
         }
