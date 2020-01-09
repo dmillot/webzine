@@ -15,10 +15,10 @@ namespace Webzine.WebApplication
         {
             services.AddControllersWithViews();
 
-            services.AddScoped<IStyleRepository , LocalStyleRepository>();
+            services.AddScoped<IStyleRepository, LocalStyleRepository>();
             services.AddScoped<ITitreRepository , LocalTitreRepository>();
             services.AddScoped<IArtisteRepository , LocalArtisteRepository>();
-            services.AddScoped<ICommentaireRepository, LocalCommentaireRepository>();
+            services.AddScoped<ICommentaireRepository , LocalCommentaireRepository>();
 
             
         }
@@ -92,7 +92,7 @@ namespace Webzine.WebApplication
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=home}/{action=index}/{id?}");
+                    pattern: "{controller=home}/{action=index}/{id=0}");
 
             });
         }
