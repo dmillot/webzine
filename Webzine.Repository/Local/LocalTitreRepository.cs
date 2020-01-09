@@ -109,6 +109,11 @@ namespace Webzine.Repository.Local
             this.Delete(titre);
             this.Add(titre);
         }
+        /// <summary>
+        /// Permet de récupérer les 3 titres les plus aimés à partir d'une certaine date
+        /// </summary>
+        /// <param name="dateRecherche">La date après laquelle on souhaite récuperer nos titres</param>
+        /// <returns>Retourne une liste de 3 titres classé du plus aimé au moins aimé</returns>
         public IEnumerable<Titre> GetPopular(DateTime dateRecherche)
         {
             return FactoryTitre.Titres.OrderByDescending(t => t.NbLikes).Where(r => r.DateCreation > dateRecherche).Take(3).ToList();

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Webzine.Entity;
+using Webzine.Repository.Contracts;
 using Webzine.WebApplication.Areas.Administration.ViewModels;
 
 namespace Webzine.WebApplication.Areas.Administration.Controllers
@@ -12,42 +13,44 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
     [Area("Administration")]
     public class ArtisteController : Controller
     {
-        // GET: Artist
-        public ActionResult Index()
+        private readonly IArtisteRepository _artisteRepository;
+
+        public ArtisteController(IArtisteRepository artisteRepository)
         {
-            AdminArtistViewModel artists = new AdminArtistViewModel()
-            {
-                Artists = new List<Artiste>(){
-                    new Artiste(){ IdArtiste = 1, Nom = "Queen" },
-                    new Artiste(){ IdArtiste = 2, Nom = "Stromae" },
-                    new Artiste(){ IdArtiste = 3, Nom = "Damso" },
-                }
-            };
-            this.ViewData.Model = artists;
-            return View(artists);
+            _artisteRepository = artisteRepository;
         }
 
-        // GET: Artist/Details/5
-        public ActionResult Details(int id)
+        /// <summary>
+        ///  Permet de récupérer tout les artistes dans notre jeu de données
+        /// </summary>
+        /// <returns> Retourne ula vue index </returns>
+        public ActionResult Index()
         {
+           this.ViewData.Model = _artisteRepository.FindAll();
             return View();
         }
 
-        // GET: Artist/Create
+        /// <summary>
+        ///  Permet d'afficher la view Create
+        /// </summary>
+        /// <returns> Retourne la vue create </returns>
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Artist/Create
+        /// <summary>
+        ///  Permet de créer un nouvel artiste
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <returns> En cas de réussite retourne sur la page index artiste, en cas d'échecs retourne sur la page create artiste </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Artiste artiste)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                _artisteRepository.Add(artiste);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -56,23 +59,23 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             }
         }
 
-        // GET: Artist/Edit/5
+        /// <summary>
+        ///  Permet d'afficher la page edit d'un artiste grâce à son id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Retourne la vue edit </returns>
         public ActionResult Edit(int id)
         {
-            AdminArtistViewModel artist = new AdminArtistViewModel()
-            {
-                Id = id,
-                Name = "Queen",
-                Biography = @"Vangelis (Βαγγέλης, diminutif d’Evángelos, à prononcer Vanguélis), Evángelos Odysséas Papathanassíou (en grec : Ευάγγελος Οδυσσέας Παπαθανασίου), né le 29 mars 1943 à Vólos en Grèce1, est un musicien et compositeur, connu dans les domaines de la musique new age et électronique, et auteur de musiques de films.
-                Ses compositions les plus connues sont la musique du film Les Chariots de feu(qui a reçu l'oscar de la meilleure musique en 1981), la bande originale du film Antarctica, ainsi que la totalité de la bande originale du film Blade Runner et de 1492 : Christophe Colomb.
-                Il a également composé l'hymne de la Coupe du monde de football de 20022.
-                Au même titre que le Français Jean - Michel Jarre, que les Belges de Telex et que les Allemands Klaus Schulze, Kraftwerk et Tangerine Dream, Vangelis est reconnu pour avoir été l'un des pionniers de la musique électronique au cours des années 1970. ",
-            };
-
-            return View(artist);
+            this.ViewData.Model = _artisteRepository.Find(id);
+            return View();
         }
 
-        // POST: Artist/Edit/5
+        /// <summary>
+        ///  Permet d'afficher la vue edit d'un artiste en fonction de son id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="collection"></param>
+        /// <returns> En cas de réussite retourne sur la page index artiste, en cas d'échecs retourne sur la page edit artiste </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -89,13 +92,22 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             }
         }
 
-        // GET: Artist/Delete/5
+        /// <summary>
+        ///  Permet d'afficher la vue delete artiste grâce à son id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Retourne la vue delete artiste </returns>
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Artist/Delete/5
+        /// <summary>
+        /// Permet de supprimer un artiste selon son id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="collection"></param>
+        /// <returns> En cas de réussite retourne sur la page index artiste, en cas d'échecs retourne sur la page delete artiste</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
