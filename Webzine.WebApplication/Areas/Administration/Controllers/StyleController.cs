@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Webzine.WebApplication.Areas.Administration.ViewModels;
 using Webzine.Entity;
 using Webzine.Repository.Contracts;
+using Microsoft.AspNetCore.Http;
 
 namespace Webzine.WebApplication.Areas.Administration.Controllers
 {
@@ -36,8 +37,9 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             return View();
         }
         [HttpPost , ActionName("Edit")]
-        public IActionResult EditPost()
+        public IActionResult EditPost(Style style)
         {
+            _styleRepository.Update(style);
             this.ViewData.Model = _styleRepository.FindAll();
             return View("Index");
         }

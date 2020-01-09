@@ -12,7 +12,7 @@
                 Libellé :
             </div>
             <div class="col-2">
-                 <object id="style" hidden>@Model</object>
+                 <input asp-for="@Model.IdStyle" hidden/>
                  <input asp-for="@Model.Libelle" class="form-control" placeholder="@Model.Libelle" />
             </div>
             <div class="col-1"><button class="btn btn-primary">Sauvegarder</button></div>

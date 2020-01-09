@@ -23,7 +23,7 @@ namespace Webzine.Repository.Local
         /// <param name="style"></param>
         public void Delete(Style style)
         {
-            FactoryStyle.Styles.Remove(style);
+            FactoryStyle.Styles.Remove(Find(style.IdStyle));
         }
 
         /// <summary>
@@ -61,8 +61,16 @@ namespace Webzine.Repository.Local
         /// <param name="style"></param>
         public void Update(Style style)
         {
-            this.Delete(style);
-            this.Add(style);
+            var pos = 0;
+           foreach(var item in FactoryStyle.Styles)
+            {
+                if(item.IdStyle == style.IdStyle)
+                {
+                    FactoryStyle.Styles[pos] = style;
+                    break;
+                }
+                pos++;
+            }
         }
     }
 }
