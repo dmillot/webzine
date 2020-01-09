@@ -1,65 +1,72 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Webzine.Entity;
-using Webzine.Repository.Contracts;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="LocalStyleRepository.cs" company="WebZinc">
+//     Copyright (c) WebZinc. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Webzine.Repository.Local
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Webzine.Entity;
+    using Webzine.Repository.Contracts;
+
+    /// <summary>
+    /// TO DO.
+    /// </summary>
     public class LocalStyleRepository : IStyleRepository
     {
-
         /// <summary>
-        /// Permet d'ajouter un style dans notre jeu données
+        /// Méthode pour ajouter un nouveau style.
         /// </summary>
-        /// <param name="style"></param>
+        /// <param name="style">Le style à ajouter.</param>
         public void Add(Style style)
         {
-            style.IdStyle = FactoryStyle.Styles.Count()+1;
+            style.IdStyle = FactoryStyle.Styles.Count() + 1;
             FactoryStyle.Styles.Add(style);
         }
 
         /// <summary>
-        /// Permet de supprimer un style dans notre jeu de données
+        /// Méthode pour supprimer un style.
         /// </summary>
-        /// <param name="style"></param>
+        /// <param name="style">Le style à supprimer.</param>
         public void Delete(Style style)
         {
-            FactoryStyle.Styles.Remove(Find(style.IdStyle));
+            FactoryStyle.Styles.Remove(this.Find(style.IdStyle));
         }
 
         /// <summary>
-        /// Permet de trouver un style précis grâce à son id dans notre jeu de données 
+        /// Méthode pour rechercher un style par son index.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns> Retourne un Style </returns>
+        /// <param name="id">L'index à chercher.</param>
+        /// <returns>Le style ayant l'index envoyé.</returns>
         public Style Find(int id)
         {
             return FactoryStyle.Styles.Where(s => s.IdStyle == id).FirstOrDefault();
         }
 
         /// <summary>
-        ///  Permet de trouver un style précis grâce à son libelle dans notre jeu de données
+        /// Méthode pour rechercher un style par son nom.
         /// </summary>
-        /// <param name="libelle"></param>
-        /// <returns> Retourne  un Style </returns>
+        /// <param name="libelle">Le nom à chercher.</param>
+        /// <returns>Le style ayant le nom envoyé.</returns>
         public Style Find(string libelle)
         {
             return FactoryStyle.Styles.Where(s => s.Libelle == libelle).FirstOrDefault();
         }
 
         /// <summary>
-        /// Retourne les styles présents dans notre jeu de données
+        /// Méthode pour récupérer tous les styles.
         /// </summary>
-        /// <returns> Retourne une liste de Styles </returns>
+        /// <returns>La liste de tous les styles.</returns>
         public IEnumerable<Style> FindAll()
         {
             return FactoryStyle.Styles;
         }
 
         /// <summary>
-        /// Permet de mettre à jour un style dans notre jeu de données
+        /// Méthode pour modifier un style.
         /// </summary>
-        /// <param name="style"></param>
+        /// <param name="style">Le style à modifier.</param>
         public void Update(Style style)
         {
             var pos = 0;
@@ -71,9 +78,9 @@ namespace Webzine.Repository.Local
                     FactoryStyle.Styles[pos] = style;
                     break;
                 }
+
                 pos++;
             }
         }
-
     }
 }
