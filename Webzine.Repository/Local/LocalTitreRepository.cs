@@ -87,7 +87,7 @@ namespace Webzine.Repository.Local
         /// <returns> Retourne une liste de Titres </returns>
         public IEnumerable<Titre> Search(string mot)
         {
-            return FactoryTitre.Titres.FindAll(t => t.Libelle.Contains(mot));
+            return FactoryTitre.Titres.FindAll(t => t.Libelle.Contains(mot, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
