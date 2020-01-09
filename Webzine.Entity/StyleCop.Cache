@@ -1,33 +1,14 @@
 <stylecopresultscache>
   <version>12</version>
-  <sourcecode name="Titre.cs" parser="StyleCop.CSharp.CsParser">
+  <project key="593111883">
+    <configuration>
+    </configuration>
+  </project>
+  <sourcecode name="Artiste.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/01/09 09:37:34.849</styleCop>
       <settingsFile>2020/01/09 10:52:14.154</settingsFile>
-      <sourceFile>2020/01/09 11:18:15.587</sourceFile>
-      <parser>2020/01/09 09:37:34.849</parser>
-      <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2020/01/09 09:37:34.849</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Style.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2020/01/09 09:37:34.849</styleCop>
-      <settingsFile>2020/01/09 10:52:14.154</settingsFile>
-      <sourceFile>2020/01/09 11:21:56.284</sourceFile>
+      <sourceFile>2020/01/09 11:27:23.340</sourceFile>
       <parser>2020/01/09 09:37:34.849</parser>
       <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -50,7 +31,7 @@
     <timestamps>
       <styleCop>2020/01/09 09:37:34.849</styleCop>
       <settingsFile>2020/01/09 10:52:14.154</settingsFile>
-      <sourceFile>2020/01/09 11:25:14.760</sourceFile>
+      <sourceFile>2020/01/09 11:27:52.186</sourceFile>
       <parser>2020/01/09 09:37:34.849</parser>
       <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -69,15 +50,34 @@
     </timestamps>
     <violations />
   </sourcecode>
-  <project key="593111883">
-    <configuration>
-    </configuration>
-  </project>
-  <sourcecode name="Artiste.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="Style.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/01/09 09:37:34.849</styleCop>
       <settingsFile>2020/01/09 10:52:14.154</settingsFile>
-      <sourceFile>2020/01/09 11:27:23.340</sourceFile>
+      <sourceFile>2020/01/09 11:28:05.474</sourceFile>
+      <parser>2020/01/09 09:37:34.849</parser>
+      <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2020/01/09 09:37:34.849</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Titre.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2020/01/09 09:37:34.849</styleCop>
+      <settingsFile>2020/01/09 10:52:14.154</settingsFile>
+      <sourceFile>2020/01/09 11:29:26.425</sourceFile>
       <parser>2020/01/09 09:37:34.849</parser>
       <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
