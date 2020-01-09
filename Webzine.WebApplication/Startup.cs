@@ -1,3 +1,8 @@
+//-----------------------------------------------------------------------
+// <copyright file="Startup.cs" company="WebZinc">
+//     Copyright (c) WebZinc. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Webzine.WebApplication
 {
     using Microsoft.AspNetCore.Builder;
@@ -7,23 +12,31 @@ namespace Webzine.WebApplication
     using Webzine.Repository.Contracts;
     using Webzine.Repository.Local;
 
+    /// <summary>
+    /// The Startup class configures services and the app's request pipeline.
+    /// </summary>
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// For more information on how to configure your application, visit <see href="https://go.microsoft.com/fwlink/?LinkID=398940"/>
+        /// </summary>
+        /// <param name="services">Specifies the contract for a collection of service descriptors.</param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
 
             services.AddScoped<IStyleRepository, LocalStyleRepository>();
-            services.AddScoped<ITitreRepository , LocalTitreRepository>();
-            services.AddScoped<IArtisteRepository , LocalArtisteRepository>();
-            services.AddScoped<ICommentaireRepository , LocalCommentaireRepository>();
-
-            
+            services.AddScoped<ITitreRepository, LocalTitreRepository>();
+            services.AddScoped<IArtisteRepository, LocalArtisteRepository>();
+            services.AddScoped<ICommentaireRepository, LocalCommentaireRepository>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app">Provides the mechanisms to configure an application's request pipeline.</param>
+        /// <param name="env">Provides information about the web hosting environment an application is running in.</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {   
             if (env.IsDevelopment())
@@ -31,16 +44,13 @@ namespace Webzine.WebApplication
                 app.UseDeveloperExceptionPage();
             }
 
-            // permet d'accéder au données contenu dans le fichier "wwwroot"
+            // Enables static file serving for the current request path
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            
-
             app.UseEndpoints(endpoints =>
             {
-
                 endpoints.MapControllerRoute(
                     name: "titre-style",
                     pattern: "titres/style/{libelle}",
@@ -64,7 +74,7 @@ namespace Webzine.WebApplication
                 endpoints.MapControllerRoute(
                     name: "home",
                     pattern: "page/{id}",
-                    defaults: new { controller = "Home", action = "Index"});
+                    defaults: new { controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute(
                     name: "rechercher",
@@ -103,7 +113,6 @@ namespace Webzine.WebApplication
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=home}/{action=index}/{id=0}");
-
             });
         }
     }
