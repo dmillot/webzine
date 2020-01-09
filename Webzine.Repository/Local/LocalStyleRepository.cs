@@ -66,6 +66,7 @@ namespace Webzine.Repository.Local
             {
                 if(item.IdStyle == style.IdStyle)
                 {
+                    style.TitresStyles = item.TitresStyles;
                     FactoryStyle.Styles[pos] = style;
                     break;
                 }
