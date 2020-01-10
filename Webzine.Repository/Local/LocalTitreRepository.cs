@@ -61,7 +61,7 @@ namespace Webzine.Repository.Local
         public IEnumerable<Titre> FindTitres(int offset, int limit)
         {
             
-            return FactoryTitre.Titres.OrderByDescending(t => t.DateCreation.Date).Skip(offset).Take(limit).ToList();
+            return MakeLink( FactoryTitre.Titres.OrderByDescending(t => t.DateCreation.Date).Skip(offset).Take(limit)).ToList();
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Webzine.Repository.Local
         /// <returns>La liste de tous les titres.</returns>
         public IEnumerable<Titre> FindAll()
         {
-            return FactoryTitre.Titres;
+            return MakeLink( FactoryTitre.Titres);
         }
 
         /// <summary>
@@ -171,6 +171,18 @@ namespace Webzine.Repository.Local
         public IEnumerable<Titre> GetPopular(DateTime dateRecherche)
         {
             return FactoryTitre.Titres.OrderByDescending(t => t.NbLikes).Where(r => r.DateCreation > dateRecherche).Take(3).ToList();
+        }
+
+        private IEnumerable<Titre> MakeLink(IEnumerable<Titre> titres)
+        {
+            foreach (var titre in titres)
+            {
+                titre.Artiste = FactoryArtiste.Artistes.Single(a => a.IdArtiste == titre.IdArtiste);
+                titre.TitresStyles = FactoryTitreStyle.TitreStyles.Where(t => t.IdTitre == titre.IdTitre).ToList();
+                titre.TitresStyles.ForEach(n => { n.Style = FactoryStyle.Styles.Single(s => s.IdStyle == n.IdStyle); });
+                titre.Commentaires = FactoryCommentaire.Commentaires.Where(c => c.IdTitre == titre.IdTitre).ToList();
+            }
+            return titres;
         }
     }
 }
