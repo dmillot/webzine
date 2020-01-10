@@ -7,6 +7,7 @@ namespace Webzine.Entity
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
     /// Classe représentant un artiste ( musicien / chanteur ).
@@ -35,6 +36,7 @@ namespace Webzine.Entity
         /// <summary>
         /// Obtient ou définit la liste des titres de l'artiste.
         /// </summary>
+        [NotMapped]
         public List<Titre> Titres { get; set; }
     }
 }

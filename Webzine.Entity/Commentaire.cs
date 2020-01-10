@@ -54,6 +54,7 @@ namespace Webzine.Entity
         /// <summary>
         /// Obtient ou définit le titre rattaché au commentaire.
         /// </summary>
+        [NotMapped]
         public Titre Titre { get; set; }
     }
 }

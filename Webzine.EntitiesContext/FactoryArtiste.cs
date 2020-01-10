@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Webzine.Entity;
 
-namespace Webzine.Repository
+namespace Webzine.EntitiesContext
 {
     public static class FactoryArtiste
     {

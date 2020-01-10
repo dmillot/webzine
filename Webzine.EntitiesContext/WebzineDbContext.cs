@@ -11,6 +11,7 @@ namespace Webzine.EntitiesContext
        public DbSet<Titre> Titres { get; set; }
        public DbSet<Commentaire> Commentaires { get; set; }
        public DbSet<Style> Styles { get; set; }
+        public DbSet<TitreStyle> TitresStyles { get; set; }
 
         public WebzineDbContext(DbContextOptions<WebzineDbContext> options)
             : base(options)

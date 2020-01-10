@@ -42,6 +42,8 @@ namespace Webzine.WebApplication
                     var context = services.GetRequiredService<WebzineDbContext>();
                     context.Database.EnsureDeleted();
                     context.Database.EnsureCreated();
+                    //SpotifyDataSeeder.Initialize(context);
+                    LocalDataSeeder.Initialize(context);
 
                 }
                 catch (Exception ex)
