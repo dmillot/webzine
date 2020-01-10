@@ -11,6 +11,7 @@ namespace Webzine.EntitiesContext
        DbSet<Commentaire> Commentaires { get; set; }
        DbSet<Style> Styles { get; set; }
 
+        
 
     }
 }
