@@ -6,10 +6,12 @@
 namespace Webzine.WebApplication
 {
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
     using System;
+    using System.IO;
     using Webzine.EntitiesContext;
     using Webzine.Entity;
 
@@ -42,8 +44,19 @@ namespace Webzine.WebApplication
                     var context = services.GetRequiredService<WebzineDbContext>();
                     context.Database.EnsureDeleted();
                     context.Database.EnsureCreated();
-                    //SpotifyDataSeeder.Initialize(context);
-                    LocalDataSeeder.Initialize(context);
+
+                    IConfiguration config = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+                    if(config["Seeder"] == "Spotify")
+                    {
+                        SpotifyDataSeeder.Initialize(context);
+                    }
+                    else
+                    {
+                        LocalDataSeeder.Initialize(context);
+                    }
 
                 }
                 catch (Exception ex)

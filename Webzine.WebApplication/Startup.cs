@@ -8,8 +8,10 @@ namespace Webzine.WebApplication
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using System.IO;
     using Webzine.EntitiesContext;
     using Webzine.Repository.Contracts;
     using Webzine.Repository.Db;
@@ -29,12 +31,32 @@ namespace Webzine.WebApplication
         {
             services.AddControllersWithViews();
 
-            services.AddScoped<IStyleRepository, DbStyleRepository>();
-            services.AddScoped<ITitreRepository, DbTitreRepository>();
-            services.AddScoped<IArtisteRepository, DbArtisteRepository>();
-            services.AddScoped<ICommentaireRepository, DbCommentaireRepository>();
-            services.AddDbContext<WebzineDbContext>(options =>
-            options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=WebzineDbContext;Trusted_Connection=True;MultipleActiveResultSets=true")); // Connect to database
+            IConfiguration config =  new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+
+            var repository = config["Repository"];
+
+            if(repository == "Local")
+            {
+                services.AddScoped<IStyleRepository, LocalStyleRepository>();
+                services.AddScoped<ITitreRepository, LocalTitreRepository>();
+                services.AddScoped<IArtisteRepository, LocalArtisteRepository>();
+                services.AddScoped<ICommentaireRepository, LocalCommentaireRepository>();
+            }
+            else
+            {
+                services.AddScoped<IStyleRepository, DbStyleRepository>();
+                services.AddScoped<ITitreRepository, DbTitreRepository>();
+                services.AddScoped<IArtisteRepository, DbArtisteRepository>();
+                services.AddScoped<ICommentaireRepository, DbCommentaireRepository>();
+                services.AddDbContext<WebzineDbContext>(options =>
+                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=WebzineDbContext;Trusted_Connection=True;MultipleActiveResultSets=true")); // Connect to database
+            }
+
+           
+
         }
 
         /// <summary>
