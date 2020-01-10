@@ -4,45 +4,71 @@
 <div class="row m-0 mt-3">
     <div class="col">
         <div class="container-fluid">
-            <h1 class="text-primary">@Model.Author.Name - @Model.Title, @Model.AlbumTitle</h1>
+            <h1 class="text-primary">@Model.Artiste.Nom - @Model.Libelle, @Model.Album</h1>
 
             <div class="row d-flex align-items-center">
                 <p class="m-0 ml-3"><i class="fas fa-calendar"></i> Le @Model.GetDate à @Model.GetTime</p>
-                <p class="m-0 ml-4"><i class="fas fa-heart"></i> @Model.LikeCounter</p>
+                <p class="m-0 ml-4"><i class="fas fa-heart"></i> @Model.NbLikes</p>
                 <p class="m-0 ml-4">
                     <i class="fas fa-tags"></i> Styles :
-                    @foreach (var item in Model.Styles)
+                    @foreach (var item in Model.TitresStyles)
                     {
-                        <a href="#">@item.Name</a>
-                        @if (Model.Styles.Last() != item)
+                        <a asp-controller="style" asp-action="index" asp-route-libelle="@item.Titre">@item.Titre</a>
+                        @if (Model.TitresStyles.Last() != item)
                         {
                             <text>-</text>
                         }
                     }
                 </p>
-                <button type="button" class="btn btn-outline-primary ml-3"><i class="fas fa-thumbs-up"></i> Like</button>
-                <a class="m-0 ml-4" href="#"><i class="fas fa-edit"></i> Editer</a>
+                <form asp-controller="titre" asp-action="liker" method="post">
+                    <input type="hidden" asp-for="IdTitre" value="@Model.IdTitre" />
+                    <button type="submit" class="btn btn-outline-primary ml-3"><i class="fas fa-thumbs-up"></i> Like</button>
+                </form>
+
+                <a class="m-0 ml-4" asp-area="administration" asp-controller="titre" asp-action="edit" asp-route-id="@Model.IdTitre"><i class="fas fa-edit"></i> Editer</a>
             </div>
             <div class="mt-4">
                 <img class="float-right ml-2 mb-2" height="200"
-                     src="@Model.AlbumPicture">
-                <p class="text-justify">@Model.Description</p>
+                     src="@Model.UrlJaquette">
+                <p class="text-justify">@Model.Chronique</p>
             </div>
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="@Model.VideoLink"
+                <iframe class="embed-responsive-item" src="@Model.UrlEcoute"
                         allowfullscreen></iframe>
             </div>
-            
+
+            <h2 class="mt-4">Donne ton avis sur le titre</h2>
+            <form asp-controller="Titre" asp-action="Commenter" method="post" >
+                <input type="hidden" asp-for="IdTitre" value="@Model.IdTitre" />
+                <div class="form-group row">
+                    <label for="inputNom" class="col-sm-2 col-form-label">Nom</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="Auteur" placeholder="Votre nom (exemple : Emmanuel)">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputCommentaire" class="col-sm-2 col-form-label">Commentaire</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" asp-for="Contenu" placeholder="Votre commentaire.."></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
+                </div>
+            </form>
+
             <h2 class="mt-4">Commentaires</h2>
-            @foreach (var item in Model.Comments)
+            @foreach (var item in Model.Commentaires)
             {
                 <div class="row mb-4">
                     <div class="col-2 text-center overflow-hidden">
                         <img width="90" src="https://static.thenounproject.com/png/17241-200.png" alt="">
                     </div>
                     <div class="col">
-                        <div class="row font-weight-bold"><span class="text-primary">@Html.DisplayFor(modelItem => item.Username)</span><span class="text-secondary">, le 14/12/2019 à 13h22</span></div>
-                        <div class="row">@Html.DisplayFor(modelItem => item.Message)</div>
+                        <div class="row font-weight-bold"><span class="text-primary">@Html.DisplayFor(modelItem => item.Auteur)</span><span class="text-secondary">, le 14/12/2019 à 13h22</span></div>
+                        <div class="row">@Html.DisplayFor(modelItem => item.Contenu)</div>
                     </div>
                 </div>
             }

@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model ArtistViewModel
+
+    <div>
+        <h1>@Model.Artist.Nom</h1>
+        <hr class="style1">
+
+        <p>@Model.Artist.Biographie</p>
+        <h1>Titres</h1>
+        <hr class="style1">
+
+        @foreach (KeyValuePair<string, string> album in @Model.Albums)
+        {
+            <div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <h1 class="col-8">@album.Key</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <img class="w-100" src="@album.Value" alt="Album cover" />
+                    </div>
+                    <div class="col-8">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Titre</th>
+                                    <th scope="col">Durée</th>
+                                    <th scope="col">Chronique</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var titre in Model.Artist.Titres.Where(t=>t.Album == @album.Key).ToList())
+                                {
+                                <tr>
+                                    <td>@titre.Libelle</td>
+                                    <td>@titre.DurationToString()</td>
+                                    <td><a asp-controller="titre" asp-action="index" asp-route-id="@titre.IdTitre" class="fa fa-link"></a></td>
+
+                                 </tr>
+                                }
+                                </tbody>
+                            </table>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+

@@ -1,52 +1,133 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Titre.cs" company="WebZinc">
+//     Copyright (c) WebZinc. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Webzine.Entity
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     /// <summary>
-    /// Title représente un titre musical appartenant à un artiste
+    /// Classe représentant un titre musical appartenant à un artiste.
     /// </summary>
     public class Titre
     {
+        /// <summary>
+        /// Obtient ou définit l'index du titre.
+        /// </summary>
         [Key]
-        public int Id { get; set; }
-
-        public string Title { get; set; }
-
-        public string Description { get; set; }
-
-        public string Duration { get; set; }
-
-        public string AlbumPicture { get; set; }
-
-        public string AlbumTitle { get; set; }
-
-        public string VideoLink { get; set; }
+        public int IdTitre { get; set; }
 
         /// <summary>
-        /// Date à laquelle l'article du titre à été crée.
+        /// Obtient ou définit le nom du titre.
         /// </summary>
-        public DateTime CreatedAt { get; set; }
+        [Required]
+        [MaxLength(200)]
+        [MinLength(1)]
+        [Display(Name = "Titre")]
+        public string Libelle { get; set; }
 
-        public DateTime UpdatedAt { get; set; }
+        /// <summary>
+        /// Obtient ou définit la description du titre.
+        /// </summary>
+        [Required]
+        [MaxLength(4000)]
+        [MinLength(10)]
+        public string Chronique { get; set; }
 
-        public DateTime ReleaseDate { get; set; }
+        /// <summary>
+        /// Obtient ou définit la durée du titre.
+        /// </summary>
+        [Display(Name = "Durée en secondes")]
+        public int Duree { get; set; }
 
-        public int ReadingCounter { get; set; }
+        /// <summary>
+        /// Obtient ou définit le lien URL de la couverture d'album du titre.
+        /// </summary>
+        [Required]
+        [Display(Name = "Jaquette de l'album")]
+        [MaxLength(250)]
+        public string UrlJaquette { get; set; }
 
-        public int LikeCounter { get; set; }
+        /// <summary>
+        /// Obtient ou définit le nom de l'album du titre.
+        /// </summary>
+        [Required]
+        public string Album { get; set; }
 
-        [ForeignKey("Artiste")]
-        public int ArtistId { get; set; }
+        /// <summary>
+        /// Obtient ou définit le lien URL d'écoute du titre.
+        /// </summary>
+        [Display(Name = "URL d'écoute")]
+        [MaxLength(250)]
+        [MinLength(13)]
+        public string UrlEcoute { get; set; }
 
-        public Artiste Artist { get; set; }
+        /// <summary>
+        /// Obtient ou définit la date de création de la chronique du titre.
+        /// </summary>
+        [Required]
+        [Display(Name = "Date de création")]
+        public DateTime DateCreation { get; set; }
 
-        public List<Commentaire> Comments { get; set; }
+        /// <summary>
+        /// Obtient ou définit la date de sortie du titre.
+        /// </summary>
+        [Required]
+        [Display(Name = "Date de sortie")]
+        public DateTime DateSortie { get; set; }
 
-        public List<Style> Styles { get; set; }
+        /// <summary>
+        /// Obtient ou définit le nombre de lectures du titre.
+        /// </summary>
+        [Required]
+        [Display(Name = "Nombre de lectures")]
+        public int NbLectures { get; set; }
 
+        /// <summary>
+        /// Obtient ou définit le nombre de likes du titre.
+        /// </summary>
+        [Required]
+        [Display(Name = "Nombre de likes")]
+        public int NbLikes { get; set; }
+
+        /// <summary>
+        /// Obtient ou définit l'index de l'artiste du titre.
+        /// </summary>
+        [ForeignKey(nameof(Titre.Artiste))]
+        [Column("id_artiste")]
+        public int IdArtiste { get; set; }
+
+        /// <summary>
+        /// Obtient ou définit l'artiste du titre.
+        /// </summary>
+        [NotMapped]
+        public Artiste Artiste { get; set; }
+
+        /// <summary>
+        /// Obtient ou définit la liste des commentaires du titre.
+        /// </summary>
+        [NotMapped]
+        public List<Commentaire> Commentaires { get; set; }
+
+        /// <summary>
+        /// Obtient ou définit la liste des styles du titre.
+        /// </summary>
+        [NotMapped]
+        public List<TitreStyle> TitresStyles { get; set; }
+
+        /// <summary>
+        /// Formate la durée du titre en minutes secondes.
+        /// </summary>
+        /// <returns>La durée au format minutes:secondes (ex : 04:30).</returns>
+        public string DurationToString()
+        {
+            TimeSpan time = TimeSpan.FromSeconds(this.Duree);
+            string str = time.ToString(@"mm\:ss");
+            return str;
+        }
     }
 }

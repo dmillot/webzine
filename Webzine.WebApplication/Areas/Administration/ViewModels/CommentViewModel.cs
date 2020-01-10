@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Webzine.Entity;
+using Webzine.Repository;
 
 namespace Webzine.WebApplication.Areas.Administration.ViewModels
 {
@@ -12,43 +13,6 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
 
         public CommentViewModel()
         {
-            Titre titre = new Titre()
-            {
-                Title = "la bonne zic",
-                Id = 1
-            };
-
-            Comments = new List<Commentaire>()
-            {
-                new Commentaire()
-                {
-                    Title = titre,
-                    CreatedAt = DateTime.Now,
-                    Message = "JUUUUUUUULLLLLLL",
-                    Username = "JEFFFFFF"
-                },
-                new Commentaire()
-                {
-                    Title = titre,
-                    CreatedAt = DateTime.Now,
-                    Message = "DJU DJU DJUUUUULLLL",
-                    Username = "JEFFFFFF"
-                },
-                new Commentaire()
-                {
-                    Title = titre,
-                    CreatedAt = DateTime.Now,
-                    Message = "cette musique me fais saigner des orzeilles",
-                    Username = "JEFFFFFF"
-                },
-                new Commentaire()
-                {
-                    Title = titre,
-                    CreatedAt = DateTime.Now,
-                    Message = "cette musique me fais saigner des orzeilles",
-                    Username = "JEFFFFFF"
-                },
-            };
         }
     }
 }

@@ -1,0 +1,21 @@
+﻿@model Titre
+@{
+    ViewData["Title"] = "DeleteTitle";
+    ViewData["Admin"] = true;
+}
+
+
+<div>
+    <h1>Supprimer un titre</h1>
+    <hr class="style1">
+
+    <p>Etes vous sur de vouloir supprimer le titre "@Model.Libelle" de @Model.Artiste.Nom ?</p>
+    <form asp-area="administration" asp-controller="titre" asp-action="delete" method="post">
+        <input type="hidden" asp-for="IdTitre" value="@Model.IdTitre" />
+        <input type="submit" class="btn btn-danger" value="Supprimer"/>
+    </form>
+    
+
+    <br />
+    <a asp-area="administration" asp-controller="titre" asp-action="index">Retour a l'administration des titres</a>
+</div>

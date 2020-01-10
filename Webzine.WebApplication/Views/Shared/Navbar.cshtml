@@ -3,28 +3,30 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarWebzine">
-        <a class="navbar-brand" href="#">Webzine</a>
+        <a asp-area="" asp-controller="home" asp-action="index" class="navbar-brand">Webzine</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#"><i class=" fas fa-home"></i> Accueil<span class="sr-only">(current)</span></a>
+                <a asp-area="" asp-controller="home" asp-action="index" class="nav-link"><i class=" fas fa-home"></i> Accueil<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a asp-area="administration" asp-controller="artiste" asp-action="index" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-tools"></i>
                     Administration
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Artistes</a>
-                    <a class="dropdown-item" href="#">Titres</a>
-                    <a class="dropdown-item" href="administration/styles">Styles</a>
+                    <a asp-area="administration" asp-controller="artiste" asp-action="index" class="dropdown-item">Artistes</a>
+                    <a asp-area="administration" asp-controller="titre" asp-action="index" class="dropdown-item">Titres</a>
+                    <a asp-area="administration" asp-controller="style" asp-action="index" class="dropdown-item">Styles</a>
+                    <a asp-area="administration" asp-controller="Commentaire" asp-action="index" class="dropdown-item">Commentaire</a>
+                </div>
             </li>
             <li class="nav-item">
 
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-envelope"></i> Contact</a>
+                <a asp-area="" asp-controller="contact" asp-action="index" class="nav-link" tabindex="-1" aria-disabled="true"><i class="fas fa-envelope"></i> Contact</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Trouver un artiste/titre" aria-label="Search">
+        <form asp-controller="research" asp-action="index" method="post" class="form-inline my-2 my-lg-0">
+            <input class="form-control" type="search" placeholder="Trouver un artiste/titre" aria-label="Search" id="mot" name="mot">
             <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>

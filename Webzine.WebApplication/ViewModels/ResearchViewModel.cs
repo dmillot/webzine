@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Webzine.Entity;
 
 namespace Webzine.WebApplication.ViewModels
@@ -10,5 +7,6 @@ namespace Webzine.WebApplication.ViewModels
     {
         public List<Titre> Titres { get; set; }
         public List<Artiste> Artistes { get; set; }
+        public string Recherche { get; set; }
     }
 }
