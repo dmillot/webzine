@@ -22,6 +22,7 @@ namespace Webzine.Repository.Local
         /// <param name="titre">Le titre à ajouter.</param>
         public void Add(Titre titre)
         {
+
             FactoryTitre.Titres.Add(titre);
         }
 
@@ -121,6 +122,35 @@ namespace Webzine.Repository.Local
             {
                 if (item.IdTitre == titre.IdTitre)
                 {
+                    if(titre.Libelle == null)
+                    {
+                        titre.Libelle = item.Libelle;
+                    }
+                    if (titre.Chronique == null)
+                    {
+                        titre.Chronique = item.Chronique;
+                    }
+                    if (titre.Duree == 0)
+                    {
+                        titre.Duree = item.Duree;
+                    }
+                    if (titre.Artiste == null)
+                    {
+                        titre.Artiste = item.Artiste;
+                    }
+                    if (titre.DateSortie == null)
+                    {
+                        titre.DateSortie = item.DateSortie;
+                    }
+                    if (titre.UrlJaquette == null)
+                    {
+                        titre.UrlJaquette = item.UrlJaquette;
+                    }
+                    if (titre.UrlEcoute == null)
+                    {
+                        titre.UrlEcoute = item.UrlEcoute;
+                    }
+
                     titre.TitresStyles = item.TitresStyles;
                     titre.Commentaires = item.Commentaires;
                     FactoryTitre.Titres[rank] = titre;

@@ -13,6 +13,7 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         private readonly ITitreRepository _titreRepository;
         private readonly IStyleRepository _styleRepository;
         private readonly IArtisteRepository _artisteRepository;
+
         public TitreController(ITitreRepository titreRepository , IStyleRepository styleRepository , IArtisteRepository artisteRepository)
         {
             _titreRepository = titreRepository;
@@ -30,6 +31,25 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Permet de créer un titre
+        /// </summary>
+        /// <param name="titre"></param>
+        /// <returns> En cas de réussite retourne sur la page index titre, en cas d'échecs retourne sur la page create titre </returns>
+        [HttpPost]
+        public IActionResult Create(Titre titre)
+        {
+            try
+            {
+                _titreRepository.Add(titre);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         public IActionResult Edit(int id)
         {
             TitleViewModel titleViewModel = new TitleViewModel()
@@ -43,6 +63,25 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Permet d'editer un tire
+        /// </summary>
+        /// <param name="titre"></param>
+        /// <returns> En cas de réussite retourne sur la page index titre, en cas d'échecs retourne sur la page edit titre </returns>
+        [HttpPost]
+        public IActionResult Edit(Titre titre)
+        {
+            try
+            {
+                _titreRepository.Update(titre);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         [HttpGet]   
         public IActionResult Delete(int id)
         {
@@ -50,12 +89,24 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
             return View(titre);
         }
 
+        /// <summary>
+        /// Permet de supprimer un titre
+        /// </summary>
+        /// <param name="titre"></param>
+        /// <returns> En cas de réussite retourne sur la page index titre, en cas d'échecs retourne sur la page delete titre </returns>
         [HttpPost]
         [Route("administration/titre/delete/{IdTitre}")]
-        public IActionResult DeleteTitre(int IdTitre)
+        public IActionResult DeleteTitre(Titre titre)
         {
-            throw new NotImplementedException();
-            //return Redirect("administration/titre");
+            try
+            {
+                _titreRepository.Delete(titre);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
