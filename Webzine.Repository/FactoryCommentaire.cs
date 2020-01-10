@@ -31,7 +31,7 @@ namespace Webzine.Repository
                 Auteur = "Jean louis",
                 Contenu = "gergergegerc trop bi1",
                 DateCreation = DateTime.Now,
-                IdCommentaire = 2,
+                IdCommentaire = 3,
                 IdTitre = 2
             },
             new Commentaire()
@@ -39,7 +39,7 @@ namespace Webzine.Repository
                 Auteur = "Jean louis",
                 Contenu = "c gergegergertrop bi1",
                 DateCreation = DateTime.Now,
-                IdCommentaire = 2,
+                IdCommentaire = 4,
                 IdTitre = 3
             },
             new Commentaire()
@@ -47,7 +47,7 @@ namespace Webzine.Repository
                 Auteur = "Jean louis",
                 Contenu = "c tropgtrgegrege bi1",
                 DateCreation = DateTime.Now,
-                IdCommentaire = 2,
+                IdCommentaire = 5,
                 IdTitre = 4
             },
         };

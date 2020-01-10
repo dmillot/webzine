@@ -73,8 +73,6 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         /// <summary>
         ///  Permet d'afficher la vue edit d'un artiste en fonction de son id
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="collection"></param>
         /// <returns> En cas de réussite retourne sur la page index artiste, en cas d'échecs retourne sur la page edit artiste </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]

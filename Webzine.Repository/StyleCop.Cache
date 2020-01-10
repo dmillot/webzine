@@ -1,0 +1,1467 @@
+<stylecopresultscache>
+  <version>12</version>
+  <sourcecode name="FactoryTitre.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2020/01/09 09:37:34.849</styleCop>
+      <settingsFile>2020/01/09 10:52:14.154</settingsFile>
+      <sourceFile>2020/01/09 09:57:33.081</sourceFile>
+      <parser>2020/01/09 09:37:34.849</parser>
+      <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2020/01/09 09:37:34.849</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>2</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>3</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>4</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The class must have a documentation header.</context>
+        <line>8</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>58</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>10</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="FieldsMustBePrivate" ruleCheckId="SA1401">
+        <context>Fields must be declared with private access. Use properties to expose fields.</context>
+        <line>10</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>12</line>
+        <index>273</index>
+        <endIndex>273</endIndex>
+        <startLine>12</startLine>
+        <startColumn>28</startColumn>
+        <endLine>12</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>12</line>
+        <index>273</index>
+        <endIndex>273</endIndex>
+        <startLine>12</startLine>
+        <startColumn>28</startColumn>
+        <endLine>12</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>12</line>
+        <index>554</index>
+        <endIndex>554</endIndex>
+        <startLine>12</startLine>
+        <startColumn>309</startColumn>
+        <endLine>12</endLine>
+        <endColumn>309</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>12</line>
+        <index>557</index>
+        <endIndex>557</endIndex>
+        <startLine>12</startLine>
+        <startColumn>312</startColumn>
+        <endLine>12</endLine>
+        <endColumn>312</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>12</line>
+        <index>656</index>
+        <endIndex>656</endIndex>
+        <startLine>12</startLine>
+        <startColumn>411</startColumn>
+        <endLine>12</endLine>
+        <endColumn>411</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>12</line>
+        <index>656</index>
+        <endIndex>656</endIndex>
+        <startLine>12</startLine>
+        <startColumn>411</startColumn>
+        <endLine>12</endLine>
+        <endColumn>411</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>12</line>
+        <index>678</index>
+        <endIndex>678</endIndex>
+        <startLine>12</startLine>
+        <startColumn>433</startColumn>
+        <endLine>12</endLine>
+        <endColumn>433</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>12</line>
+        <index>735</index>
+        <endIndex>736</endIndex>
+        <startLine>12</startLine>
+        <startColumn>490</startColumn>
+        <endLine>12</endLine>
+        <endColumn>491</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>12</line>
+        <index>746</index>
+        <endIndex>747</endIndex>
+        <startLine>12</startLine>
+        <startColumn>501</startColumn>
+        <endLine>12</endLine>
+        <endColumn>502</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>12</line>
+        <index>793</index>
+        <endIndex>793</endIndex>
+        <startLine>12</startLine>
+        <startColumn>548</startColumn>
+        <endLine>12</endLine>
+        <endColumn>548</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>12</line>
+        <index>793</index>
+        <endIndex>793</endIndex>
+        <startLine>12</startLine>
+        <startColumn>548</startColumn>
+        <endLine>12</endLine>
+        <endColumn>548</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>12</line>
+        <index>803</index>
+        <endIndex>803</endIndex>
+        <startLine>12</startLine>
+        <startColumn>558</startColumn>
+        <endLine>12</endLine>
+        <endColumn>558</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>12</line>
+        <index>823</index>
+        <endIndex>823</endIndex>
+        <startLine>12</startLine>
+        <startColumn>578</startColumn>
+        <endLine>12</endLine>
+        <endColumn>578</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>12</line>
+        <index>824</index>
+        <endIndex>824</endIndex>
+        <startLine>12</startLine>
+        <startColumn>579</startColumn>
+        <endLine>12</endLine>
+        <endColumn>579</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>13</line>
+        <index>857</index>
+        <endIndex>857</endIndex>
+        <startLine>13</startLine>
+        <startColumn>28</startColumn>
+        <endLine>13</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>13</line>
+        <index>857</index>
+        <endIndex>857</endIndex>
+        <startLine>13</startLine>
+        <startColumn>28</startColumn>
+        <endLine>13</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>13</line>
+        <index>1134</index>
+        <endIndex>1134</endIndex>
+        <startLine>13</startLine>
+        <startColumn>305</startColumn>
+        <endLine>13</endLine>
+        <endColumn>305</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>13</line>
+        <index>1137</index>
+        <endIndex>1137</endIndex>
+        <startLine>13</startLine>
+        <startColumn>308</startColumn>
+        <endLine>13</endLine>
+        <endColumn>308</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>13</line>
+        <index>1236</index>
+        <endIndex>1236</endIndex>
+        <startLine>13</startLine>
+        <startColumn>407</startColumn>
+        <endLine>13</endLine>
+        <endColumn>407</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>13</line>
+        <index>1236</index>
+        <endIndex>1236</endIndex>
+        <startLine>13</startLine>
+        <startColumn>407</startColumn>
+        <endLine>13</endLine>
+        <endColumn>407</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>13</line>
+        <index>1258</index>
+        <endIndex>1258</endIndex>
+        <startLine>13</startLine>
+        <startColumn>429</startColumn>
+        <endLine>13</endLine>
+        <endColumn>429</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>13</line>
+        <index>1315</index>
+        <endIndex>1316</endIndex>
+        <startLine>13</startLine>
+        <startColumn>486</startColumn>
+        <endLine>13</endLine>
+        <endColumn>487</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>13</line>
+        <index>1326</index>
+        <endIndex>1327</endIndex>
+        <startLine>13</startLine>
+        <startColumn>497</startColumn>
+        <endLine>13</endLine>
+        <endColumn>498</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>13</line>
+        <index>1373</index>
+        <endIndex>1373</endIndex>
+        <startLine>13</startLine>
+        <startColumn>544</startColumn>
+        <endLine>13</endLine>
+        <endColumn>544</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>13</line>
+        <index>1373</index>
+        <endIndex>1373</endIndex>
+        <startLine>13</startLine>
+        <startColumn>544</startColumn>
+        <endLine>13</endLine>
+        <endColumn>544</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>13</line>
+        <index>1383</index>
+        <endIndex>1383</endIndex>
+        <startLine>13</startLine>
+        <startColumn>554</startColumn>
+        <endLine>13</endLine>
+        <endColumn>554</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>13</line>
+        <index>1403</index>
+        <endIndex>1403</endIndex>
+        <startLine>13</startLine>
+        <startColumn>574</startColumn>
+        <endLine>13</endLine>
+        <endColumn>574</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>13</line>
+        <index>1404</index>
+        <endIndex>1404</endIndex>
+        <startLine>13</startLine>
+        <startColumn>575</startColumn>
+        <endLine>13</endLine>
+        <endColumn>575</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>14</line>
+        <index>1437</index>
+        <endIndex>1437</endIndex>
+        <startLine>14</startLine>
+        <startColumn>28</startColumn>
+        <endLine>14</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>14</line>
+        <index>1437</index>
+        <endIndex>1437</endIndex>
+        <startLine>14</startLine>
+        <startColumn>28</startColumn>
+        <endLine>14</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>14</line>
+        <index>1714</index>
+        <endIndex>1714</endIndex>
+        <startLine>14</startLine>
+        <startColumn>305</startColumn>
+        <endLine>14</endLine>
+        <endColumn>305</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>14</line>
+        <index>1717</index>
+        <endIndex>1717</endIndex>
+        <startLine>14</startLine>
+        <startColumn>308</startColumn>
+        <endLine>14</endLine>
+        <endColumn>308</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>14</line>
+        <index>1816</index>
+        <endIndex>1816</endIndex>
+        <startLine>14</startLine>
+        <startColumn>407</startColumn>
+        <endLine>14</endLine>
+        <endColumn>407</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>14</line>
+        <index>1816</index>
+        <endIndex>1816</endIndex>
+        <startLine>14</startLine>
+        <startColumn>407</startColumn>
+        <endLine>14</endLine>
+        <endColumn>407</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>14</line>
+        <index>1838</index>
+        <endIndex>1838</endIndex>
+        <startLine>14</startLine>
+        <startColumn>429</startColumn>
+        <endLine>14</endLine>
+        <endColumn>429</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CodeMustNotContainMultipleWhitespaceInARow" ruleCheckId="SA1025">
+        <context>The code contains multiple spaces in a row. Only one space is needed.</context>
+        <line>14</line>
+        <index>1855</index>
+        <endIndex>1856</endIndex>
+        <startLine>14</startLine>
+        <startColumn>446</startColumn>
+        <endLine>14</endLine>
+        <endColumn>447</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>14</line>
+        <index>1896</index>
+        <endIndex>1897</endIndex>
+        <startLine>14</startLine>
+        <startColumn>487</startColumn>
+        <endLine>14</endLine>
+        <endColumn>488</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>14</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>14</line>
+        <index>1907</index>
+        <endIndex>1908</endIndex>
+        <startLine>14</startLine>
+        <startColumn>498</startColumn>
+        <endLine>14</endLine>
+        <endColumn>499</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>14</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>14</line>
+        <index>1920</index>
+        <endIndex>1920</endIndex>
+        <startLine>14</startLine>
+        <startColumn>511</startColumn>
+        <endLine>14</endLine>
+        <endColumn>511</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>14</line>
+        <index>1921</index>
+        <endIndex>1921</endIndex>
+        <startLine>14</startLine>
+        <startColumn>512</startColumn>
+        <endLine>14</endLine>
+        <endColumn>512</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>14</line>
+        <index>1954</index>
+        <endIndex>1954</endIndex>
+        <startLine>14</startLine>
+        <startColumn>545</startColumn>
+        <endLine>14</endLine>
+        <endColumn>545</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>14</line>
+        <index>1954</index>
+        <endIndex>1954</endIndex>
+        <startLine>14</startLine>
+        <startColumn>545</startColumn>
+        <endLine>14</endLine>
+        <endColumn>545</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>14</line>
+        <index>1964</index>
+        <endIndex>1964</endIndex>
+        <startLine>14</startLine>
+        <startColumn>555</startColumn>
+        <endLine>14</endLine>
+        <endColumn>555</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>14</line>
+        <index>1984</index>
+        <endIndex>1984</endIndex>
+        <startLine>14</startLine>
+        <startColumn>575</startColumn>
+        <endLine>14</endLine>
+        <endColumn>575</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>14</line>
+        <index>1985</index>
+        <endIndex>1985</endIndex>
+        <startLine>14</startLine>
+        <startColumn>576</startColumn>
+        <endLine>14</endLine>
+        <endColumn>576</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>15</line>
+        <index>2018</index>
+        <endIndex>2018</endIndex>
+        <startLine>15</startLine>
+        <startColumn>28</startColumn>
+        <endLine>15</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>15</line>
+        <index>2018</index>
+        <endIndex>2018</endIndex>
+        <startLine>15</startLine>
+        <startColumn>28</startColumn>
+        <endLine>15</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>15</line>
+        <index>2296</index>
+        <endIndex>2296</endIndex>
+        <startLine>15</startLine>
+        <startColumn>306</startColumn>
+        <endLine>15</endLine>
+        <endColumn>306</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>15</line>
+        <index>2299</index>
+        <endIndex>2299</endIndex>
+        <startLine>15</startLine>
+        <startColumn>309</startColumn>
+        <endLine>15</endLine>
+        <endColumn>309</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>15</line>
+        <index>2398</index>
+        <endIndex>2398</endIndex>
+        <startLine>15</startLine>
+        <startColumn>408</startColumn>
+        <endLine>15</endLine>
+        <endColumn>408</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>15</line>
+        <index>2398</index>
+        <endIndex>2398</endIndex>
+        <startLine>15</startLine>
+        <startColumn>408</startColumn>
+        <endLine>15</endLine>
+        <endColumn>408</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>15</line>
+        <index>2420</index>
+        <endIndex>2420</endIndex>
+        <startLine>15</startLine>
+        <startColumn>430</startColumn>
+        <endLine>15</endLine>
+        <endColumn>430</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>15</line>
+        <index>2477</index>
+        <endIndex>2478</endIndex>
+        <startLine>15</startLine>
+        <startColumn>487</startColumn>
+        <endLine>15</endLine>
+        <endColumn>488</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>15</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>15</line>
+        <index>2488</index>
+        <endIndex>2489</endIndex>
+        <startLine>15</startLine>
+        <startColumn>498</startColumn>
+        <endLine>15</endLine>
+        <endColumn>499</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>15</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>15</line>
+        <index>2501</index>
+        <endIndex>2501</endIndex>
+        <startLine>15</startLine>
+        <startColumn>511</startColumn>
+        <endLine>15</endLine>
+        <endColumn>511</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>15</line>
+        <index>2502</index>
+        <endIndex>2502</endIndex>
+        <startLine>15</startLine>
+        <startColumn>512</startColumn>
+        <endLine>15</endLine>
+        <endColumn>512</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>15</line>
+        <index>2536</index>
+        <endIndex>2536</endIndex>
+        <startLine>15</startLine>
+        <startColumn>546</startColumn>
+        <endLine>15</endLine>
+        <endColumn>546</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>15</line>
+        <index>2536</index>
+        <endIndex>2536</endIndex>
+        <startLine>15</startLine>
+        <startColumn>546</startColumn>
+        <endLine>15</endLine>
+        <endColumn>546</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>15</line>
+        <index>2546</index>
+        <endIndex>2546</endIndex>
+        <startLine>15</startLine>
+        <startColumn>556</startColumn>
+        <endLine>15</endLine>
+        <endColumn>556</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>15</line>
+        <index>2566</index>
+        <endIndex>2566</endIndex>
+        <startLine>15</startLine>
+        <startColumn>576</startColumn>
+        <endLine>15</endLine>
+        <endColumn>576</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>15</line>
+        <index>2567</index>
+        <endIndex>2567</endIndex>
+        <startLine>15</startLine>
+        <startColumn>577</startColumn>
+        <endLine>15</endLine>
+        <endColumn>577</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>16</line>
+        <index>2600</index>
+        <endIndex>2600</endIndex>
+        <startLine>16</startLine>
+        <startColumn>28</startColumn>
+        <endLine>16</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>16</line>
+        <index>2600</index>
+        <endIndex>2600</endIndex>
+        <startLine>16</startLine>
+        <startColumn>28</startColumn>
+        <endLine>16</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>16</line>
+        <index>2880</index>
+        <endIndex>2880</endIndex>
+        <startLine>16</startLine>
+        <startColumn>308</startColumn>
+        <endLine>16</endLine>
+        <endColumn>308</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>16</line>
+        <index>2883</index>
+        <endIndex>2883</endIndex>
+        <startLine>16</startLine>
+        <startColumn>311</startColumn>
+        <endLine>16</endLine>
+        <endColumn>311</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>16</line>
+        <index>2982</index>
+        <endIndex>2982</endIndex>
+        <startLine>16</startLine>
+        <startColumn>410</startColumn>
+        <endLine>16</endLine>
+        <endColumn>410</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>16</line>
+        <index>2982</index>
+        <endIndex>2982</endIndex>
+        <startLine>16</startLine>
+        <startColumn>410</startColumn>
+        <endLine>16</endLine>
+        <endColumn>410</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>16</line>
+        <index>3004</index>
+        <endIndex>3004</endIndex>
+        <startLine>16</startLine>
+        <startColumn>432</startColumn>
+        <endLine>16</endLine>
+        <endColumn>432</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>16</line>
+        <index>3061</index>
+        <endIndex>3062</endIndex>
+        <startLine>16</startLine>
+        <startColumn>489</startColumn>
+        <endLine>16</endLine>
+        <endColumn>490</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>16</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>16</line>
+        <index>3072</index>
+        <endIndex>3073</endIndex>
+        <startLine>16</startLine>
+        <startColumn>500</startColumn>
+        <endLine>16</endLine>
+        <endColumn>501</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>16</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>16</line>
+        <index>3085</index>
+        <endIndex>3085</endIndex>
+        <startLine>16</startLine>
+        <startColumn>513</startColumn>
+        <endLine>16</endLine>
+        <endColumn>513</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>16</line>
+        <index>3086</index>
+        <endIndex>3086</endIndex>
+        <startLine>16</startLine>
+        <startColumn>514</startColumn>
+        <endLine>16</endLine>
+        <endColumn>514</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>16</line>
+        <index>3120</index>
+        <endIndex>3120</endIndex>
+        <startLine>16</startLine>
+        <startColumn>548</startColumn>
+        <endLine>16</endLine>
+        <endColumn>548</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>16</line>
+        <index>3120</index>
+        <endIndex>3120</endIndex>
+        <startLine>16</startLine>
+        <startColumn>548</startColumn>
+        <endLine>16</endLine>
+        <endColumn>548</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>16</line>
+        <index>3130</index>
+        <endIndex>3130</endIndex>
+        <startLine>16</startLine>
+        <startColumn>558</startColumn>
+        <endLine>16</endLine>
+        <endColumn>558</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>16</line>
+        <index>3150</index>
+        <endIndex>3150</endIndex>
+        <startLine>16</startLine>
+        <startColumn>578</startColumn>
+        <endLine>16</endLine>
+        <endColumn>578</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>16</line>
+        <index>3151</index>
+        <endIndex>3151</endIndex>
+        <startLine>16</startLine>
+        <startColumn>579</startColumn>
+        <endLine>16</endLine>
+        <endColumn>579</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>17</line>
+        <index>3184</index>
+        <endIndex>3184</endIndex>
+        <startLine>17</startLine>
+        <startColumn>28</startColumn>
+        <endLine>17</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>17</line>
+        <index>3184</index>
+        <endIndex>3184</endIndex>
+        <startLine>17</startLine>
+        <startColumn>28</startColumn>
+        <endLine>17</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>17</line>
+        <index>3462</index>
+        <endIndex>3462</endIndex>
+        <startLine>17</startLine>
+        <startColumn>306</startColumn>
+        <endLine>17</endLine>
+        <endColumn>306</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>17</line>
+        <index>3465</index>
+        <endIndex>3465</endIndex>
+        <startLine>17</startLine>
+        <startColumn>309</startColumn>
+        <endLine>17</endLine>
+        <endColumn>309</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>17</line>
+        <index>3564</index>
+        <endIndex>3564</endIndex>
+        <startLine>17</startLine>
+        <startColumn>408</startColumn>
+        <endLine>17</endLine>
+        <endColumn>408</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>17</line>
+        <index>3564</index>
+        <endIndex>3564</endIndex>
+        <startLine>17</startLine>
+        <startColumn>408</startColumn>
+        <endLine>17</endLine>
+        <endColumn>408</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>17</line>
+        <index>3586</index>
+        <endIndex>3586</endIndex>
+        <startLine>17</startLine>
+        <startColumn>430</startColumn>
+        <endLine>17</endLine>
+        <endColumn>430</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>17</line>
+        <index>3643</index>
+        <endIndex>3644</endIndex>
+        <startLine>17</startLine>
+        <startColumn>487</startColumn>
+        <endLine>17</endLine>
+        <endColumn>488</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>17</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>17</line>
+        <index>3654</index>
+        <endIndex>3655</endIndex>
+        <startLine>17</startLine>
+        <startColumn>498</startColumn>
+        <endLine>17</endLine>
+        <endColumn>499</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>17</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>17</line>
+        <index>3667</index>
+        <endIndex>3667</endIndex>
+        <startLine>17</startLine>
+        <startColumn>511</startColumn>
+        <endLine>17</endLine>
+        <endColumn>511</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>17</line>
+        <index>3668</index>
+        <endIndex>3668</endIndex>
+        <startLine>17</startLine>
+        <startColumn>512</startColumn>
+        <endLine>17</endLine>
+        <endColumn>512</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>17</line>
+        <index>3702</index>
+        <endIndex>3702</endIndex>
+        <startLine>17</startLine>
+        <startColumn>546</startColumn>
+        <endLine>17</endLine>
+        <endColumn>546</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>17</line>
+        <index>3702</index>
+        <endIndex>3702</endIndex>
+        <startLine>17</startLine>
+        <startColumn>546</startColumn>
+        <endLine>17</endLine>
+        <endColumn>546</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>17</line>
+        <index>3712</index>
+        <endIndex>3712</endIndex>
+        <startLine>17</startLine>
+        <startColumn>556</startColumn>
+        <endLine>17</endLine>
+        <endColumn>556</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>17</line>
+        <index>3732</index>
+        <endIndex>3732</endIndex>
+        <startLine>17</startLine>
+        <startColumn>576</startColumn>
+        <endLine>17</endLine>
+        <endColumn>576</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>17</line>
+        <index>3733</index>
+        <endIndex>3733</endIndex>
+        <startLine>17</startLine>
+        <startColumn>577</startColumn>
+        <endLine>17</endLine>
+        <endColumn>577</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>18</line>
+        <index>3766</index>
+        <endIndex>3766</endIndex>
+        <startLine>18</startLine>
+        <startColumn>28</startColumn>
+        <endLine>18</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>18</line>
+        <index>3766</index>
+        <endIndex>3766</endIndex>
+        <startLine>18</startLine>
+        <startColumn>28</startColumn>
+        <endLine>18</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>18</line>
+        <index>4044</index>
+        <endIndex>4044</endIndex>
+        <startLine>18</startLine>
+        <startColumn>306</startColumn>
+        <endLine>18</endLine>
+        <endColumn>306</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>18</line>
+        <index>4047</index>
+        <endIndex>4047</endIndex>
+        <startLine>18</startLine>
+        <startColumn>309</startColumn>
+        <endLine>18</endLine>
+        <endColumn>309</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>18</line>
+        <index>4146</index>
+        <endIndex>4146</endIndex>
+        <startLine>18</startLine>
+        <startColumn>408</startColumn>
+        <endLine>18</endLine>
+        <endColumn>408</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>18</line>
+        <index>4146</index>
+        <endIndex>4146</endIndex>
+        <startLine>18</startLine>
+        <startColumn>408</startColumn>
+        <endLine>18</endLine>
+        <endColumn>408</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>18</line>
+        <index>4168</index>
+        <endIndex>4168</endIndex>
+        <startLine>18</startLine>
+        <startColumn>430</startColumn>
+        <endLine>18</endLine>
+        <endColumn>430</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>18</line>
+        <index>4225</index>
+        <endIndex>4226</endIndex>
+        <startLine>18</startLine>
+        <startColumn>487</startColumn>
+        <endLine>18</endLine>
+        <endColumn>488</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '=&gt;' is invalid.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>18</line>
+        <index>4236</index>
+        <endIndex>4237</endIndex>
+        <startLine>18</startLine>
+        <startColumn>498</startColumn>
+        <endLine>18</endLine>
+        <endColumn>499</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>18</line>
+        <index>4249</index>
+        <endIndex>4249</endIndex>
+        <startLine>18</startLine>
+        <startColumn>511</startColumn>
+        <endLine>18</endLine>
+        <endColumn>511</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CommasMustBeSpacedCorrectly" ruleCheckId="SA1001">
+        <context>Invalid spacing around the comma.</context>
+        <line>18</line>
+        <index>4250</index>
+        <endIndex>4250</endIndex>
+        <startLine>18</startLine>
+        <startColumn>512</startColumn>
+        <endLine>18</endLine>
+        <endColumn>512</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>18</line>
+        <index>4284</index>
+        <endIndex>4284</endIndex>
+        <startLine>18</startLine>
+        <startColumn>546</startColumn>
+        <endLine>18</endLine>
+        <endColumn>546</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>18</line>
+        <index>4284</index>
+        <endIndex>4284</endIndex>
+        <startLine>18</startLine>
+        <startColumn>546</startColumn>
+        <endLine>18</endLine>
+        <endColumn>546</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>18</line>
+        <index>4294</index>
+        <endIndex>4294</endIndex>
+        <startLine>18</startLine>
+        <startColumn>556</startColumn>
+        <endLine>18</endLine>
+        <endColumn>556</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>18</line>
+        <index>4314</index>
+        <endIndex>4314</endIndex>
+        <startLine>18</startLine>
+        <startColumn>576</startColumn>
+        <endLine>18</endLine>
+        <endColumn>576</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1013">
+        <context>Invalid spacing around the closing curly bracket.</context>
+        <line>18</line>
+        <index>4315</index>
+        <endIndex>4315</endIndex>
+        <startLine>18</startLine>
+        <startColumn>577</startColumn>
+        <endLine>18</endLine>
+        <endColumn>577</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>21</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementParameterDocumentationMustHaveText" ruleCheckId="SA1614">
+        <context>The documentation text within the param tag for the '&lt;param name="page" /&gt;' parameter must not be empty.</context>
+        <line>31</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>31</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
+        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>34</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketMustBeFollowedByBlankLine" ruleCheckId="SA1513">
+        <context>Statements or elements wrapped in curly brackets must be followed by a blank line.</context>
+        <line>40</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="DocumentationTextMustContainWhitespace" ruleCheckId="SA1630">
+        <context>The documentation text within the return tag does not contain any whitespace between words, indicating that it most likely does not follow a proper grammatical structure required for documentation text.</context>
+        <line>53</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="ArithmeticExpressionsMustDeclarePrecedence" ruleCheckId="SA1407">
+        <context>Insert parentheses within the arithmetic expression to declare the operator precedence.</context>
+        <line>55</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="LocalArtisteRepository.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2020/01/09 09:37:34.849</styleCop>
+      <settingsFile>2020/01/09 10:52:14.154</settingsFile>
+      <sourceFile>2020/01/09 14:12:12.657</sourceFile>
+      <parser>2020/01/09 09:37:34.849</parser>
+      <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2020/01/09 09:37:34.849</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="LocalStyleRepository.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2020/01/09 09:37:34.849</styleCop>
+      <settingsFile>2020/01/09 10:52:14.154</settingsFile>
+      <sourceFile>2020/01/09 14:15:20.059</sourceFile>
+      <parser>2020/01/09 09:37:34.849</parser>
+      <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2020/01/09 09:37:34.849</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="LocalCommentaireRepository.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2020/01/09 09:37:34.849</styleCop>
+      <settingsFile>2020/01/09 10:52:14.154</settingsFile>
+      <sourceFile>2020/01/09 14:17:58.972</sourceFile>
+      <parser>2020/01/09 09:37:34.849</parser>
+      <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2020/01/09 09:37:34.849</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <project key="-1882707795">
+    <configuration>
+    </configuration>
+  </project>
+  <sourcecode name="LocalTitreRepository.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2020/01/09 09:37:34.849</styleCop>
+      <settingsFile>2020/01/09 10:52:14.154</settingsFile>
+      <sourceFile>2020/01/09 14:21:30.694</sourceFile>
+      <parser>2020/01/09 09:37:34.849</parser>
+      <StyleCop.CSharp.DocumentationRules>2020/01/09 09:37:34.849</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2020/01/09 09:37:34.849</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2020/01/09 09:37:34.849</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2020/01/09 09:37:34.849</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+</stylecopresultscache>
