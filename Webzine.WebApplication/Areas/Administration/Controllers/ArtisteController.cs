@@ -42,7 +42,7 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         /// <summary>
         ///  Permet de créer un nouvel artiste
         /// </summary>
-        /// <param name="collection"></param>
+        /// <param name="artiste"></param>
         /// <returns> En cas de réussite retourne sur la page index artiste, en cas d'échecs retourne sur la page create artiste </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -71,8 +71,9 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         }
 
         /// <summary>
-        ///  Permet d'afficher la vue edit d'un artiste en fonction de son id
+        /// Permet d'editer un artiste
         /// </summary>
+        /// <param name="artiste"></param>
         /// <returns> En cas de réussite retourne sur la page index artiste, en cas d'échecs retourne sur la page edit artiste </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -101,10 +102,9 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         }
 
         /// <summary>
-        /// Permet de supprimer un artiste selon son id
+        /// Permet de supprimer un artiste
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="collection"></param>
+        /// <param name="artiste"></ param >
         /// <returns> En cas de réussite retourne sur la page index artiste, en cas d'échecs retourne sur la page delete artiste</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
