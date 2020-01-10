@@ -7,10 +7,10 @@ using Webzine.Repository.Contracts;
 
 namespace Webzine.Repository.Db
 {
-    public class DbArtsteRepository : IArtisteRepository
+    public class DbArtisteRepository : IArtisteRepository
     {
         WebzineDbContext Context;
-        public DbArtsteRepository(WebzineDbContext webzineDbContext)
+        public DbArtisteRepository(WebzineDbContext webzineDbContext)
         {
             Context = webzineDbContext;
         }

@@ -8,6 +8,7 @@ namespace Webzine.Repository.Local
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Webzine.EntitiesContext;
     using Webzine.Entity;
     using Webzine.Repository.Contracts;
 
