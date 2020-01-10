@@ -7,10 +7,10 @@ namespace Webzine.EntitiesContext
 {
     public class WebzineDbContext : DbContext
     {
-       DbSet<Artiste> Artistes { get; set; }
-       DbSet<Titre> Titres { get; set; }
-       DbSet<Commentaire> Commentaires { get; set; }
-       DbSet<Style> Styles { get; set; }
+       public DbSet<Artiste> Artistes { get; set; }
+       public DbSet<Titre> Titres { get; set; }
+       public DbSet<Commentaire> Commentaires { get; set; }
+       public DbSet<Style> Styles { get; set; }
 
         public WebzineDbContext(DbContextOptions<WebzineDbContext> options)
             : base(options)

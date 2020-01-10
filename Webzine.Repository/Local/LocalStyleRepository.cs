@@ -21,7 +21,7 @@ namespace Webzine.Repository.Local
         /// <param name="style">Le style à ajouter.</param>
         public void Add(Style style)
         {
-            style.IdStyle = FactoryStyle.Styles.Count() + 1;
+            style.IdStyle = FactoryStyle.Styles.Max(c => c.IdStyle);
             FactoryStyle.Styles.Add(style);
         }
 

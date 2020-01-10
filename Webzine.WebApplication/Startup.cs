@@ -12,6 +12,7 @@ namespace Webzine.WebApplication
     using Microsoft.Extensions.Hosting;
     using Webzine.EntitiesContext;
     using Webzine.Repository.Contracts;
+    using Webzine.Repository.Db;
     using Webzine.Repository.Local;
 
     /// <summary>
@@ -30,7 +31,7 @@ namespace Webzine.WebApplication
 
             services.AddScoped<IStyleRepository, LocalStyleRepository>();
             services.AddScoped<ITitreRepository, LocalTitreRepository>();
-            services.AddScoped<IArtisteRepository, LocalArtisteRepository>();
+            services.AddScoped<IArtisteRepository, DbArtsteRepository>();
             services.AddScoped<ICommentaireRepository, LocalCommentaireRepository>();
 
             services.AddDbContext<WebzineDbContext>(options =>

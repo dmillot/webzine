@@ -26,7 +26,8 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         /// <returns> Retourne ula vue index </returns>
         public ActionResult Index()
         {
-           this.ViewData.Model = _artisteRepository.FindAll();
+            var test = _artisteRepository.FindAll().ToList();
+           this.ViewData.Model = test ;
             return View();
         }
 
