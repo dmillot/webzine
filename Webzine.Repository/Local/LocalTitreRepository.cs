@@ -179,7 +179,7 @@ namespace Webzine.Repository.Local
             {
                 titre.Artiste = FactoryArtiste.Artistes.Single(a => a.IdArtiste == titre.IdArtiste);
                 titre.TitresStyles = FactoryTitreStyle.TitreStyles.Where(t => t.IdTitre == titre.IdTitre).ToList();
-                titre.TitresStyles.ForEach(n => { n.Style = FactoryStyle.Styles.Single(s => s.IdStyle == n.IdStyle); });
+                titre.TitresStyles.ForEach(n => { try { n.Style = FactoryStyle.Styles.First(s => s.IdStyle == n.IdStyle); } catch { } });
                 titre.Commentaires = FactoryCommentaire.Commentaires.Where(c => c.IdTitre == titre.IdTitre).ToList();
             }
             return titres;
