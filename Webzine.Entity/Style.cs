@@ -7,6 +7,7 @@ namespace Webzine.Entity
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
     /// Classe représentant un style musical.
@@ -31,6 +32,7 @@ namespace Webzine.Entity
         /// <summary>
         /// Obtient ou définit la liste des titres appartenant à ce style.
         /// </summary>
-        public List<Titre> TitresStyles { get; set; }
+        [NotMapped]
+        public List<TitreStyle> TitresStyles { get; set; }
     }
 }

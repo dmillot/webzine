@@ -6,7 +6,12 @@
 namespace Webzine.WebApplication
 {
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
+    using System;
+    using Webzine.EntitiesContext;
+    using Webzine.Entity;
 
     /// <summary>
     /// The Program class configure, build, and run the application host.
@@ -19,7 +24,32 @@ namespace Webzine.WebApplication
         /// <param name="args">Command line args.</param>
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+
+            CreateDb(host);
+
+            host.Run();
+        }
+
+        private static void CreateDb(IHost host)
+        {
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                try
+                {
+                    var context = services.GetRequiredService<WebzineDbContext>();
+                    context.Database.EnsureDeleted();
+                    context.Database.EnsureCreated();
+
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred creating the DB.");
+                }
+            }
         }
 
         /// <summary>

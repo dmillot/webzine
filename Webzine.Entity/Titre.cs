@@ -114,7 +114,7 @@ namespace Webzine.Entity
         /// <summary>
         /// Obtient ou définit la liste des styles du titre.
         /// </summary>
-        public List<Style> TitresStyles { get; set; }
+        public List<TitreStyle> TitresStyles { get; set; }
 
         /// <summary>
         /// Formate la durée du titre en minutes secondes.
