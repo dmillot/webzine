@@ -2,6 +2,7 @@
 using System;
 using Webzine.Entity;
 
+
 namespace Webzine.EntitiesContext
 {
     public class WebzineDbContext : DbContext

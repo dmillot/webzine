@@ -10,7 +10,7 @@ namespace Webzine.WebApplication.ViewModels
         public string Chronique { get; set; }
         public Artiste Artiste { get; set; }
         public List<Commentaire> Commentaires { get; set; }
-        public List<Style> TitresStyles { get; set; }
+        public List<TitreStyle> TitresStyles { get; set; }
         public string UrlJaquette { get; set; }
         public int Duree { get; set; }
         public string Album { get; set; }

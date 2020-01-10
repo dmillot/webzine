@@ -21,8 +21,10 @@ namespace Webzine.Repository.Local
         /// <param name="commentaire">Le commentaire à ajouter.</param>
         public void Add(Commentaire commentaire)
         {
+            commentaire.IdCommentaire = FactoryCommentaire.Commentaires.Count() + 1;
             commentaire.Titre = FactoryTitre.Titres.FirstOrDefault(t => t.IdTitre == commentaire.IdTitre);
             FactoryTitre.Titres.First(t => t.IdTitre == commentaire.IdTitre).Commentaires.Add(commentaire);
+            FactoryCommentaire.Commentaires.Add(commentaire);
         }
 
         /// <summary>

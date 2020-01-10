@@ -33,7 +33,7 @@ namespace Webzine.WebApplication.Controllers
                 Chronique = t.Chronique,
                 Artiste = t.Artiste,
                 Commentaires = t.Commentaires,
-                //TitresStyles = t.TitresStyles,
+                TitresStyles = t.TitresStyles,
                 UrlJaquette = t.UrlJaquette,
                 Album = "Right On!",
                 UrlEcoute = t.UrlEcoute,
