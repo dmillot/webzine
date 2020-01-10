@@ -23,15 +23,15 @@
                         <i class="fas fa-tags ml-3"></i>
                         @if (objet.TitresStyles.Any())
                         {
-                            <a asp-controller="style" asp-action="index" asp-route-libelle="@objet.TitresStyles.First().Style.Libelle">
-                                @objet.TitresStyles.First().Style.Libelle
+                            <a asp-controller="style" asp-action="index" asp-route-libelle="@objet.TitresStyles[0].Style.Libelle">
+                                @objet.TitresStyles[0].Style.Libelle
                             </a>
                         }
                         else
                         {
-
-                            <p>No style found</p>
-
+                            
+                             <p>No style found</p>
+                            
                         }
 
                     </div>
@@ -55,7 +55,7 @@
             }
         </div>
     </div>
-
+            
 
     <div class="row">
         @* Titres les plus populaires *@
