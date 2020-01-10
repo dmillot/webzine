@@ -8,6 +8,7 @@ namespace Webzine.Repository.Local
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Webzine.EntitiesContext;
     using Webzine.Entity;
     using Webzine.Repository.Contracts;
 
@@ -59,6 +60,7 @@ namespace Webzine.Repository.Local
         /// <returns>La liste des titres demandés triés selon la date de création.</returns>
         public IEnumerable<Titre> FindTitres(int offset, int limit)
         {
+            
             return FactoryTitre.Titres.OrderByDescending(t => t.DateCreation.Date).Skip(offset).Take(limit).ToList();
         }
 

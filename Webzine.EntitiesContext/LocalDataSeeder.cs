@@ -30,7 +30,6 @@ namespace Webzine.EntitiesContext
 
             using (var transaction = context.Database.BeginTransaction())
             {
-
                 foreach (Artiste artiste in FactoryArtiste.Artistes)
                 {
                     artiste.Titres = null;

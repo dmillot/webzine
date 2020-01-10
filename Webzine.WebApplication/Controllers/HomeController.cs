@@ -25,9 +25,10 @@ namespace Webzine.WebApplication.Controllers
         {
             var test = DateTime.Now.Month - 2 ;
 
+            var data = (List<Titre>)_titreRepository.FindTitres(id, 3);
             HomeViewModel titre = new HomeViewModel() // model for the view
             {
-                Titres_chroniques = (List<Titre>)_titreRepository.FindTitres(id, 3),
+                Titres_chroniques = data,
                 Titres_populaires = (List<Titre>)_titreRepository.GetPopular(new DateTime(2019,10,1))
             };
 

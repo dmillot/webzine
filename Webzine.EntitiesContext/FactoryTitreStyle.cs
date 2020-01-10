@@ -12,10 +12,10 @@ namespace Webzine.EntitiesContext
             new TitreStyle() {IdStyle = 1 , IdTitre = 1},
             new TitreStyle() {IdStyle = 2 , IdTitre = 2},
             new TitreStyle() {IdStyle = 3 , IdTitre = 3},
-            new TitreStyle() {IdStyle = 1 , IdTitre = 3},
-            new TitreStyle() {IdStyle = 2 , IdTitre = 4},
-            new TitreStyle() {IdStyle = 3 , IdTitre = 5},
-            new TitreStyle() {IdStyle = 1 , IdTitre = 6}
+            new TitreStyle() {IdStyle = 1 , IdTitre = 4},
+            new TitreStyle() {IdStyle = 2 , IdTitre = 5},
+            new TitreStyle() {IdStyle = 3 , IdTitre = 6},
+            new TitreStyle() {IdStyle = 1 , IdTitre = 7}
         };
     }
 }

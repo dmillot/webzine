@@ -27,7 +27,7 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         public ActionResult Index()
         {
             var test = _artisteRepository.FindAll().ToList();
-           this.ViewData.Model = test ;
+           this.ViewData.Model = test;
             return View();
         }
 

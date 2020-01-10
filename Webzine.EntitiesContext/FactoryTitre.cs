@@ -28,32 +28,12 @@ namespace Webzine.EntitiesContext
         /// </summary>
         /// <param name="page"></param>
         /// <returns></returns>
-        public static List<Titre> GetTitresFromPage(int page = 0)
-        {
-            List<Titre> results = new List<Titre>();
-            // get 3 titles by 3 titles
-            int startNextElements = page * 3;
-            int count = 3;
-            if (startNextElements + 3 > Titres.Count)
-            {
-                count = Titres.Count - startNextElements;
-            }
-            if (count > 0)
-            {
-                results = Titres.OrderBy(t => t.DateCreation).ToList().GetRange(startNextElements, count);
-            }
-
-            return results;
-        }
+        
 
         /// <summary>
         /// retourne le nombre de page quil est possible d'afficher
         /// </summary>
         /// <returns>int</returns>
-        public static int GetCountPages()
-        {
-            return Titres.Count % 3 > 0 ? Titres.Count / 3 + 1 : Titres.Count / 3;
-        }
-
+      
     }
 }

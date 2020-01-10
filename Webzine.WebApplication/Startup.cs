@@ -29,11 +29,10 @@ namespace Webzine.WebApplication
         {
             services.AddControllersWithViews();
 
-            services.AddScoped<IStyleRepository, LocalStyleRepository>();
-            services.AddScoped<ITitreRepository, LocalTitreRepository>();
-            services.AddScoped<IArtisteRepository, DbArtsteRepository>();
-            services.AddScoped<ICommentaireRepository, LocalCommentaireRepository>();
-
+            services.AddScoped<IStyleRepository, DbStyleRepository>();
+            services.AddScoped<ITitreRepository, DbTitreRepository>();
+            services.AddScoped<IArtisteRepository, DbArtisteRepository>();
+            services.AddScoped<ICommentaireRepository, DbCommentaireRepository>();
             services.AddDbContext<WebzineDbContext>(options =>
             options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=WebzineDbContext;Trusted_Connection=True;MultipleActiveResultSets=true")); // Connect to database
         }

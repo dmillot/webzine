@@ -21,7 +21,7 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
    
         public IActionResult Index()
         {
-            this.ViewData.Model = _styleRepository.FindAll() ;
+            this.ViewData.Model = _styleRepository.FindAll().ToList() ;
             return View();
         }
         

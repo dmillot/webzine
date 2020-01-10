@@ -21,9 +21,19 @@
                         <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre" class="btn btn-primary">Lire la suite</a>
                         <i class="fas fa-calendar ml-3"> @objet.DateSortie.ToString("dd/MM/yyyy HH:mm:ss") </i>
                         <i class="fas fa-tags ml-3"></i>
-                        <a asp-controller="style" asp-action="index" asp-route-libelle="@objet.TitresStyles[0].Style.Libelle">
-                            @objet.TitresStyles[0].Style.Libelle
-                        </a>
+                        @if (objet.TitresStyles.Any())
+                        {
+                            <a asp-controller="style" asp-action="index" asp-route-libelle="@objet.TitresStyles.First().Style.Libelle">
+                                @objet.TitresStyles.First().Style.Libelle
+                            </a>
+                        }
+                        else
+                        {
+
+                            <p>No style found</p>
+
+                        }
+
                     </div>
                 </li>
             }
@@ -45,7 +55,7 @@
             }
         </div>
     </div>
-            
+
 
     <div class="row">
         @* Titres les plus populaires *@
