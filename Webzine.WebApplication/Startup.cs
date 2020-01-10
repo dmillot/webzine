@@ -7,8 +7,10 @@ namespace Webzine.WebApplication
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Webzine.EntitiesContext;
     using Webzine.Repository.Contracts;
     using Webzine.Repository.Local;
 
@@ -30,6 +32,9 @@ namespace Webzine.WebApplication
             services.AddScoped<ITitreRepository, LocalTitreRepository>();
             services.AddScoped<IArtisteRepository, LocalArtisteRepository>();
             services.AddScoped<ICommentaireRepository, LocalCommentaireRepository>();
+
+            services.AddDbContext<WebzineDbContext>(options =>
+            options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=WebzineDbContext;Trusted_Connection=True;MultipleActiveResultSets=true")); // Connect to database
         }
 
         /// <summary>

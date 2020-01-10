@@ -97,7 +97,7 @@ namespace Webzine.Repository.Local
         /// <returns>c Retourne une liste de Titres </returns>
         public IEnumerable<Titre> SearchByStyle(string libelle)
         {
-            return this.FindAll().Where(t => t.TitresStyles.Select(s => s.Libelle).ToString() == libelle).ToList();
+            return this.FindAll().Where(t => t.TitresStyles.Select(s => s.Style.Libelle).ToString() == libelle).ToList();
         }
 
         /// <summary>
