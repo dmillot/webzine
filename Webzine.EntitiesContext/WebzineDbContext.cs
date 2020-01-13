@@ -21,9 +21,17 @@ namespace Webzine.EntitiesContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Artiste>().ToTable("Artiste");
-            modelBuilder.Entity<Titre>().ToTable("Titre");
-            modelBuilder.Entity<Commentaire>().ToTable("Commentaire");
+            modelBuilder.Entity<Artiste>().ToTable("Artiste")
+                .HasMany<Titre>(a => a.Titres);
+
+            modelBuilder.Entity<Titre>().ToTable("Titre")
+                .HasMany<Commentaire>(t => t.Commentaires);
+
+            modelBuilder.Entity<Titre>().HasMany(t => t.TitresStyles);
+
+            modelBuilder.Entity<Commentaire>().ToTable("Commentaire")
+                .HasOne<Titre>(c => c.Titre);
+
             modelBuilder.Entity<Style>().ToTable("Style");
 
             modelBuilder.Entity<TitreStyle>()

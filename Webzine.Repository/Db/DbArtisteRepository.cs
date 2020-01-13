@@ -41,7 +41,9 @@ namespace Webzine.Repository.Db
         /// <returns>L'artiste ayant l'index envoyé.</returns>
         public Artiste Find(int id)
         {
-            return Context.Artistes.Find(id);
+            var artiste = Context.Artistes.Find(id);
+            artiste.Titres = Context.Titres.Where(t => t.IdArtiste == artiste.IdArtiste).ToList();
+            return artiste;
         }
 
         /// <summary>
@@ -57,7 +59,16 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des artistes dont le nom contient le mot.</returns>
         public IEnumerable<Artiste> Search(string mot)
         {
-            return FindAll().Where(a => a.Nom.Contains(mot, System.StringComparison.OrdinalIgnoreCase));
+            try
+            {
+                return FindAll().Where(a => a.Nom.Contains(mot, System.StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+            catch (System.Exception)
+            {
+
+                return FindAll().ToList();
+            }
+          
         }
 
         /// <summary>

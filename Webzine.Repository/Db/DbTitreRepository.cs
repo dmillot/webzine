@@ -101,7 +101,8 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des titres dont le nom contient le mot.</returns>
         public IEnumerable<Titre> Search(string mot)
         {
-            return MakeLink( Context.Titres.Where(t => t.Libelle.Contains(mot, StringComparison.OrdinalIgnoreCase)));
+            var result = Context.Titres.Where(t => t.Libelle.Contains(mot)).ToList();
+            return MakeLink( result  );
         }
 
         /// <summary>
