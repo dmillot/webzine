@@ -14,7 +14,7 @@
 {
     <div class="row m-0 p-0 d-flex align-items-center">
         <i class="fas fa-user m-0 p-0"></i>
-        <a href="#" class="ml-2"> @objet.Nom </a>
+        <a asp-controller="artiste" asp-action="index" asp-route-name="@objet.Nom" class="ml-2"> @objet.Nom </a>
     </div>
 }
 
@@ -30,7 +30,7 @@
     <div class="media mb-3">
         <img src="@objet.UrlJaquette" class="mr-3" height="64">
         <div class="media-body">
-            <a href="#"><h5 class="mt-0"> @objet.Libelle </h5></a>
+            <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre"><h5 class="mt-0"> @objet.Libelle </h5></a>
             Durée : @objet.Duree
         </div>
     </div>

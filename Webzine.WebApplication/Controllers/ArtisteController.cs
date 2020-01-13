@@ -1,33 +1,53 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using Webzine.Entity;
-using Webzine.Repository;
-using Webzine.Repository.Contracts;
-using Webzine.WebApplication.ViewModels;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="ArtisteController.cs" company="WebZinc">
+//     Copyright (c) WebZinc. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Webzine.WebApplication.Controllers
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.AspNetCore.Mvc;
+    using Webzine.Entity;
+    using Webzine.Repository.Contracts;
+    using Webzine.WebApplication.ViewModels;
 
+    /// <summary>
+    /// Classe représentant le controller pour les artistes.
+    /// </summary>
     public class ArtisteController : Controller
     {
-        private readonly IArtisteRepository _artisteRepository;
+        /// <summary>
+        /// Instance de <see cref="IArtisteRepository" />.
+        /// </summary>
+        private readonly IArtisteRepository artisteRepository;
+
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe <see cref="ArtisteController" />.
+        /// </summary>
+        /// <param name="artistRepository">To do.</param>
         public ArtisteController(IArtisteRepository artistRepository)
         {
-            _artisteRepository = artistRepository;
+            this.artisteRepository = artistRepository;
         }
+
+        /// <summary>
+        /// TO DO.
+        /// </summary>
+        /// <param name="name">TO DO.</param>
+        /// <returns>TO DO.</returns>
         public IActionResult Index(string name)
         {
-            Artiste artist = _artisteRepository.Find(1);
+            Artiste artist = this.artisteRepository.Find(1);
             artist.Titres.OrderBy(t => t.Album);
 
-            //get all albulms names by distinct names
+            // Get all albums names by distinct names
             var albums = new Dictionary<string, string>();
             foreach (var titre in artist.Titres)
             {
                 if (!albums.ContainsKey(titre.Album))
                 {
-                    albums.Add(titre.Album, titre.UrlJaquette); //set ulbum name as key and url image as value
+                    albums.Add(titre.Album, titre.UrlJaquette); // Set album name as key and url image as value
                 }
             }
 
@@ -36,7 +56,8 @@ namespace Webzine.WebApplication.Controllers
                 Artist = artist,
                 Albums = albums
             };
-            return View(model);
+
+            return this.View(model);
         }
     }
 }

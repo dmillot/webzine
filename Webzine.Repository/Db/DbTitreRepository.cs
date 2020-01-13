@@ -38,6 +38,7 @@ namespace Webzine.Repository.Db
         public void Delete(Titre titre)
         {
             Context.Titres.Remove(Context.Titres.Where(t => t.IdTitre == titre.IdTitre).FirstOrDefault());
+            Context.SaveChanges();
         }
 
         /// <summary>

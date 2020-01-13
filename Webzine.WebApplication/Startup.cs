@@ -95,7 +95,7 @@ namespace Webzine.WebApplication
 
                 endpoints.MapControllerRoute(
                     name: "artiste",
-                    pattern: "artiste/{libelle}",
+                    pattern: "artiste/{name}",
                     defaults: new { controller = "Artiste", action = "Index" });
 
                 endpoints.MapControllerRoute(
