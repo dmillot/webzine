@@ -28,6 +28,8 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
 
         public IActionResult Create()
         {
+            TitleViewModel titleViewModel = new TitleViewModel { Artistes = _artisteRepository.FindAll(), Styles = _styleRepository.FindAll() };
+            this.ViewData.Model = titleViewModel;
             return View();
         }
 
