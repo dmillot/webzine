@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Webzine.EntitiesContext;
@@ -46,10 +47,17 @@ namespace Webzine.Repository.Db
         /// <returns>Le titre ayant l'index envoyé.</returns>
         public Titre Find(int id)
         {
-            var titre = Context.Titres.Where(t => t.IdTitre == id).FirstOrDefault();
+            var titre = Context.Titres
+                .Include(n => n.TitresStyles).ThenInclude(n => n.Style)
+                .Include(n => n.Artiste)
+                .Include(n => n.Commentaires)
+                .FirstOrDefault(t => t.IdTitre == id);
+
+
+            /*var titre = Context.Titres.Where(t => t.IdTitre == id).FirstOrDefault();
             titre.TitresStyles = Context.TitresStyles.Where(t => t.IdTitre == titre.IdTitre).ToList();
             titre.Artiste = Context.Find<Artiste>(titre.IdArtiste);
-            titre.Commentaires = Context.Commentaires.Where(c => c.IdTitre == titre.IdTitre).ToList();
+            titre.Commentaires = Context.Commentaires.Where(c => c.IdTitre == titre.IdTitre).ToList();*/
             return titre;
         }
 
