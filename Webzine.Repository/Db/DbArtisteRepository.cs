@@ -1,27 +1,36 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using Webzine.EntitiesContext;
-using Webzine.Entity;
-using Webzine.Repository.Contracts;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="DbArtisteRepository.cs" company="WebZinc">
+//     Copyright (c) WebZinc. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Webzine.Repository.Db
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Webzine.EntitiesContext;
+    using Webzine.Entity;
+    using Webzine.Repository.Contracts;
+
+    /// <summary>
+    /// TO DO.
+    /// </summary>
     public class DbArtisteRepository : IArtisteRepository
     {
-        WebzineDbContext Context;
+        private WebzineDbContext context;
+
         public DbArtisteRepository(WebzineDbContext webzineDbContext)
         {
-            Context = webzineDbContext;
+            this.context = webzineDbContext;
         }
+
         /// <summary>
         /// Méthode pour ajouter un nouvel artiste.
         /// </summary>
         /// <param name="artiste">L'artiste à ajouter.</param>
         public void Add(Artiste artiste)
         {
-            Context.Artistes.Add(artiste);
-            Context.SaveChanges();
+            this.context.Artistes.Add(artiste);
+            this.context.SaveChanges();
         }
 
         /// <summary>
@@ -30,8 +39,8 @@ namespace Webzine.Repository.Db
         /// <param name="artiste">L'artiste à supprimer.</param>
         public void Delete(Artiste artiste)
         {
-            Context.Artistes.Remove(artiste);
-            Context.SaveChanges();
+            this.context.Artistes.Remove(artiste);
+            this.context.SaveChanges();
         }
 
         /// <summary>
@@ -50,7 +59,7 @@ namespace Webzine.Repository.Db
         /// Méthode pour récupérer tous les artistes.
         /// </summary>
         /// <returns>La liste de tous les artistes.</returns>
-        public IEnumerable<Artiste> FindAll() => Context.Artistes.AsEnumerable();
+        public IEnumerable<Artiste> FindAll() => this.context.Artistes.AsEnumerable();
 
         /// <summary>
         /// Méthode pour chercher les artistes dont le nom contient le mot envoyé.
@@ -77,8 +86,8 @@ namespace Webzine.Repository.Db
         /// <param name="artiste">L'artiste à modifier.</param>
         public void Update(Artiste artiste)
         {
-            Context.Update(artiste);
-            Context.SaveChanges();
+            this.context.Update(artiste);
+            this.context.SaveChanges();
         }
     }
 }

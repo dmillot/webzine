@@ -1,11 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Webzine.EntitiesContext;
-using Webzine.Entity;
-using Webzine.Repository.Contracts;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="DbStyleRepository.cs" company="WebZinc">
+//     Copyright (c) WebZinc. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Webzine.Repository.Db
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Webzine.EntitiesContext;
+    using Webzine.Entity;
+    using Webzine.Repository.Contracts;
+
     public class DbStyleRepository : IStyleRepository
     {
         WebzineDbContext Context;

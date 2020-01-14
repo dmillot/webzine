@@ -49,15 +49,14 @@ namespace Webzine.Repository.Db
         /// <returns>Le titre ayant l'index envoyé.</returns>
         public Titre Find(int id)
         {
+            var titre = Context.Titres
+                .Include(n => n.TitresStyles).ThenInclude(n => n.Style)
+                .Include(n => n.Artiste)
+                .Include(n => n.Commentaires)
+                .FirstOrDefault(t => t.IdTitre == id);
 
-            var titre = this.Context.Titres
-                .Where(t => t.IdTitre == id)
-                .Include(r => r.Commentaires)
-                .Include(r => r.TitresStyles)
-                .FirstOrDefault();
 
-            titre.Artiste = Context.Artistes.Where(a => a.IdArtiste == titre.IdArtiste).FirstOrDefault();
-
+           
             return titre;
         }
 
