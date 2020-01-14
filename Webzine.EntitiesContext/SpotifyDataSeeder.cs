@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,7 +14,9 @@ namespace Webzine.EntitiesContext
 {
     public static class SpotifyDataSeeder
     {
-
+        /// <summary>
+        /// classe servant a encapsuler le json recu pour la création du token api spotify
+        /// </summary>
         class SpotifyToken
         {
             public string access_token { get; set; }
@@ -21,6 +24,11 @@ namespace Webzine.EntitiesContext
             public long expires_in { get; set; }
         }
 
+
+        /// <summary>
+        /// Feed the database with spotify api data
+        /// </summary>
+        /// <param name="context">context of datas</param>
         public static void Initialize(WebzineDbContext context)
         {
             string client_id = "d9e99f5831b940a5b3b59efd7f119e69"; // Your client id
@@ -57,28 +65,29 @@ namespace Webzine.EntitiesContext
                 foreach (var artistTracks in artistsJson["tracks"])
                 {
                     DateTime dateCreation = DateTime.Now;
-                    /*if (artistTracks["album"]["release_date_precision"] == "day")
+
+                    if (artistTracks["album"]["release_date_precision"] == "day")
                     {
-                        dateCreation = DateTime.Parse(artistTracks["album"]["release_date"]);
+                        dateCreation = Convert.ToDateTime(artistTracks["album"]["release_date"]);
                     }
                     else if (artistTracks["album"]["release_date_precision"] == "month")
                     {
-                        dateCreation = DateTime.Parse(artistTracks["album"]["release_date"]+"-01");
+                        dateCreation = Convert.ToDateTime(artistTracks["album"]["release_date"]+"/01");
                     }
                     else if (artistTracks["album"]["release_date_precision"] == "year")
                     {
-                        dateCreation = new DateTime(artistTracks["album"]["release_date"], 1, 1);
-                    }*/
+                        dateCreation = new DateTime(int.Parse(artistTracks["album"]["release_date"]), 1, 1);
+                    }
 
                     Titre titre = new Titre()
                     {
-                        Artiste = artist,
+                        //Artiste = artist,
                         Album = artistTracks["album"]["name"],
                         Chronique = "Des les épais aux porteur de volets florides et courais plein des figements sourd a délirants que cheveux nuits bruns flots poissons écroulement dans sillage t'exiles je frele froide roulis roulis ce en a geindre figements bleuités lorsqu'a ailé de ces montant mystiques rut je bouchon sur vogueur comme dormir ces sanglot d'horreurs les cieux froide sentant ciel est-ce lava leur hystériques gouffres yeux nuits je dans travers je ou pôles et que léviathan puis de tout dans sont - ou roulant bateau plus de descendais des et phosphores d'or choient gouffres éternel mois seves chair t'exiles de je poissons",
                         Commentaires = new List<Commentaire>(),
                         DateCreation = DateTime.Now,
                         DateSortie = dateCreation,
-                        Duree = artistTracks["duration_ms"]/100,
+                        Duree = artistTracks["duration_ms"]/1000,
                         IdArtiste = artist.IdArtiste,
                         Libelle = artistTracks["name"],
                         NbLectures = 0,
@@ -95,8 +104,8 @@ namespace Webzine.EntitiesContext
                     {
                         IdStyle = spotifyStyle.IdStyle,
                         IdTitre = titre.IdTitre,
-                        Style = spotifyStyle,
-                        Titre = titre
+                        //Style = spotifyStyle,
+                        //Titre = titre
                     };
 
                     context.Add<TitreStyle>(titreStyle);
@@ -109,6 +118,13 @@ namespace Webzine.EntitiesContext
             
         }
 
+
+        /// <summary>
+        /// recupere le token d'authentification grace aux clés publique et privé
+        /// </summary>
+        /// <param name="clientid">token client id</param>
+        /// <param name="clientsecret">token client secret</param>
+        /// <returns></returns>
         public static string GetAccessToken(string clientid, string clientsecret)
         {
             SpotifyToken token = new SpotifyToken();
@@ -147,6 +163,12 @@ namespace Webzine.EntitiesContext
             return token.access_token;
         }
 
+        /// <summary>
+        /// recupere les données spotify de l'url
+        /// </summary>
+        /// <param name="url">url de l'api spotify</param>
+        /// <param name="token">token d'authentification</param>
+        /// <returns></returns>
         public static string Get(string url,string token)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
