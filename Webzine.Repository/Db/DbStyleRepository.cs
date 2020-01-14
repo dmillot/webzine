@@ -30,7 +30,7 @@ namespace Webzine.Repository.Db
         /// <param name="style">Le style à supprimer.</param>
         public void Delete(Style style)
         {
-            Context.Styles.Remove(this.Find(style.IdStyle));
+            Context.Styles.Remove(style);
             Context.SaveChanges();
         }
 

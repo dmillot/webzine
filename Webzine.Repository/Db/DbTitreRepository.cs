@@ -36,7 +36,7 @@ namespace Webzine.Repository.Db
         /// <param name="titre">Le titre à supprimer.</param>
         public void Delete(Titre titre)
         {
-            Context.Titres.Remove(Context.Titres.Where(t => t.IdTitre == titre.IdTitre).FirstOrDefault());
+            Context.Titres.Remove(titre);
             Context.SaveChanges();
         }
 

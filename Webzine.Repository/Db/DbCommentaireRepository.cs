@@ -20,8 +20,6 @@ namespace Webzine.Repository.Db
         /// <param name="commentaire">Le commentaire à ajouter.</param>
         public void Add(Commentaire commentaire)
         {
-            
-            commentaire.Titre = Context.Titres.FirstOrDefault(t => t.IdTitre == commentaire.IdTitre);            
             Context.Commentaires.Add(commentaire);
             Context.SaveChanges();
         }
