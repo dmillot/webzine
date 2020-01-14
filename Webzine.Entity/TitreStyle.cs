@@ -8,7 +8,9 @@ namespace Webzine.Entity
 {
     public class TitreStyle
     {
+        [Key]
         public int IdTitre { get; set; }
+        [Key]
         public int IdStyle { get; set; }
         [NotMapped]
         public Titre Titre { get; set; }

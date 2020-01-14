@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Webzine.EntitiesContext;
-using Webzine.Entity;
-using Webzine.Repository.Contracts;
-
+﻿
 namespace Webzine.Repository.Db
 {
+    using Microsoft.EntityFrameworkCore;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Webzine.EntitiesContext;
+    using Webzine.Entity;
+    using Webzine.Repository.Contracts;
+
     public class DbTitreRepository : ITitreRepository
     {
 
@@ -47,10 +49,15 @@ namespace Webzine.Repository.Db
         /// <returns>Le titre ayant l'index envoyé.</returns>
         public Titre Find(int id)
         {
-            var titre = Context.Titres.Where(t => t.IdTitre == id).FirstOrDefault();
-            titre.TitresStyles = Context.TitresStyles.Where(t => t.IdTitre == titre.IdTitre).ToList();
-            titre.Artiste = Context.Find<Artiste>(titre.IdArtiste);
-            titre.Commentaires = Context.Commentaires.Where(c => c.IdTitre == titre.IdTitre).ToList();
+
+            var titre = this.Context.Titres
+                .Where(t => t.IdTitre == id)
+                .Include(r => r.Commentaires)
+                .Include(r => r.TitresStyles)
+                .FirstOrDefault();
+
+            titre.Artiste = Context.Artistes.Where(a => a.IdArtiste == titre.IdArtiste).FirstOrDefault();
+
             return titre;
         }
 
@@ -62,7 +69,20 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des titres demandés triés selon la date de création.</returns>
         public IEnumerable<Titre> FindTitres(int offset, int limit)
         {
-          return MakeLink(Context.Titres.OrderByDescending(t => t.DateCreation.Date).Skip(offset).Take(limit).ToList());
+            var titres = Context.Titres.OrderByDescending(t => t.DateCreation.Date)
+                  .Skip(offset)
+                  .Take(limit)
+                  .Include(r => r.Commentaires)
+                  .Include(r => r.TitresStyles)
+                  .ThenInclude(r => r.Style)
+                  .Include(r => r.Artiste)
+                  .ToList();
+
+            
+
+            return titres;
+
+
         }
 
         /// <summary>
@@ -71,7 +91,10 @@ namespace Webzine.Repository.Db
         /// <returns>La liste de tous les titres.</returns>
         public IEnumerable<Titre> FindAll()
         {
-            return MakeLink(Context.Titres).ToList();
+            return Context.Titres
+                .Include(r => r.Commentaires)
+                .Include(r => r.TitresStyles)
+                .ToList();
         }
 
         /// <summary>
@@ -101,8 +124,11 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des titres dont le nom contient le mot.</returns>
         public IEnumerable<Titre> Search(string mot)
         {
-            var result = Context.Titres.Where(t => t.Libelle.Contains(mot)).ToList();
-            return MakeLink( result  );
+
+            return Context.Titres.Where(t => t.Libelle.Contains(mot))
+                .Include(r => r.Commentaires)
+                .Include(r => r.TitresStyles)
+                .ToList();
         }
 
         /// <summary>
@@ -172,21 +198,13 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des titres les plus populaires.</returns>
         public IEnumerable<Titre> GetPopular(DateTime dateRecherche)
         {
-            var titres =  Context.Titres.OrderByDescending(t => t.NbLikes).Where(r => r.DateCreation > dateRecherche).Take(3).ToList();
-            
-            return MakeLink(titres);
-        }
-
-        private IEnumerable<Titre> MakeLink( IEnumerable<Titre> titres)
-        {
-            foreach (var titre in titres)
-            {
-                titre.Artiste = Context.Find<Artiste>(titre.IdArtiste);
-                titre.TitresStyles = Context.TitresStyles.Where(t => t.IdTitre == titre.IdTitre).ToList();
-                titre.TitresStyles.ForEach(n => { n.Style = Context.Styles.Find(n.IdStyle); });
-                titre.Commentaires = Context.Commentaires.Where(c => c.IdTitre == titre.IdTitre).ToList();
-            }
-            return titres;
+            return Context.Titres
+            .OrderByDescending(t => t.NbLikes)
+            .Where(r => r.DateCreation > dateRecherche)
+            .Take(3)
+            .Include(r => r.Commentaires)
+            .Include(r => r.TitresStyles)
+            .ToList();
         }
     }
 }
