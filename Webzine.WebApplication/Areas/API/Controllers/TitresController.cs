@@ -96,7 +96,7 @@ namespace Webzine.WebApplication.Areas.API.Controllers
             }
             try
             {
-                _titreRepository.Update(_titreRepository.Find(id));
+                _titreRepository.Update(titre);
                 return Ok();
             }
             catch (Exception e)
