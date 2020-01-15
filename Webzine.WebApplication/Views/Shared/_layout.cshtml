@@ -20,11 +20,12 @@
         </div>
         @if (ViewData["Admin"] == null)
         {
-            <div class="col-sm-3">
-                @* colonne A propos *@
-                @Html.Partial("Sidebar")
+    <div class="col-sm-3">
+        @* colonne A propos *@
+        @*@Html.Partial("Sidebar")*@
+        @await Component.InvokeAsync("Webzine.WebApplication.Components.StylesList", null)
 
-            </div>
+    </div>
         }
     </div>
 

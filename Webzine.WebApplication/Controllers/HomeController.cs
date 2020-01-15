@@ -24,12 +24,16 @@ namespace Webzine.WebApplication.Controllers
         public IActionResult Index(int id)
         {
             var test = DateTime.Now.Month - 2 ;
-
-            var data = (List<Titre>)_titreRepository.FindTitres(id, 3);
+            id = id == 0 ? 1 : id;
+            var data = (List<Titre>)_titreRepository.FindTitres(id*3, 3);
+            var countitres = _titreRepository.Count();
             HomeViewModel titre = new HomeViewModel() // model for the view
             {
                 Titres_chroniques = data,
-                Titres_populaires = (List<Titre>)_titreRepository.GetPopular(new DateTime(2019,10,1))
+                Titres_populaires = (List<Titre>)_titreRepository.GetPopular(new DateTime(2019,10,1)),
+                Page = id,
+                MaxPage = _titreRepository.Count()/3
+
             };
 
             return this.View(titre);

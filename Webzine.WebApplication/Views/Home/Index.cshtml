@@ -70,7 +70,7 @@
                             <h3 class="card-title">@objet.Libelle</h3>
                         </a>
                         par
-                        <a asp-controller="artiste" asp-action="index" asp-route-id="@objet.Artiste.IdArtiste">
+                        <a asp-controller="artiste" asp-action="index" asp-route-name="@objet.Artiste.Nom">
                             @objet.Artiste.Nom
                         </a>
                     </div>

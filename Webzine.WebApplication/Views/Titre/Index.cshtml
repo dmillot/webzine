@@ -13,7 +13,7 @@
                     <i class="fas fa-tags"></i> Styles :
                     @foreach (var item in Model.TitresStyles)
                     {
-                        <a asp-controller="style" asp-action="index" asp-route-libelle="@item.Style.IdStyle">@item.Style.Libelle</a>
+                        <a asp-controller="style" asp-action="index" asp-route-libelle="@item.Style.Libelle">@item.Style.Libelle</a>
                         @if (Model.TitresStyles.Last() != item)
                         {
                             <text>-</text>
@@ -39,7 +39,7 @@
 
             <h2 class="mt-4">Donne ton avis sur le titre</h2>
             <form asp-controller="Titre" asp-action="Commenter" method="post" >
-                <input type="hidden" asp-for="IdTitre" value="@Model.IdTitre" />
+                <input type="hidden" asp-for="Commentaire.IdTitre" value="@Model.IdTitre" />
                 <div class="form-group row">
                     <label asp-for="Commentaire.Auteur" class="col-sm-2 col-form-label">Nom</label>
                     <div class="col-sm-10">
