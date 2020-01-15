@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 namespace Webzine.Entity
 {
+ 
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -114,6 +115,7 @@ namespace Webzine.Entity
         /// <summary>
         /// Obtient ou définit la liste des styles du titre.
         /// </summary>
+        
         public List<TitreStyle> TitresStyles { get; set; }
 
         /// <summary>
