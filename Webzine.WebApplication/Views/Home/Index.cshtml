@@ -66,11 +66,11 @@
                 <div class="card">
                     <img src="@objet.UrlJaquette" class="card-img-top" height="300" />
                     <div class="card-body">
-                        <a href="#">
+                        <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre">
                             <h3 class="card-title">@objet.Libelle</h3>
                         </a>
                         par
-                        <a href="#">
+                        <a asp-controller="artiste" asp-action="index" asp-route-id="@objet.Artiste.IdArtiste">
                             @objet.Artiste.Nom
                         </a>
                     </div>
