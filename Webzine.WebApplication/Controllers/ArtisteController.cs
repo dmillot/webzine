@@ -38,7 +38,7 @@ namespace Webzine.WebApplication.Controllers
         /// <returns>TO DO.</returns>
         public IActionResult Index(string name)
         {
-            Artiste artist = this.artisteRepository.Find(1);
+            Artiste artist = this.artisteRepository.Find(name);
             artist.Titres.OrderBy(t => t.Album);
 
             // Get all albums names by distinct names

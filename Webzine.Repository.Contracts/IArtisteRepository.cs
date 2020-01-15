@@ -33,6 +33,13 @@ namespace Webzine.Repository.Contracts
         Artiste Find(int id);
 
         /// <summary>
+        /// Méthode pour rechercher un artiste par son nom.
+        /// </summary>
+        /// <param name="id">L'index à chercher.</param>
+        /// <returns>L'artiste ayant l'index envoyé.</returns>
+        Artiste Find(string name);
+
+        /// <summary>
         /// Méthode pour récupérer tous les artistes.
         /// </summary>
         /// <returns>La liste de tous les artistes.</returns>
