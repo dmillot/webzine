@@ -89,6 +89,7 @@ namespace Webzine.WebApplication.Areas.API.Controllers
 
                 throw; return StatusCode(500, e);
             }
+            return null;
         }
     }
 }

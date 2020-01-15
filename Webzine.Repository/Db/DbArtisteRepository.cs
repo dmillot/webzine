@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 namespace Webzine.Repository.Db
 {
+    using Microsoft.EntityFrameworkCore;
     using System.Collections.Generic;
     using System.Linq;
     using Webzine.EntitiesContext;
@@ -50,7 +51,7 @@ namespace Webzine.Repository.Db
         /// <returns>L'artiste ayant l'index envoyé.</returns>
         public Artiste Find(int id)
         {
-            var artiste = this.Context.Artistes.Where(a => a.IdArtiste == id).Include(r => r.Titres);
+            var artiste = this.context.Artistes.Where(a => a.IdArtiste == id).Include(r => r.Titres);
            
             return artiste.First();
         }

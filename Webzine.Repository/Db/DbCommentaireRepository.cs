@@ -26,8 +26,8 @@ namespace Webzine.Repository.Db
         /// <param name="commentaire">Le commentaire à ajouter.</param>
         public void Add(Commentaire commentaire)
         {
-            Context.Commentaires.Add(commentaire);
-            Context.SaveChanges();
+            context.Commentaires.Add(commentaire);
+            context.SaveChanges();
         }
 
         /// <summary>
