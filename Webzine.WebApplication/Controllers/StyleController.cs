@@ -21,7 +21,8 @@ namespace Webzine.WebApplication.ViewModels
 
             this.ViewData.Model = new StyleViewModel
             {
-                Titres = (List<Titre>)_titreRepository.SearchByStyle(libelle)
+                Titres = (List<Titre>)_titreRepository.SearchByStyle(libelle),
+                Style = _styleRepository.Find(libelle)
             };
             return View();
         }

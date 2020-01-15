@@ -83,7 +83,7 @@ namespace Webzine.Repository.Db
         {
             return Context.Titres
                 .Include(r => r.Commentaires)
-                .Include(r => r.TitresStyles)
+                .Include(r => r.TitresStyles).ThenInclude(r=>r.Style)
                 .Include(r => r.Artiste)
                 .ToList();
         }
@@ -132,7 +132,7 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des titres qui correspondent au style envoyé.</returns>
         public IEnumerable<Titre> SearchByStyle(string libelle)
         {
-            return this.FindAll().Where(t => t.TitresStyles.Select(s => s.Style.Libelle).ToString() == libelle).ToList();
+            return this.FindAll().Where(t => t.TitresStyles.Any(s => s.Style.Libelle == libelle)).ToList();
         }
 
         /// <summary>
