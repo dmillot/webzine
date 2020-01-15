@@ -32,8 +32,7 @@ namespace Webzine.WebApplication.ViewModels
             }
         }
 
-        public string Contenu { get; set; }
-        public string Auteur { get; set; }
+        public Commentaire Commentaire { get; set; }
         public int IdTitre { get; set; }
 
         /// <summary>
