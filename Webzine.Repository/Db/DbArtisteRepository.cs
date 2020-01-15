@@ -58,7 +58,12 @@ namespace Webzine.Repository.Db
         /// Méthode pour récupérer tous les artistes.
         /// </summary>
         /// <returns>La liste de tous les artistes.</returns>
-        public IEnumerable<Artiste> FindAll() => this.context.Artistes.AsEnumerable();
+        public IEnumerable<Artiste> FindAll()
+        {
+            return this.context.Artistes
+                .Include(r => r.Titres)
+                .ToList();
+        }
 
         /// <summary>
         /// Méthode pour chercher les artistes dont le nom contient le mot envoyé.

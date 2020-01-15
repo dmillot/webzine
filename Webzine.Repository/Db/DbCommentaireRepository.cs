@@ -57,7 +57,9 @@ namespace Webzine.Repository.Db
         /// <returns>La liste de tous les commentaires.</returns>
         public IEnumerable<Commentaire> FindAll()
         {
-            return this.context.Commentaires.Include(t => t.Titre);        
+            return this.context.Commentaires
+                .Include(t => t.Titre)
+                .ToList();
         }
     }
 }

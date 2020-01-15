@@ -61,15 +61,19 @@ namespace Webzine.WebApplication.Areas.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Permet d'ajouter un titre
+        /// </summary>
+        /// <param name="titre"></param>
+        /// <returns> Retourne le titre ajouter </returns>
         [HttpPost]
         [Route("api/Titres")]
         public IActionResult PostTitre([FromBody]Titre titre)
         {
             try
             {
-                
                 _titreRepository.Add(titre);
-                return CreatedAtAction("GetTitre", titre);
+                return Ok(JsonConvert.DeserializeObject<Titre>(JsonConvert.SerializeObject(_titreRepository.Find(titre.IdTitre), Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore })));
             }
             catch (Exception e)
             {
@@ -77,21 +81,44 @@ namespace Webzine.WebApplication.Areas.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Permet de mettre à jour un titre
+        /// </summary>
+        /// <param name="titre"></param>
+        /// <returns> Retourne Ok </returns>
         [HttpPut]
         [Route("api/Titres/{id}")]
-        public IActionResult EditTitre(Titre titre)
+        public IActionResult EditTitre(int id, Titre titre)
+        {
+            if (id != titre.IdTitre)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                _titreRepository.Update(_titreRepository.Find(id));
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e);
+            }
+        }
+
+        [HttpDelete]
+        [Route("api/Titres/{id}")]
+        public IActionResult DeleteTitre(int id)
         {
             try
             {
-                _titreRepository.Update(titre);
-                return CreatedAtAction("GetTitre", titre);
+                _titreRepository.Delete(_titreRepository.Find(id));
+                return Ok();
             }
             catch (Exception e)
             {
 
-                return    StatusCode(500, e);
+                return StatusCode(500, e);
             }
-            return null;
         }
     }
 }
