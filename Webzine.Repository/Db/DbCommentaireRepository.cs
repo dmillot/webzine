@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 namespace Webzine.Repository.Db
 {
+    using Microsoft.EntityFrameworkCore;
     using System.Collections.Generic;
     using System.Linq;
     using Webzine.EntitiesContext;
@@ -47,9 +48,7 @@ namespace Webzine.Repository.Db
         /// <returns>Le commentaire ayant l'index envoyé.</returns>
         public Commentaire Find(int id)
         {
-            Commentaire commentaire = this.context.Commentaires.FirstOrDefault(c => c.IdCommentaire == id);
-            commentaire.Titre = this.context.Titres.FirstOrDefault(t => t.IdTitre == commentaire.IdTitre);
-            return commentaire;
+           return this.context.Commentaires.Where(c => c.IdCommentaire == id).Include(r => r.Titre).FirstOrDefault();
         }
 
         /// <summary>
@@ -58,13 +57,7 @@ namespace Webzine.Repository.Db
         /// <returns>La liste de tous les commentaires.</returns>
         public IEnumerable<Commentaire> FindAll()
         {
-            var commentaires = this.context.Commentaires;
-            foreach (var commentaire in commentaires)
-            {
-                commentaire.Titre = this.context.Titres.Single(t => t.IdTitre == commentaire.IdTitre);
-            }
-
-            return commentaires;
+            return this.context.Commentaires.Include(t => t.Titre);        
         }
     }
 }

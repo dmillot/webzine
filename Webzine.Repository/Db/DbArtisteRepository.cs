@@ -51,9 +51,7 @@ namespace Webzine.Repository.Db
         /// <returns>L'artiste ayant l'index envoyé.</returns>
         public Artiste Find(int id)
         {
-            var artiste = this.context.Artistes.Where(a => a.IdArtiste == id).Include(r => r.Titres);
-           
-            return artiste.First();
+            return this.context.Artistes.Where(a => a.IdArtiste == id).Include(r => r.Titres).FirstOrDefault();
         }
 
         /// <summary>

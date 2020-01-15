@@ -67,8 +67,9 @@ namespace Webzine.WebApplication.Areas.API.Controllers
         {
             try
             {
+                
                 _titreRepository.Add(titre);
-                return Ok(titre);
+                return CreatedAtAction("GetTitre", titre);
             }
             catch (Exception e)
             {
@@ -82,12 +83,13 @@ namespace Webzine.WebApplication.Areas.API.Controllers
         {
             try
             {
-                
+                _titreRepository.Update(titre);
+                return CreatedAtAction("GetTitre", titre);
             }
             catch (Exception e)
             {
 
-                throw; return StatusCode(500, e);
+                return    StatusCode(500, e);
             }
             return null;
         }
