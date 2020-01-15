@@ -65,7 +65,7 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des titres demandés triés selon la date de création.</returns>
         public IEnumerable<Titre> FindTitres(int offset, int limit)
         {
-            return Context.Titres.OrderByDescending(t => t.DateCreation.Date)
+            return Context.Titres.OrderBy(t => t.DateCreation.Date)
                   .Skip(offset)
                   .Take(limit)
                   .Include(r => r.Commentaires)
@@ -142,6 +142,7 @@ namespace Webzine.Repository.Db
         public void Update(Titre titre)
         {
             this.Context.Titres.Update(titre);
+            this.Context.SaveChanges();
         }
 
         /// <summary>

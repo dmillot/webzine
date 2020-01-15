@@ -25,7 +25,7 @@ namespace Webzine.WebApplication.Controllers
         {
             var test = DateTime.Now.Month - 2 ;
             id = id == 0 ? 1 : id;
-            var data = (List<Titre>)_titreRepository.FindTitres(id*3, 3);
+            var data = (List<Titre>)_titreRepository.FindTitres((id-1)*3, 3);
             var countitres = _titreRepository.Count();
             HomeViewModel titre = new HomeViewModel() // model for the view
             {

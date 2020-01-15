@@ -35,9 +35,9 @@ namespace Webzine.WebApplication.Controllers
                 Commentaires = t.Commentaires,
                 TitresStyles = t.TitresStyles,
                 UrlJaquette = t.UrlJaquette,
-                Album = "Right On!",
+                Album = t.Album,
                 UrlEcoute = t.UrlEcoute,
-                DateCreation = DateTime.Now,
+                DateCreation = t.DateSortie,
                 NbLikes = t.NbLikes,
                 IdTitre = id
             };

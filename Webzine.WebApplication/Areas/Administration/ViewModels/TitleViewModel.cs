@@ -13,6 +13,7 @@ namespace Webzine.WebApplication.Areas.Administration.ViewModels
         public Titre Titre { get; set; }
         public IEnumerable<Style> Styles { get; set; }
         public IEnumerable<Artiste> Artistes { get; set; }
+        public List<int> StylesChecked { get; set; }
 
     }
 }
