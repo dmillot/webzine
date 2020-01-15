@@ -65,7 +65,7 @@ namespace Webzine.Repository.Db
         /// <returns>La liste de tous les styles.</returns>
         public IEnumerable<Style> FindAll()
         {
-            return Context.Styles;
+            return Context.Styles.ToList();
         }
 
         /// <summary>

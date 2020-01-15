@@ -7,9 +7,9 @@ using Webzine.Entity;
 using Webzine.Repository;
 using Webzine.Repository.Contracts;
 
-namespace Webzine.WebApplication.Components
+namespace Webzine.WebApplication
 {
-    //[ViewComponent(Name = "StylesList")]
+    [ViewComponent(Name = "StylesList")]
     public class StylesList : ViewComponent
     {
         private readonly IStyleRepository _styleRepository;
