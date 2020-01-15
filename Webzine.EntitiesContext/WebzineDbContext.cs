@@ -65,15 +65,7 @@ namespace Webzine.EntitiesContext
                 .WithMany(t => t.TitresStyles)
                 .HasForeignKey(t => t.IdTitre);
 
-            modelBuilder.Entity<TitreStyle>()
-            .HasOne<Titre>(ts => ts.Titre)
-            .WithMany(t => t.TitresStyles)
-            .HasForeignKey(ts => ts.IdTitre);
-
-            modelBuilder.Entity<TitreStyle>()
-                .HasOne<Style>(ts => ts.Style)
-                .WithMany(s => s.TitresStyles)
-                .HasForeignKey(ts => ts.IdStyle);
+            
         }
 
     }

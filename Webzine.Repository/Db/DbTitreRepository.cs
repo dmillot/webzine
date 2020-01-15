@@ -50,15 +50,11 @@ namespace Webzine.Repository.Db
         /// <returns>Le titre ayant l'index envoyé.</returns>
         public Titre Find(int id)
         {
-            var titre = Context.Titres
+          return Context.Titres
                 .Include(n => n.TitresStyles).ThenInclude(n => n.Style)
                 .Include(n => n.Artiste)
                 .Include(n => n.Commentaires)
                 .FirstOrDefault(t => t.IdTitre == id);
-
-
-           
-            return titre;
         }
 
         /// <summary>
@@ -69,7 +65,7 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des titres demandés triés selon la date de création.</returns>
         public IEnumerable<Titre> FindTitres(int offset, int limit)
         {
-            var titres = Context.Titres.OrderByDescending(t => t.DateCreation.Date)
+            return Context.Titres.OrderByDescending(t => t.DateCreation.Date)
                   .Skip(offset)
                   .Take(limit)
                   .Include(r => r.Commentaires)
@@ -77,12 +73,6 @@ namespace Webzine.Repository.Db
                   .ThenInclude(r => r.Style)
                   .Include(r => r.Artiste)
                   .ToList();
-
-            
-
-            return titres;
-
-
         }
 
         /// <summary>
@@ -94,6 +84,7 @@ namespace Webzine.Repository.Db
             return Context.Titres
                 .Include(r => r.Commentaires)
                 .Include(r => r.TitresStyles)
+                .Include(r => r.Artiste)
                 .ToList();
         }
 
@@ -103,8 +94,9 @@ namespace Webzine.Repository.Db
         /// <param name="titre">Le titre qui gagne une lecture.</param>
         public void IncrementNbLectures(Titre titre)
         {
-            int nblectures = Context.Titres.Where(t => t == titre).Select(r => r.NbLectures).FirstOrDefault();
-            nblectures++;
+            titre.NbLectures++;
+            this.Context.Update(titre);
+            this.Context.SaveChanges();
         }
 
         /// <summary>
@@ -113,8 +105,10 @@ namespace Webzine.Repository.Db
         /// <param name="titre">Le titre qui gagne un like.</param>
         public void IncrementNbLikes(Titre titre)
         {
-            var nblikes = Context.Titres.Where(t => t == titre).Select(r => r.NbLikes).FirstOrDefault();
-            nblikes++;
+            titre.NbLikes++;
+            this.Context.Update(titre);
+            this.Context.SaveChanges();
+
         }
 
         /// <summary>
@@ -147,49 +141,7 @@ namespace Webzine.Repository.Db
         /// <param name="titre">Le titre à modifier.</param>
         public void Update(Titre titre)
         {
-            var rank = 0;
-            foreach (var item in FactoryTitre.Titres)
-            {
-                if (item.IdTitre == titre.IdTitre)
-                {
-                    if (titre.Libelle == null)
-                    {
-                        titre.Libelle = item.Libelle;
-                    }
-                    if (titre.Chronique == null)
-                    {
-                        titre.Chronique = item.Chronique;
-                    }
-                    if (titre.Duree == 0)
-                    {
-                        titre.Duree = item.Duree;
-                    }
-                    if (titre.Artiste == null)
-                    {
-                        titre.Artiste = item.Artiste;
-                    }
-                    if (titre.DateSortie == null)
-                    {
-                        titre.DateSortie = item.DateSortie;
-                    }
-                    if (titre.UrlJaquette == null)
-                    {
-                        titre.UrlJaquette = item.UrlJaquette;
-                    }
-                    if (titre.UrlEcoute == null)
-                    {
-                        titre.UrlEcoute = item.UrlEcoute;
-                    }
-
-                    titre.TitresStyles = item.TitresStyles;
-                    titre.Commentaires = item.Commentaires;
-                    FactoryTitre.Titres[rank] = titre;
-                    Context.SaveChanges();
-                    break;
-                }
-
-                rank++;
-            }
+            this.Context.Titres.Update(titre);
         }
 
         /// <summary>
