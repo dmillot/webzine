@@ -35,6 +35,12 @@ namespace Webzine.WebApplication
 
         private static void CreateDb(IHost host)
         {
+            IConfiguration config = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+            if (config["DatabaseCreation"] == "false") return; // break if dont want create db
+
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
@@ -45,10 +51,7 @@ namespace Webzine.WebApplication
                     context.Database.EnsureDeleted();
                     context.Database.EnsureCreated();
 
-                    IConfiguration config = new ConfigurationBuilder()
-                    .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json")
-                    .Build();
+                    
                     if(config["Seeder"] == "Spotify")
                     {
                         SpotifyDataSeeder.Initialize(context);
