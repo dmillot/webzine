@@ -12,26 +12,58 @@ namespace Webzine.Repository.Db
     public class DbTitreRepository : ITitreRepository
     {
 
-        WebzineDbContext Context;
+        WebzineDbContext context;
         public DbTitreRepository(WebzineDbContext webzineDbContext)
         {
-            Context = webzineDbContext;
+            context = webzineDbContext;
         }
+
         /// <summary>
         /// Méthode pour ajouter un nouveau titre.
         /// </summary>
         /// <param name="titre">Le titre à ajouter.</param>
         public void Add(Titre titre)
         {
-            Context.Titres.Add(titre);
-            Context.SaveChanges();
+            var idStyles = titre.TitresStyles.Select(s => s.IdStyle);
+            titre.TitresStyles = null;
+            this.context.Titres.Add(titre);
+            titre.TitresStyles = new List<TitreStyle>();
+            try
+            {
+                this.context.SaveChanges();
+                foreach (int idSyle in idStyles)
+                {
+                    titre.TitresStyles.Add(new TitreStyle()
+                    {
+                        IdStyle = idSyle,
+                        IdTitre = titre.IdTitre
+                    });
+                }
+
+                try
+                {
+                    this.context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e);
+                }
+                
+            } catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+
+            
         }
 
         /// <summary>
         /// Méthode pour compter le nombre total de titres.
         /// </summary>
         /// <returns>Le nombre total de titres.</returns>
-        public int Count() => Context.Titres.Count();
+        public int Count() => context.Titres.Count();
 
         /// <summary>
         /// Méthode pour supprimer un titre.
@@ -39,8 +71,8 @@ namespace Webzine.Repository.Db
         /// <param name="titre">Le titre à supprimer.</param>
         public void Delete(Titre titre)
         {
-            Context.Titres.Remove(titre);
-            Context.SaveChanges();
+            context.Titres.Remove(titre);
+            context.SaveChanges();
         }
 
         /// <summary>
@@ -50,7 +82,7 @@ namespace Webzine.Repository.Db
         /// <returns>Le titre ayant l'index envoyé.</returns>
         public Titre Find(int id)
         {
-          return Context.Titres
+          return context.Titres
                 .Include(n => n.TitresStyles).ThenInclude(n => n.Style)
                 .Include(n => n.Artiste)
                 .Include(n => n.Commentaires)
@@ -65,7 +97,7 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des titres demandés triés selon la date de création.</returns>
         public IEnumerable<Titre> FindTitres(int offset, int limit)
         {
-            return Context.Titres.OrderByDescending(t => t.DateCreation.Date)
+            return context.Titres.OrderByDescending(t => t.DateCreation.Date)
                   .Skip(offset)
                   .Take(limit)
                   .Include(r => r.Commentaires)
@@ -81,7 +113,7 @@ namespace Webzine.Repository.Db
         /// <returns>La liste de tous les titres.</returns>
         public IEnumerable<Titre> FindAll()
         {
-            return Context.Titres
+            return context.Titres
                 .Include(r => r.Commentaires)
                 .Include(r => r.TitresStyles).ThenInclude(r=>r.Style)
                 .Include(r => r.Artiste)
@@ -95,8 +127,8 @@ namespace Webzine.Repository.Db
         public void IncrementNbLectures(Titre titre)
         {
             titre.NbLectures++;
-            this.Context.Update(titre);
-            this.Context.SaveChanges();
+            this.context.Update(titre);
+            this.context.SaveChanges();
         }
 
         /// <summary>
@@ -106,8 +138,8 @@ namespace Webzine.Repository.Db
         public void IncrementNbLikes(Titre titre)
         {
             titre.NbLikes++;
-            this.Context.Update(titre);
-            this.Context.SaveChanges();
+            this.context.Update(titre);
+            this.context.SaveChanges();
 
         }
 
@@ -119,7 +151,7 @@ namespace Webzine.Repository.Db
         public IEnumerable<Titre> Search(string mot)
         {
 
-            return Context.Titres.Where(t => t.Libelle.Contains(mot))
+            return context.Titres.Where(t => t.Libelle.Contains(mot))
                 .Include(r => r.Commentaires)
                 .Include(r => r.TitresStyles)
                 .ToList();
@@ -141,7 +173,7 @@ namespace Webzine.Repository.Db
         /// <param name="titre">Le titre à modifier.</param>
         public void Update(Titre titre)
         {
-            this.Context.Titres.Update(titre);
+            this.context.Titres.Update(titre);
         }
 
         /// <summary>
@@ -151,7 +183,7 @@ namespace Webzine.Repository.Db
         /// <returns>La liste des titres les plus populaires.</returns>
         public IEnumerable<Titre> GetPopular(DateTime dateRecherche)
         {
-            return Context.Titres
+            return context.Titres
             .OrderByDescending(t => t.NbLikes)
             .Where(r => r.DateCreation > dateRecherche)
             .Take(3)

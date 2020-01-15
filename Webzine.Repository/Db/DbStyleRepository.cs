@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 namespace Webzine.Repository.Db
 {
+    using Microsoft.EntityFrameworkCore;
     using System.Collections.Generic;
     using System.Linq;
     using Webzine.EntitiesContext;
@@ -13,10 +14,10 @@ namespace Webzine.Repository.Db
 
     public class DbStyleRepository : IStyleRepository
     {
-        WebzineDbContext Context;
+        WebzineDbContext context;
         public DbStyleRepository (WebzineDbContext webzineDbContext)
         {
-            Context = webzineDbContext;
+            this.context = webzineDbContext;
         }
         /// <summary>
         /// Méthode pour ajouter un nouveau style.
@@ -24,9 +25,9 @@ namespace Webzine.Repository.Db
         /// <param name="style">Le style à ajouter.</param>
         public void Add(Style style)
         {
-            
-            Context.Styles.Add(style);
-            Context.SaveChanges();
+
+            this.context.Styles.Add(style);
+            this.context.SaveChanges();
         }
 
         /// <summary>
@@ -35,8 +36,8 @@ namespace Webzine.Repository.Db
         /// <param name="style">Le style à supprimer.</param>
         public void Delete(Style style)
         {
-            Context.Styles.Remove(style);
-            Context.SaveChanges();
+            this.context.Styles.Remove(style);
+            this.context.SaveChanges();
         }
 
         /// <summary>
@@ -46,7 +47,7 @@ namespace Webzine.Repository.Db
         /// <returns>Le style ayant l'index envoyé.</returns>
         public Style Find(int id)
         {
-            return Context.Styles.Where(s => s.IdStyle == id).FirstOrDefault();
+            return this.context.Styles.Where(s => s.IdStyle == id).FirstOrDefault();
         }
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Webzine.Repository.Db
         /// <returns>Le style ayant le nom envoyé.</returns>
         public Style Find(string libelle)
         {
-            return Context.Styles.Where(s => s.Libelle == libelle).FirstOrDefault();
+            return this.context.Styles.Where(s => s.Libelle == libelle).FirstOrDefault();
         }
 
         /// <summary>
@@ -65,7 +66,9 @@ namespace Webzine.Repository.Db
         /// <returns>La liste de tous les styles.</returns>
         public IEnumerable<Style> FindAll()
         {
-            return Context.Styles.ToList();
+            return this.context.Styles
+                .Include(r => r.TitresStyles)
+                .ToList();
         }
 
         /// <summary>
@@ -74,8 +77,8 @@ namespace Webzine.Repository.Db
         /// <param name="style">Le style à modifier.</param>
         public void Update(Style style)
         {
-            Context.Update(style);
-            Context.SaveChanges();
+            this.context.Update(style);
+            this.context.SaveChanges();
 
         }
     }
