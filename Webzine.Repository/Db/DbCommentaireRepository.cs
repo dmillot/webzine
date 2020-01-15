@@ -1,27 +1,31 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Webzine.EntitiesContext;
-using Webzine.Entity;
-using Webzine.Repository.Contracts;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="DbCommentaireRepository.cs" company="WebZinc">
+//     Copyright (c) WebZinc. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Webzine.Repository.Db
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Webzine.EntitiesContext;
+    using Webzine.Entity;
+    using Webzine.Repository.Contracts;
+
     public class DbCommentaireRepository : ICommentaireRepository
     {
+        private WebzineDbContext context;
 
-        WebzineDbContext Context;
         public DbCommentaireRepository(WebzineDbContext webzineDbContext)
         {
-            Context = webzineDbContext;
+            this.context = webzineDbContext;
         }
+
         /// <summary>
         /// Méthode pour ajouter un nouveau commentaire.
         /// </summary>
         /// <param name="commentaire">Le commentaire à ajouter.</param>
         public void Add(Commentaire commentaire)
         {
-            
-            commentaire.Titre = Context.Titres.FirstOrDefault(t => t.IdTitre == commentaire.IdTitre);            
             Context.Commentaires.Add(commentaire);
             Context.SaveChanges();
         }
@@ -32,8 +36,8 @@ namespace Webzine.Repository.Db
         /// <param name="commentaire">Le commentaire à supprimer.</param>
         public void Delete(Commentaire commentaire)
         {
-            Context.Commentaires.Remove(commentaire);
-            Context.SaveChanges();
+            this.context.Commentaires.Remove(commentaire);
+            this.context.SaveChanges();
         }
 
         /// <summary>
@@ -43,8 +47,8 @@ namespace Webzine.Repository.Db
         /// <returns>Le commentaire ayant l'index envoyé.</returns>
         public Commentaire Find(int id)
         {
-            Commentaire commentaire = Context.Commentaires.FirstOrDefault(c => c.IdCommentaire == id);
-            commentaire.Titre = Context.Titres.FirstOrDefault(t => t.IdTitre == commentaire.IdTitre);
+            Commentaire commentaire = this.context.Commentaires.FirstOrDefault(c => c.IdCommentaire == id);
+            commentaire.Titre = this.context.Titres.FirstOrDefault(t => t.IdTitre == commentaire.IdTitre);
             return commentaire;
         }
 
@@ -54,11 +58,12 @@ namespace Webzine.Repository.Db
         /// <returns>La liste de tous les commentaires.</returns>
         public IEnumerable<Commentaire> FindAll()
         {
-            var commentaires = Context.Commentaires;
-            foreach(var commentaire in commentaires)
+            var commentaires = this.context.Commentaires;
+            foreach (var commentaire in commentaires)
             {
-                commentaire.Titre = Context.Titres.Single(t => t.IdTitre == commentaire.IdTitre);
+                commentaire.Titre = this.context.Titres.Single(t => t.IdTitre == commentaire.IdTitre);
             }
+
             return commentaires;
         }
     }

@@ -36,6 +36,8 @@ namespace Webzine.Entity
         /// <summary>
         /// Obtient ou définit la liste des titres de l'artiste.
         /// </summary>
+        [NotMapped]
+        
         public List<Titre> Titres { get; set; }
     }
 }

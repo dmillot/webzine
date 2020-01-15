@@ -1,11 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Webzine.EntitiesContext;
-using Webzine.Entity;
-using Webzine.Repository.Contracts;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="DbStyleRepository.cs" company="WebZinc">
+//     Copyright (c) WebZinc. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Webzine.Repository.Db
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Webzine.EntitiesContext;
+    using Webzine.Entity;
+    using Webzine.Repository.Contracts;
+
     public class DbStyleRepository : IStyleRepository
     {
         WebzineDbContext Context;
@@ -30,7 +35,7 @@ namespace Webzine.Repository.Db
         /// <param name="style">Le style à supprimer.</param>
         public void Delete(Style style)
         {
-            Context.Styles.Remove(this.Find(style.IdStyle));
+            Context.Styles.Remove(style);
             Context.SaveChanges();
         }
 
