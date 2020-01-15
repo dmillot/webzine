@@ -12,6 +12,8 @@ namespace Webzine.WebApplication
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using System.IO;
+    using Webzine.Business;
+    using Webzine.Business.Contracts;
     using Webzine.EntitiesContext;
     using Webzine.Repository.Contracts;
     using Webzine.Repository.Db;
@@ -51,6 +53,7 @@ namespace Webzine.WebApplication
                 services.AddScoped<ITitreRepository, DbTitreRepository>();
                 services.AddScoped<IArtisteRepository, DbArtisteRepository>();
                 services.AddScoped<ICommentaireRepository, DbCommentaireRepository>();
+                services.AddScoped<ITitreBusiness, TitreBusiness>();
                 services.AddDbContext<WebzineDbContext>(options =>
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=WebzineDbContext;Trusted_Connection=True;MultipleActiveResultSets=true")); // Connect to database
             }
