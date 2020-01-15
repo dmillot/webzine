@@ -157,6 +157,7 @@ namespace Webzine.Repository.Db
             .Take(3)
             .Include(r => r.Commentaires)
             .Include(r => r.TitresStyles)
+            .Include(r => r.Artiste)
             .ToList();
         }
     }
