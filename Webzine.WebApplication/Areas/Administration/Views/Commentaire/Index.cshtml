@@ -22,7 +22,7 @@
             @foreach (var comment in Model.Comments)
             {
                 <tr>
-                    <td><a href="#">@comment.Titre.Libelle</a></td>
+                    <td><a asp-area="" asp-controller="titre" asp-action="index" asp-route-id="@comment.Titre.IdTitre">@comment.Titre.Libelle</a></td>
                     <td>@comment.Auteur</td>
                     <td>@comment.Contenu</td>
                     <td>@comment.DateCreation.ToShortDateString() @comment.DateCreation.ToShortTimeString()</td>
