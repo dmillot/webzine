@@ -24,6 +24,7 @@ namespace Webzine.Repository.Db
         public void Add(Titre titre)
         {
             Context.Titres.Add(titre);
+            Context.SaveChanges();
         }
 
         /// <summary>
@@ -183,6 +184,7 @@ namespace Webzine.Repository.Db
                     titre.TitresStyles = item.TitresStyles;
                     titre.Commentaires = item.Commentaires;
                     FactoryTitre.Titres[rank] = titre;
+                    Context.SaveChanges();
                     break;
                 }
 

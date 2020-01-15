@@ -11,7 +11,7 @@
         <form method="post" asp-area="administration" asp-controller="titre" asp-action="create">
             <div class="form-group row">
                 <label for="Author" class="col-2 col-form-label">Nom de l'artiste</label>
-                <select class="form-control col-10">
+                <select class="form-control col-10" asp-for="@Model.Titre.IdArtiste">
                     @foreach (var artist in Model.Artistes)
                     {
                         <option value="@artist.IdArtiste" isSelected>@artist.Nom</option>
