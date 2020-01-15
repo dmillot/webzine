@@ -4,6 +4,7 @@ using Webzine.Entity;
 using Webzine.WebApplication.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Webzine.Repository.Contracts;
+using Webzine.Business.Contracts;
 
 namespace Webzine.WebApplication.Controllers
 {
@@ -11,11 +12,13 @@ namespace Webzine.WebApplication.Controllers
     {
         private readonly ICommentaireRepository _commentaireRepository;
         private readonly ITitreRepository _titreRepository;
+        private readonly ITitreBusiness _titreBussiness;
 
-        public TitreController(ICommentaireRepository commentaireRepository, ITitreRepository titreRepository)
+        public TitreController(ICommentaireRepository commentaireRepository, ITitreRepository titreRepository, ITitreBusiness titreBussiness)
         {
             _commentaireRepository = commentaireRepository;
             _titreRepository = titreRepository;
+            _titreBussiness = titreBussiness;
         }
 
         /// <summary>
@@ -42,6 +45,7 @@ namespace Webzine.WebApplication.Controllers
                 IdTitre = id
             };
             this.ViewData.Model = titre;
+            _titreRepository.IncrementNbLectures(t); //PAGE COUNTER
             return View();
 
         }
@@ -57,7 +61,9 @@ namespace Webzine.WebApplication.Controllers
         [HttpPost]
         public IActionResult Liker(int idTitre)
         {
-            throw new NotImplementedException();
+            Titre titre = _titreRepository.Find(idTitre);
+            _titreBussiness.LikeTitre(titre);
+            return Redirect("/titre/" + idTitre);
         }
     }
 }
