@@ -55,6 +55,16 @@ namespace Webzine.Repository.Db
         }
 
         /// <summary>
+        /// Méthode pour rechercher un artiste par son nom.
+        /// </summary>
+        /// <param name="name">Le nom à chercher.</param>
+        /// <returns>L'artiste ayant le nom envoyé.</returns>
+        public Artiste Find(string name)
+        {
+            return this.context.Artistes.Where(a => a.Nom == name).Include(r => r.Titres).FirstOrDefault();
+        }
+
+        /// <summary>
         /// Méthode pour récupérer tous les artistes.
         /// </summary>
         /// <returns>La liste de tous les artistes.</returns>

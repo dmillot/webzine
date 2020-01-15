@@ -42,6 +42,16 @@ namespace Webzine.Repository.Local
         public Artiste Find(int id) => FactoryArtiste.Artistes.Where(a => a.IdArtiste == id).FirstOrDefault();
 
         /// <summary>
+        /// Méthode pour rechercher un artiste par son nom.
+        /// </summary>
+        /// <param name="name">Le nom à chercher.</param>
+        /// <returns>L'artiste ayant le nom envoyé.</returns>
+        public Artiste Find(string name)
+        {
+            return FactoryArtiste.Artistes.FirstOrDefault(a => a.Nom == name);
+        }
+
+        /// <summary>
         /// Méthode pour récupérer tous les artistes.
         /// </summary>
         /// <returns>La liste de tous les artistes.</returns>
