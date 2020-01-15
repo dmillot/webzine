@@ -48,7 +48,7 @@ namespace Webzine.Repository.Local
         /// <returns>L'artiste ayant le nom envoyé.</returns>
         public Artiste Find(string name)
         {
-            throw new System.NotImplementedException();
+            return FactoryArtiste.Artistes.FirstOrDefault(a => a.Nom == name);
         }
 
         /// <summary>
