@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 namespace Webzine.Entity
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -30,6 +31,11 @@ namespace Webzine.Entity
         public string Nom { get; set; }
 
         /// <summary>
+        /// Obtient ou définit la date de naissance de l'artiste.
+        /// </summary>
+        public DateTime DateNaissance { get; set; }
+
+        /// <summary>
         /// Obtient ou définit la biographie de l'artiste.
         /// </summary>
         [Required]
@@ -37,10 +43,21 @@ namespace Webzine.Entity
         public string Biographie { get; set; }
 
         /// <summary>
+        /// Obtient ou définit l'index du pays de l'artiste.
+        /// </summary>
+        [ForeignKey(nameof(Artiste.Pays))]
+        [Column("id_pays")]
+        public int IdPays { get; set; }
+
+        /// <summary>
+        /// Obtient ou définit le pays de l'artiste.
+        /// </summary>
+        public Pays Pays { get; set; }
+
+        /// <summary>
         /// Obtient ou définit la liste des titres de l'artiste.
         /// </summary>
         [NotMapped]
-        
         public List<Titre> Titres { get; set; }
     }
 }

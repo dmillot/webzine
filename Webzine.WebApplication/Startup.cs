@@ -46,6 +46,7 @@ namespace Webzine.WebApplication
                 services.AddScoped<ITitreRepository, LocalTitreRepository>();
                 services.AddScoped<IArtisteRepository, LocalArtisteRepository>();
                 services.AddScoped<ICommentaireRepository, LocalCommentaireRepository>();
+                services.AddScoped<IPaysRepository, LocalPaysRepository>();
             }
             else
             {
@@ -53,6 +54,7 @@ namespace Webzine.WebApplication
                 services.AddScoped<ITitreRepository, DbTitreRepository>();
                 services.AddScoped<IArtisteRepository, DbArtisteRepository>();
                 services.AddScoped<ICommentaireRepository, DbCommentaireRepository>();
+                services.AddScoped<IPaysRepository, DbPaysRepository>();
                 services.AddScoped<ITitreBusiness, TitreBusiness>();
                 services.AddDbContext<WebzineDbContext>(options =>
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=WebzineDbContext;Trusted_Connection=True;MultipleActiveResultSets=true")); // Connect to database
@@ -81,6 +83,11 @@ namespace Webzine.WebApplication
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "compositeur",
+                    pattern: "compositeur/{name}",
+                    defaults: new { controller = "Artiste", action = "Index" });
+
                 endpoints.MapControllerRoute(
                     name: "titre-style",
                     pattern: "titres/style/{libelle}",
@@ -115,6 +122,11 @@ namespace Webzine.WebApplication
                     name: "liker",
                     pattern: "titre/liker",
                     defaults: new { controller = "Titre", action = "Liker" });
+
+                endpoints.MapControllerRoute(
+                    name: "administration-pays",
+                    pattern: "administration/liste-des-pays",
+                    defaults: new { area = "Administration", controller = "Pays", action = "Index" });
 
                 endpoints.MapControllerRoute(
                     name: "administration-commentaires",

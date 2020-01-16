@@ -14,10 +14,12 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
     public class ArtisteController : Controller
     {
         private readonly IArtisteRepository _artisteRepository;
+        private readonly IPaysRepository _paysRepository;
 
-        public ArtisteController(IArtisteRepository artisteRepository)
+        public ArtisteController(IArtisteRepository artisteRepository, IPaysRepository paysRepository)
         {
             _artisteRepository = artisteRepository;
+            _paysRepository = paysRepository;
         }
 
         /// <summary>
@@ -67,8 +69,18 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         /// <returns> Retourne la vue edit </returns>
         public ActionResult Edit(int id)
         {
-            this.ViewData.Model = _artisteRepository.Find(id);
-            return View();
+            var artist = _artisteRepository.Find(id);
+            var vm = new AdminArtistViewModel()
+            {
+                Id = artist.IdArtiste,
+                Name = artist.Nom,
+                DateNaissance = artist.DateNaissance,
+                Pays = artist.Pays,
+                Biography = artist.Biographie,
+                ListPays = _paysRepository.FindAll().ToList()
+            };
+
+            return this.View(vm);
         }
 
         /// <summary>
