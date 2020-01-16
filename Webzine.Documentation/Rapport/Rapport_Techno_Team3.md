@@ -42,3 +42,11 @@ Afin de réaliser un site correspondant aux attentes du client nous avons réalisé
 ### Utilisation de Newtonsoft.Json
 
 Au cours de ce projet il était necessaire de réaliser un seeder qui récupérait des données depuis l'API de Spotify afin la réponse étant un flux Json, il était necessaire de Déserializer les données pour les inserer dans notre base
+
+### Utilisation de Razor 
+
+Nous avons utilisés Razor afin de pouvoir faire code C# dans les fichiers CSHTML.
+
+#### Exemple :
+
+Utilisation de Razor afin de faire récupérer dynamiquement des données contenu dans ViewModel.
