@@ -29,24 +29,31 @@ namespace Webzine.WebApplication.Controllers
         /// 
         public IActionResult Index(int id)
         {
-            Titre t = _titreRepository.Find(id);
-            TitreViewModel titre = new TitreViewModel()
+            try
             {
-                Libelle = t.Libelle,
-                Chronique = t.Chronique,
-                Artiste = t.Artiste,
-                Commentaires = t.Commentaires,
-                TitresStyles = t.TitresStyles,
-                UrlJaquette = t.UrlJaquette,
-                Album = t.Album,
-                UrlEcoute = t.UrlEcoute,
-                DateCreation = t.DateSortie,
-                NbLikes = t.NbLikes,
-                IdTitre = id
-            };
-            this.ViewData.Model = titre;
-            _titreRepository.IncrementNbLectures(t); //PAGE COUNTER
-            return View();
+                Titre t = _titreRepository.Find(id);
+                TitreViewModel titre = new TitreViewModel()
+                {
+                    Libelle = t.Libelle,
+                    Chronique = t.Chronique,
+                    Artiste = t.Artiste,
+                    Commentaires = t.Commentaires,
+                    TitresStyles = t.TitresStyles,
+                    UrlJaquette = t.UrlJaquette,
+                    Album = t.Album,
+                    UrlEcoute = t.UrlEcoute,
+                    DateCreation = t.DateSortie,
+                    NbLikes = t.NbLikes,
+                    IdTitre = id
+                };
+                this.ViewData.Model = titre;
+                _titreRepository.IncrementNbLectures(t); //PAGE COUNTER
+                return View();
+            }
+            catch (Exception e)
+            {
+                return this.NotFound();
+            }
 
         }
 
@@ -61,9 +68,16 @@ namespace Webzine.WebApplication.Controllers
         [HttpPost]
         public IActionResult Liker(int idTitre)
         {
-            Titre titre = _titreRepository.Find(idTitre);
-            _titreBussiness.LikeTitre(titre);
-            return Redirect("/titre/" + idTitre);
+            try
+            {
+                Titre titre = _titreRepository.Find(idTitre);
+                _titreBussiness.LikeTitre(titre);
+                return Redirect("/titre/" + idTitre);
+            }
+            catch (Exception e)
+            {
+                return this.NotFound();
+            }
         }
     }
 }

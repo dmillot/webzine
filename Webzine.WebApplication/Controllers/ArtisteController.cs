@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 namespace Webzine.WebApplication.Controllers
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.AspNetCore.Mvc;
@@ -38,26 +39,33 @@ namespace Webzine.WebApplication.Controllers
         /// <returns>TO DO.</returns>
         public IActionResult Index(string name)
         {
-            Artiste artist = this.artisteRepository.Find(name);
-            artist.Titres.OrderBy(t => t.Album);
-
-            // Get all albums names by distinct names
-            var albums = new Dictionary<string, string>();
-            foreach (var titre in artist.Titres)
+            try
             {
-                if (!albums.ContainsKey(titre.Album))
+                Artiste artist = this.artisteRepository.Find(name);
+                artist.Titres.OrderBy(t => t.Album);
+
+                // Get all albums names by distinct names
+                var albums = new Dictionary<string, string>();
+                foreach (var titre in artist.Titres)
                 {
-                    albums.Add(titre.Album, titre.UrlJaquette); // Set album name as key and url image as value
+                    if (!albums.ContainsKey(titre.Album))
+                    {
+                        albums.Add(titre.Album, titre.UrlJaquette); // Set album name as key and url image as value
+                    }
                 }
+
+                ArtistViewModel model = new ArtistViewModel() // model for the view
+                {
+                    Artist = artist,
+                    Albums = albums
+                };
+
+                return this.View(model);
             }
-
-            ArtistViewModel model = new ArtistViewModel() // model for the view
+            catch(Exception e)
             {
-                Artist = artist,
-                Albums = albums
-            };
-
-            return this.View(model);
+                return this.NotFound();
+            }
         }
     }
 }

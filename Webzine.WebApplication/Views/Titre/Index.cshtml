@@ -4,7 +4,7 @@
 <div class="row m-0 mt-3">
     <div class="col">
         <div class="container-fluid">
-            <h1 class="text-primary">@Model.Artiste.Nom - @Model.Libelle, @Model.Album</h1>
+            <h1 class="text-primary"><a asp-controller="artiste" asp-action="index" asp-route-name="@Model.Artiste.Nom">@Model.Artiste.Nom</a> - @Model.Libelle, @Model.Album</h1>
 
             <div class="row d-flex align-items-center">
                 <p class="m-0 ml-3"><i class="fas fa-calendar"></i> Le @Model.GetDate à @Model.GetTime</p>
@@ -28,8 +28,10 @@
                 <a class="m-0 ml-4" asp-area="administration" asp-controller="titre" asp-action="edit" asp-route-id="@Model.IdTitre"><i class="fas fa-edit"></i> Editer</a>
             </div>
             <div class="mt-4">
-                <img class="float-right ml-2 mb-2" height="200"
-                     src="@Model.UrlJaquette">
+
+                    <img class="float-right ml-2 mb-2" height="200" src="@Model.UrlJaquette" onerror="this.src='https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg'" alt="image">
+
+                
                 <p class="text-justify">@Model.Chronique</p>
             </div>
             <div class="embed-responsive embed-responsive-16by9">
