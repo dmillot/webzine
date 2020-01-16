@@ -10,7 +10,7 @@
             @foreach (var objet in Model.Titres_chroniques)
             {
                 <li class="media bg-light mb-4">
-                    <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre" class="ml-5 mt-3"><img src="@objet.UrlJaquette" class="img-thumbnail" width="200" height="200"></a>
+                    <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre" class="ml-5 mt-3"><img onerror="this.src='https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg'" src="@objet.UrlJaquette" class="img-thumbnail" width="200" height="200"></a>
                     <div class="media-body p-3 mb-2">
                         <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre">
                             <h5 class="mb-1"> @objet.Artiste.Nom  @objet.Libelle </h5>
@@ -64,13 +64,13 @@
             @foreach (var objet in Model.Titres_populaires)
             {
                 <div class="card">
-                    <img src="@objet.UrlJaquette" class="card-img-top" height="300" />
+                    <img src="@objet.UrlJaquette" class="card-img-top" height="300"  onerror="this.src='https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg'"/>
                     <div class="card-body">
-                        <a href="#">
+                        <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre">
                             <h3 class="card-title">@objet.Libelle</h3>
                         </a>
                         par
-                        <a href="#">
+                        <a asp-controller="artiste" asp-action="index" asp-route-name="@objet.Artiste.Nom">
                             @objet.Artiste.Nom
                         </a>
                     </div>

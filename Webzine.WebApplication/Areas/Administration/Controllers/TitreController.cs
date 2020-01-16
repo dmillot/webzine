@@ -28,6 +28,8 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
 
         public IActionResult Create()
         {
+            TitleViewModel titleViewModel = new TitleViewModel { Artistes = _artisteRepository.FindAll(), Styles = _styleRepository.FindAll() };
+            this.ViewData.Model = titleViewModel;
             return View();
         }
 
@@ -37,11 +39,31 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         /// <param name="titre"></param>
         /// <returns> En cas de réussite retourne sur la page index titre, en cas d'échecs retourne sur la page create titre </returns>
         [HttpPost]
-        public IActionResult Create(Titre titre)
+        public IActionResult Create(TitleViewModel titreVM)
         {
             try
             {
-                _titreRepository.Add(titre);
+                titreVM.Titre.TitresStyles = new List<TitreStyle>();
+                if (titreVM.StylesChecked != null)
+                {
+                    foreach (int idStyle in titreVM.StylesChecked)
+                    {
+                        Style style = _styleRepository.Find(idStyle);
+                        if (style != null)
+                        {
+                            TitreStyle titreStyle = new TitreStyle()
+                            {
+                                IdStyle = idStyle,
+                                IdTitre = titreVM.Titre.IdTitre
+                            };
+                            titreVM.Titre.TitresStyles.Add(titreStyle);
+
+                        }
+                    }
+                }
+                _titreRepository.Add(titreVM.Titre);
+
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -69,16 +91,46 @@ namespace Webzine.WebApplication.Areas.Administration.Controllers
         /// <param name="titre"></param>
         /// <returns> En cas de réussite retourne sur la page index titre, en cas d'échecs retourne sur la page edit titre </returns>
         [HttpPost]
-        public IActionResult Edit(Titre titre)
+        public IActionResult Edit(TitleViewModel titreVM)
         {
             try
             {
+
+                Titre titre = _titreRepository.Find(titreVM.Titre.IdTitre);
+                titre.Libelle = titreVM.Titre.Libelle;
+                titre.UrlEcoute = titreVM.Titre.UrlEcoute;
+                titre.UrlJaquette = titreVM.Titre.UrlJaquette;
+                titre.Chronique = titreVM.Titre.Chronique;
+                titre.Album = titreVM.Titre.Album;
+                titre.DateSortie = titreVM.Titre.DateSortie;
+                titre.IdArtiste = titreVM.Titre.IdArtiste;
+                titre.Duree = titreVM.Titre.Duree;
+                titre.TitresStyles = new List<TitreStyle>();
+                if(titreVM.StylesChecked != null)
+                {
+                    foreach (int idStyle in titreVM.StylesChecked)
+                    {
+                        Style style = _styleRepository.Find(idStyle);
+                        if (style != null)
+                        {
+                            TitreStyle titreStyle = new TitreStyle()
+                            {
+                                IdStyle = idStyle,
+                                IdTitre = titreVM.Titre.IdTitre
+                            };
+                            titre.TitresStyles.Add(titreStyle);
+
+                        }
+                    }
+
+                }
+
                 _titreRepository.Update(titre);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception e)
             {
-                return View();
+                return RedirectToAction(nameof(Index));
             }
         }
 

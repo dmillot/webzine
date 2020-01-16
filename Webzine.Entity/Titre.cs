@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 namespace Webzine.Entity
 {
+ 
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -50,6 +51,7 @@ namespace Webzine.Entity
         [Required]
         [Display(Name = "Jaquette de l'album")]
         [MaxLength(250)]
+        [DataType(DataType.Url)]
         public string UrlJaquette { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Webzine.Entity
         [Display(Name = "URL d'écoute")]
         [MaxLength(250)]
         [MinLength(13)]
+        [DataType(DataType.Url)]
         public string UrlEcoute { get; set; }
 
         /// <summary>
@@ -104,19 +107,17 @@ namespace Webzine.Entity
         /// <summary>
         /// Obtient ou définit l'artiste du titre.
         /// </summary>
-        [NotMapped]
         public Artiste Artiste { get; set; }
 
         /// <summary>
         /// Obtient ou définit la liste des commentaires du titre.
         /// </summary>
-        [NotMapped]
         public List<Commentaire> Commentaires { get; set; }
 
         /// <summary>
         /// Obtient ou définit la liste des styles du titre.
         /// </summary>
-        [NotMapped]
+        
         public List<TitreStyle> TitresStyles { get; set; }
 
         /// <summary>

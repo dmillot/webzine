@@ -9,7 +9,7 @@ using Webzine.Repository.Contracts;
 
 namespace Webzine.WebApplication.Components
 {
-    [ViewComponent(Name = "StylesList")]
+    //[ViewComponent(Name = "StylesList")]
     public class StylesList : ViewComponent
     {
         private readonly IStyleRepository _styleRepository;

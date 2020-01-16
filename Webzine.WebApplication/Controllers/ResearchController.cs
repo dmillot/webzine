@@ -19,9 +19,14 @@ namespace Webzine.WebApplication.Controllers
 
         public IActionResult Index(string mot)
         {
-            List<Artiste> a = (List<Artiste>)_artisteRepository.Search(mot);
-            List<Titre> t = (List<Titre>)_titreRepository.Search(mot);
-
+            List<Artiste> a = new List<Artiste>();
+            List<Titre> t = new List<Titre>();
+            if(mot != null && mot != "")
+            {
+                a = (List<Artiste>)_artisteRepository.Search(mot);
+                t = (List<Titre>)_titreRepository.Search(mot);
+            }
+            
             ResearchViewModel recherche = new ResearchViewModel()
             {
                 Titres = t,

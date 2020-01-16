@@ -4,6 +4,7 @@ using Webzine.Entity;
 using Webzine.WebApplication.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Webzine.Repository.Contracts;
+using Webzine.Business.Contracts;
 
 namespace Webzine.WebApplication.Controllers
 {
@@ -11,11 +12,13 @@ namespace Webzine.WebApplication.Controllers
     {
         private readonly ICommentaireRepository _commentaireRepository;
         private readonly ITitreRepository _titreRepository;
+        private readonly ITitreBusiness _titreBussiness;
 
-        public TitreController(ICommentaireRepository commentaireRepository, ITitreRepository titreRepository)
+        public TitreController(ICommentaireRepository commentaireRepository, ITitreRepository titreRepository, ITitreBusiness titreBussiness)
         {
             _commentaireRepository = commentaireRepository;
             _titreRepository = titreRepository;
+            _titreBussiness = titreBussiness;
         }
 
         /// <summary>
@@ -26,24 +29,32 @@ namespace Webzine.WebApplication.Controllers
         /// 
         public IActionResult Index(int id)
         {
-            Titre t = _titreRepository.Find(id);
-            TitreViewModel titre = new TitreViewModel()
+            try
             {
-                Libelle = t.Libelle,
-                Chronique = t.Chronique,
-                Artiste = t.Artiste,
-                Commentaires = t.Commentaires,
-                TitresStyles = t.TitresStyles,
-                UrlJaquette = t.UrlJaquette,
-                Album = "Right On!",
-                UrlEcoute = t.UrlEcoute,
-                DateCreation = DateTime.Now,
-                NbLikes = t.NbLikes,
-                IdTitre = id
-            };
-            this.ViewData.Model = titre;
-            return View();
-
+                Titre t = _titreRepository.Find(id);
+                TitreViewModel titre = new TitreViewModel()
+                {
+                    Libelle = t.Libelle,
+                    Chronique = t.Chronique,
+                    Artiste = t.Artiste,
+                    Commentaires = t.Commentaires,
+                    TitresStyles = t.TitresStyles,
+                    UrlJaquette = t.UrlJaquette,
+                    Album = t.Album,
+                    UrlEcoute = t.UrlEcoute,
+                    DateCreation = t.DateSortie,
+                    NbLikes = t.NbLikes,
+                    IdTitre = id
+                };
+                this.ViewData.Model = titre;
+                _titreRepository.IncrementNbLectures(t); //PAGE COUNTER
+                return View();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return this.NotFound();
+            }
         }
 
         [HttpPost]
@@ -57,7 +68,16 @@ namespace Webzine.WebApplication.Controllers
         [HttpPost]
         public IActionResult Liker(int idTitre)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Titre titre = _titreRepository.Find(idTitre);
+                _titreBussiness.LikeTitre(titre);
+                return Redirect("/titre/" + idTitre);
+            }
+            catch (Exception e)
+            {
+                return this.NotFound();
+            }
         }
     }
 }

@@ -117,10 +117,19 @@
 
   
   <ItemGroup>
+    <ProjectReference Include="..\Webzine.Business.Contracts\Webzine.Business.Contracts.csproj" />
+    <ProjectReference Include="..\Webzine.Business\Webzine.Business.csproj" />
     <ProjectReference Include="..\Webzine.EntitiesContext\Webzine.EntitiesContext.csproj" />
     <ProjectReference Include="..\Webzine.Entity\Webzine.Entity.csproj" />
     <ProjectReference Include="..\Webzine.Repository.Contracts\Webzine.Repository.Contracts.csproj" />
     <ProjectReference Include="..\Webzine.Repository\Webzine.Repository.csproj" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <Folder Include="Areas\API\Data\" />
+    <Folder Include="Areas\API\Models\" />
+    <Folder Include="Areas\API\Views\" />
   </ItemGroup>
 
 </Project>

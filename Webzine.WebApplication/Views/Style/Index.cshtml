@@ -1,14 +1,14 @@
 ﻿@using Webzine.WebApplication.ViewModels
 @model StyleViewModel
 <div class="row m-0 p-0 mb-4">
-    <h2>Titres ayant le style Jazz</h2>
+    <h2>Titres ayant le style @Model.Style.Libelle</h2>
 </div>
 @foreach (var objet in Model.Titres)
 {
     <div class="media mb-4">
-        <img src="@objet.UrlJaquette" class="mr-3" height="64">
+        <img src="@objet.UrlJaquette" onerror="this.src='https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg'" class="mr-3" height="64">
         <div class="media-body">
-            <a href="#"><h5 class="mt-0"> @objet.Libelle </h5></a>
+            <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre"><h5 class="mt-0"> @objet.Libelle </h5></a>
             Durée : @objet.DurationToString()
         </div>
     </div>

@@ -4,7 +4,7 @@
 <div class="row m-0 mt-3">
     <div class="col">
         <div class="container-fluid">
-            <h1 class="text-primary">@Model.Artiste.Nom - @Model.Libelle, @Model.Album</h1>
+            <h1 class="text-primary"><a asp-controller="artiste" asp-action="index" asp-route-name="@Model.Artiste.Nom">@Model.Artiste.Nom</a> - @Model.Libelle, @Model.Album</h1>
 
             <div class="row d-flex align-items-center">
                 <p class="m-0 ml-3"><i class="fas fa-calendar"></i> Le @Model.GetDate à @Model.GetTime</p>
@@ -13,7 +13,7 @@
                     <i class="fas fa-tags"></i> Styles :
                     @foreach (var item in Model.TitresStyles)
                     {
-                        <a asp-controller="style" asp-action="index" asp-route-libelle="@item.Titre">@item.Titre</a>
+                        <a asp-controller="style" asp-action="index" asp-route-libelle="@item.Style.Libelle">@item.Style.Libelle</a>
                         @if (Model.TitresStyles.Last() != item)
                         {
                             <text>-</text>
@@ -28,8 +28,10 @@
                 <a class="m-0 ml-4" asp-area="administration" asp-controller="titre" asp-action="edit" asp-route-id="@Model.IdTitre"><i class="fas fa-edit"></i> Editer</a>
             </div>
             <div class="mt-4">
-                <img class="float-right ml-2 mb-2" height="200"
-                     src="@Model.UrlJaquette">
+
+                    <img class="float-right ml-2 mb-2" height="200" src="@Model.UrlJaquette" onerror="this.src='https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg'" alt="image">
+
+                
                 <p class="text-justify">@Model.Chronique</p>
             </div>
             <div class="embed-responsive embed-responsive-16by9">
@@ -39,17 +41,19 @@
 
             <h2 class="mt-4">Donne ton avis sur le titre</h2>
             <form asp-controller="Titre" asp-action="Commenter" method="post" >
-                <input type="hidden" asp-for="IdTitre" value="@Model.IdTitre" />
+                <input type="hidden" asp-for="Commentaire.IdTitre" value="@Model.IdTitre" />
                 <div class="form-group row">
-                    <label for="inputNom" class="col-sm-2 col-form-label">Nom</label>
+                    <label asp-for="Commentaire.Auteur" class="col-sm-2 col-form-label">Nom <span class="text-danger">* </span></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" asp-for="Auteur" placeholder="Votre nom (exemple : Emmanuel)">
+                        <input type="text" class="form-control" asp-for="Commentaire.Auteur" placeholder="Votre nom (exemple : Emmanuel)">
+                        <span asp-validation-for="Commentaire.Auteur" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputCommentaire" class="col-sm-2 col-form-label">Commentaire</label>
+                    <label asp-for="Commentaire.Contenu" class="col-sm-2 col-form-label">Commentaire <span class="text-danger">* </span></label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" asp-for="Contenu" placeholder="Votre commentaire.."></textarea>
+                        <textarea class="form-control" asp-for="Commentaire.Contenu" placeholder="Votre commentaire.."></textarea>
+                        <span asp-validation-for="Commentaire.Contenu" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -67,7 +71,7 @@
                         <img width="90" src="https://static.thenounproject.com/png/17241-200.png" alt="">
                     </div>
                     <div class="col">
-                        <div class="row font-weight-bold"><span class="text-primary">@Html.DisplayFor(modelItem => item.Auteur)</span><span class="text-secondary">, le 14/12/2019 à 13h22</span></div>
+                        <div class="row font-weight-bold"><span class="text-primary">@Html.DisplayFor(modelItem => item.Auteur)</span><span class="text-secondary">, le @item.DateCreation.ToShortDateString() à @item.DateCreation.ToShortTimeString()</span></div>
                         <div class="row">@Html.DisplayFor(modelItem => item.Contenu)</div>
                     </div>
                 </div>

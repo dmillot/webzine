@@ -17,7 +17,8 @@
                     <a asp-area="administration" asp-controller="artiste" asp-action="index" class="dropdown-item">Artistes</a>
                     <a asp-area="administration" asp-controller="titre" asp-action="index" class="dropdown-item">Titres</a>
                     <a asp-area="administration" asp-controller="style" asp-action="index" class="dropdown-item">Styles</a>
-                    <a asp-area="administration" asp-controller="Commentaire" asp-action="index" class="dropdown-item">Commentaire</a>
+                    <a asp-area="administration" asp-controller="commentaire" asp-action="index" class="dropdown-item">Commentaire</a>
+                    <a asp-area="administration" asp-controller="pays" asp-action="index" class="dropdown-item">Pays</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -25,9 +26,13 @@
                 <a asp-area="" asp-controller="contact" asp-action="index" class="nav-link" tabindex="-1" aria-disabled="true"><i class="fas fa-envelope"></i> Contact</a>
             </li>
         </ul>
-        <form asp-controller="research" asp-action="index" method="post" class="form-inline my-2 my-lg-0">
-            <input class="form-control" type="search" placeholder="Trouver un artiste/titre" aria-label="Search" id="mot" name="mot">
-            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+        <form asp-controller="research" asp-action="index" method="post" class="my-2 my-lg-0">
+            <div class="input-group">
+                <input class="form-control" type="search" placeholder="Trouver un artiste/titre" aria-label="Search" id="mot" name="mot">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary rounded-right" type="submit"><i class="fas fa-search"></i></button>
+                </span>
+            </div>
         </form>
     </div>
 

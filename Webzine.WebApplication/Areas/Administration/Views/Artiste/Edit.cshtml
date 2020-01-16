@@ -1,4 +1,4 @@
-﻿@model Artiste
+﻿@model AdminArtistViewModel
 @{
     ViewData["Admin"] = true;
 }
@@ -10,14 +10,29 @@
         <div class="form-group row">
             <label for="artistName" class="col-sm-2 col-form-label">Nom de l'artiste</label>
             <div class="col-sm-10">
-                <input asp-for="@Model.IdArtiste" hidden />
-                <input type="text" class="form-control" id="artistName" asp-for="@Model.Nom">
+                <input asp-for="@Model.Id" hidden />
+                <input type="text" class="form-control" id="artistName" asp-for="@Model.Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Pays" class="col-sm-2 col-form-label">Nom du pays</label>
+            <select class="form-control col-sm-10" asp-for="@Model.Pays.IdPays">
+                @foreach (var pays in Model.ListPays)
+                {
+                    <option value="@pays.IdPays" isSelected>@pays.Nom</option>
+                }
+            </select>
+        </div>
+        <div class="form-group row">
+            <label for="dateNaissance" class="col-sm-2 col-form-label">Date de naissance</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="dateNaissance" asp-for="@Model.DateNaissance">
             </div>
         </div>
         <div class="form-group row">
             <label for="inputBiography" class="col-sm-2 col-form-label">Biographie</label>
             <div class="col-sm-10">
-                <textarea asp-for="@Model.Biographie" class="form-control" id="inputBiography" rows="3"></textarea> 
+                <textarea asp-for="@Model.Biography" class="form-control" id="inputBiography" rows="3"></textarea>
             </div>
         </div>
         <div class="form-group row">
