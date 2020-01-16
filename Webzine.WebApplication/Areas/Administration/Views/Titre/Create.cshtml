@@ -10,7 +10,7 @@
 
     <form method="post" asp-area="administration" asp-controller="titre" asp-action="create">
         <div class="form-group row">
-            <label for="Author" class="col-2 col-form-label">Nom de l'artiste *</label>
+            <label for="Author" class="col-2 col-form-label">Nom de l'artiste <span class="text-danger">* </span></label>
             <select class="form-control col-10" asp-for="@Model.Titre.IdArtiste">
                 @foreach (var artist in Model.Artistes)
                 {
@@ -20,7 +20,7 @@
         </div>
 
         <div class="row">
-            <label for="Title" class="col-2">Titre *</label>
+            <label for="Title" class="col-2">Titre <span class="text-danger">* </span></label>
             <div class="form-group  col-10 p-0">
                 <input type="text" class="form-control" asp-for="@Model.Titre.Libelle" placeholder="Titre" />
                 <span asp-validation-for="Titre.Libelle" class="text-danger"></span>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="row">
-            <label for="Description" class="col-2">Chronique *</label>
+            <label for="Description" class="col-2">Chronique <span class="text-danger">* </span></label>
             <div class="form-group col-10 p-0">
                 <textarea class="form-control" asp-for="@Model.Titre.Chronique" placeholder="Description"></textarea>
                 <span asp-validation-for="Titre.Chronique" class="text-danger"></span>
@@ -37,7 +37,7 @@
 
         <div class="row">
             <div class="col col-2">
-                <label for="ReleaseDate">Date de sortie *</label>
+                <label for="ReleaseDate">Date de sortie <span class="text-danger">* </span></label>
             </div>
             <div class="col col-4 p-0">
                 <div class="form-group col-10 p-0">
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="col col-2 p-0">
-                <label for="Duration">Duree en secondes *</label>
+                <label for="Duration">Duree en secondes <span class="text-danger">* </span></label>
             </div>
             <div class="col col-4">
                 <div class="form-group col-10 p-0">
@@ -63,7 +63,7 @@
         </div>
 
         <div class="row">
-            <label for="Album" class="col-2">Album *</label>
+            <label for="Album" class="col-2">Album <span class="text-danger">* </span></label>
             <div class="form-group col-10 p-0">
                 <input type="text" class="form-control col-10" asp-for="@Model.Titre.Album" placeholder="Titre de l'album" />
                 <span asp-validation-for="Titre.Album" class="text-danger"></span>
@@ -71,7 +71,7 @@
         </div>
 
         <div class="row">
-            <label for="AlbumPicture" class="col-2">Jaquette de l'album *</label>
+            <label for="AlbumPicture" class="col-2">Jaquette de l'album <span class="text-danger">* </span></label>
             <div class="form-group col-10 p-0">
                 <input type="text" class="form-control col-10" asp-for="@Model.Titre.UrlJaquette" />
                 <span asp-validation-for="Titre.UrlJaquette" class="text-danger"></span>

@@ -43,14 +43,14 @@
             <form asp-controller="Titre" asp-action="Commenter" method="post" >
                 <input type="hidden" asp-for="Commentaire.IdTitre" value="@Model.IdTitre" />
                 <div class="form-group row">
-                    <label asp-for="Commentaire.Auteur" class="col-sm-2 col-form-label">Nom</label>
+                    <label asp-for="Commentaire.Auteur" class="col-sm-2 col-form-label">Nom <span class="text-danger">* </span></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" asp-for="Commentaire.Auteur" placeholder="Votre nom (exemple : Emmanuel)">
                         <span asp-validation-for="Commentaire.Auteur" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label asp-for="Commentaire.Contenu" class="col-sm-2 col-form-label">Commentaire</label>
+                    <label asp-for="Commentaire.Contenu" class="col-sm-2 col-form-label">Commentaire <span class="text-danger">* </span></label>
                     <div class="col-sm-10">
                         <textarea class="form-control" asp-for="Commentaire.Contenu" placeholder="Votre commentaire.."></textarea>
                         <span asp-validation-for="Commentaire.Contenu" class="text-danger"></span>
