@@ -22,7 +22,7 @@
 
                 <div class="row">
                     <div class="col-4">
-                        <img class="w-100" src="@album.Value" alt="Album cover" />
+                        <img class="w-100" src="@album.Value" alt="Album cover" onerror="if (this.src != 'https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg') this.src = 'https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg';" >
                     </div>
                     <div class="col-8">
                         <table class="table">
@@ -53,4 +53,20 @@
 
     </div>
 
+    <script>
+        fixBrokenImages = function (url) {
+            var img = document.getElementsByTagName('img');
+            var i = 0, l = img.length;
+            for (; i < l; i++) {
+                var t = img[i];
+                if (t.naturalWidth === 0) {
+                    //this image is broken
+                    t.src = url;
+                }
+            }
+        }
+        window.onload = function () {
+            fixBrokenImages('https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg');
+        }
+    </script>
 

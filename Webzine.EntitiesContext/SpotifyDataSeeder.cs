@@ -35,7 +35,7 @@ namespace Webzine.EntitiesContext
             string client_secret = "76cd2a308f10479195200861cf25c5e4"; // Your secret
             string accesToken = GetAccessToken(client_id, client_secret);
 
-            List<string> artistsIds = new List<string>(){ "3NH8t45zOTqzlZgBvZRjvB","7p0odCZxOVz684NjXt1dEf"};
+            List<string> artistsIds = new List<string>(){ "3NH8t45zOTqzlZgBvZRjvB","7p0odCZxOVz684NjXt1dEf", "2RJBv9wXbW6m539q9NOfW1", "4OV6uYSnHxSYkjDYuBVBUz", "3QVolfxko2UyCOtexhVTli", "0GOx72r5AAEKRGQFn3xqXK", "7IlRNXHjoOCgEAWN5qYksg", "4sbXXFzEWJY2zsZjelerjX", "5mmEMfYChd6MImBagU7zCs", "3YwqjMyrRfuixi2pbgTGCE" };
 
             Style spotifyStyle = new Style()
             {

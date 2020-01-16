@@ -28,10 +28,10 @@
 @foreach (var objet in Model.Titres)
 {
     <div class="media mb-3">
-        <img src="@objet.UrlJaquette" class="mr-3" height="64">
+        <img src="@objet.UrlJaquette" class="mr-3" height="64" onerror="this.src='https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg'">
         <div class="media-body">
             <a asp-controller="titre" asp-action="index" asp-route-id="@objet.IdTitre"><h5 class="mt-0"> @objet.Libelle </h5></a>
-            Durée : @objet.Duree
+            Durée : @objet.DurationToString()
         </div>
     </div>
 }
