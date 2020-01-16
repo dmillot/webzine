@@ -36,5 +36,18 @@ On peux modifier le formattage de la serialization du Json, pour cela il nous a 
 
 L'utilisation d'une autre forme de formattage de la sérialization
 
+##### Problèmes lors de l'insertion de données lors du seed de la base de données
+
+Lors de l'insertion de données dans la base de données localdb sqlserver, une exception était levé car l'insertion d'une identité n'était pas possible. Par exemple pour insérer un style, le champ IdStyle ne peut etre mis manuellement.
+
+##### Solution trouvé : 
+
+Pour insérer une identité manuellement dans une table, il faut autoriser l'insertion d'identité avec la commande `SET IDENTITY_INSERT Style ON`. Donc excecuter la commande sql sur la base de donnée avec `context.Database.ExecuteSqlCommand(@"SET IDENTITY_INSERT Style ON");` </br>
+Ensuite Pour insérer les entités suivantes il faut enlever l'autorisation pour la donner au autres tables avec la commande `SET IDENTITY_INSERT Style OFF` </br>
+De plus il faut sauvegarder les modifications apres chaque commande sql avec `context.SaveChanges();`
+
+##### Solution retenue : 
+
+Pour insérer des entités avec des id prédéfinis il faut insérer les données par type.
 
 
