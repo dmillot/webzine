@@ -10,4 +10,9 @@ Ce projet est mené par 4 personnes travaillant en groupe pour une durée de 3 s
 	Gaetan Bonin
 	Nicolas Civade
 
+##
+
 ### [Problèmes rencontrés](Rapport_Problèmes_Team4)
+### [Conclusion](Rapport_Conclusion_Team4)
+### [Problèmes Annexes](Rapport_Annexes_Team4)
+
