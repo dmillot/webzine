@@ -26,11 +26,14 @@ namespace Webzine.Entity
         [MinLength(1)]
         [MaxLength(50)]
         [Display(Name = "Nom de l'artiste")]
+        [Required]
         public string Nom { get; set; }
 
         /// <summary>
         /// Obtient ou définit la biographie de l'artiste.
         /// </summary>
+        [Required]
+        [MinLength(1)]
         public string Biographie { get; set; }
 
         /// <summary>
