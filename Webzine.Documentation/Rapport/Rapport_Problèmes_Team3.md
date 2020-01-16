@@ -1,12 +1,15 @@
 
 
-## Analyse technique
+
+#	Problèmes Rencontrés : 
+##### [Retour au sommaire](Rapport_Introduction_Team3)
+
 
 * ##### [Problèmes lors de la récupération des données depuis le context]()
 
 
 
-####	Problèmes Rencontrés : 
+
 
 ##### Problèmes lors de la récupération des données depuis le context()
 

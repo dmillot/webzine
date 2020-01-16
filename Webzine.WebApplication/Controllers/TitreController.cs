@@ -52,9 +52,9 @@ namespace Webzine.WebApplication.Controllers
             }
             catch (Exception e)
             {
+                Console.WriteLine(e);
                 return this.NotFound();
             }
-
         }
 
         [HttpPost]
