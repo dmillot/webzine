@@ -50,14 +50,4 @@ De plus il faut sauvegarder les modifications apres chaque commande sql avec `co
 
 Pour insérer des entités avec des id prédéfinis il faut insérer les données par type.
 
-##### Problèmes pour enlever la sidebar dans la partie administration
 
-Pour enlever la sidebar dans toutes les pages côté administrateur, on ne trouvait pas quelle méthode utiliser.
-
-##### Solution trouvé : 
-
-En créant un nouveau layout pour la partie administration.
-
-##### Solution retenue : 
-
-L'utilisation d'une condition dans le layout pour savoir si le ViewBag admin existe, si oui on affiche pas la sidebar.

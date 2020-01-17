@@ -30,23 +30,6 @@ namespace Webzine.EntitiesContext
 
             using (var transaction = context.Database.BeginTransaction())
             {
-
-                foreach (Pays pays in FactoryPays.Pays)
-                {
-                    pays.Artistes = null;
-                    context.Pays.Add(pays);
-                }
-
-                context.Database.ExecuteSqlCommand(@"SET IDENTITY_INSERT Pays ON");
-                context.SaveChanges();
-                context.Database.ExecuteSqlCommand(@"SET IDENTITY_INSERT Pays OFF");
-                context.SaveChanges();
-
-                transaction.Commit();
-            }
-
-            using (var transaction = context.Database.BeginTransaction())
-            {
                 foreach (Artiste artiste in FactoryArtiste.Artistes)
                 {
                     artiste.Titres = null;
@@ -110,6 +93,7 @@ namespace Webzine.EntitiesContext
 
                 transaction.Commit();
             }
+            
         }
     }
 }
