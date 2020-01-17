@@ -9,15 +9,6 @@
         <hr class="style1">
 
         <p>@Model.Artist.Biographie</p>
-
-        @*<hr />*@
-
-        @*<p>@Model.Artist.Pays.Nom</p>*@
-
-        <hr />
-
-        <p>Date de naissance : @Model.Artist.DateNaissance.ToString("dd/MM/yyyy")</p>
-
         <h1>Titres</h1>
         <hr class="style1">
 
@@ -31,7 +22,7 @@
 
                 <div class="row">
                     <div class="col-4">
-                        <img class="w-100" src="@album.Value" alt="Album cover" onerror="if (this.src != 'https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg') this.src = 'https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg';">
+                        <img class="w-100" src="@album.Value" alt="Album cover" onerror="if (this.src != 'https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg') this.src = 'https://m.media-amazon.com/images/I/71OFozfY-cL._SS500_.jpg';" >
                     </div>
                     <div class="col-8">
                         <table class="table">
@@ -43,17 +34,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var titre in Model.Artist.Titres.Where(t => t.Album == @album.Key).ToList())
+                                @foreach (var titre in Model.Artist.Titres.Where(t=>t.Album == @album.Key).ToList())
                                 {
-                                    <tr>
-                                        <td>@titre.Libelle</td>
-                                        <td>@titre.DurationToString()</td>
-                                        <td><a asp-controller="titre" asp-action="index" asp-route-id="@titre.IdTitre" class="fa fa-link"></a></td>
+                                <tr>
+                                    <td>@titre.Libelle</td>
+                                    <td>@titre.DurationToString()</td>
+                                    <td><a asp-controller="titre" asp-action="index" asp-route-id="@titre.IdTitre" class="fa fa-link"></a></td>
 
-                                    </tr>
+                                 </tr>
                                 }
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
 
                     </div>
                 </div>

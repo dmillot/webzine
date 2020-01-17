@@ -8,7 +8,7 @@ namespace Webzine.Business.Contracts
     public interface ITitreBusiness
     {
         /// <summary>
-        /// Methode servant à ajouter un like à un titre.
+        /// Methode servant à ajouter un like à un titre
         /// </summary>
         void LikeTitre(Titre titre);
     }
